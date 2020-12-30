@@ -12,17 +12,29 @@ input {
   font-family: var(--sans-serif);
   font-size: 11px;
 }
+input[type="text"],
+input[type="password"],
+input[type="email"],
 textarea {
   font-family: var(--sans-serif);
   font-size: 11px;
-  padding: 3px 4px;
-  border: none;
+  padding: 3px 4px 5px;
+  border: 1px solid #ccc;
+  border-top-color: var(--button-border-color);
+  border-radius: 2px;
   background-color: var(--button-highlight);
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
+  &:focus {
+    outline: none;
+    border-color: var(--button-shade-light-hover);
+    border-top-color: var(--button-shade-light-active);
+  }
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  height: 21px;
+  line-height: 2;
   &:focus {
     outline: none;
   }
@@ -30,40 +42,35 @@ textarea {
 select {
   font-family: var(--sans-serif);
   font-size: 11px;
-  padding: 3px 4px;
-  border: none;
-  background-color: var(--button-highlight);
+  padding: 2px 3px;
+  border: var(--button-border);
+  border-color: var(--button-border-color);
+  border-radius: var(--border-radius);
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0;
-  height: 21px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   position: relative;
-  padding-right: 32px;
-  background-image: svg-load("./icon/button-down.svg");
-  background-position: top 2px right 2px;
+  padding-right: 30px;
+  background: svg-load("./icon/button-down.svg"),
+    linear-gradient(
+      to bottom,
+      var(--button-face) 45%,
+      var(--button-shade-light) 45%,
+      var(--button-shade-dark)
+    );
+  background-position: center right;
   background-repeat: no-repeat;
-  border-radius: 0;
   &:focus {
     outline: none;
-    color: var(--button-highlight);
-    background-color: var(--dialog-blue);
-    option {
-      color: #000;
-      background-color: #fff;
-    }
+    border-color: var(--button-border-color-active);
+    background-image: svg-load("./icon/button-down.svg"),
+      linear-gradient(
+        to bottom,
+        var(--button-face-active) 45%,
+        var(--button-shade-light-active) 45%
+      );
   }
-  &:active {
-    background-image: svg-load("./icon/button-down-active.svg");
-  }
-}
-option {
-  font-family: var(--sans-serif);
-  font-size: 11px;
 }
 .vertical-bar {
   width: 4px;
@@ -104,7 +111,12 @@ input[type="radio"] {
         width: var(--radio-width);
         height: var(--radio-width);
         margin-right: var(--radio-label-spacing);
-        background: svg-load("./icon/radio-border.svg");
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid;
+        border-color: var(--button-border-color);
+        box-shadow: inset 0 0 0 1.5px #ddd, inset 1px 3px 4px #888;
+        box-sizing: border-box;
       }
     }
   }
@@ -128,7 +140,12 @@ input[type="radio"] {
           top: var(--radio-dot-top);
           left: var(--radio-dot-left);
           position: absolute;
-          background: svg-load("./icon/radio-dot.svg");
+          background: #7cd3eb;
+          border-radius: 50%;
+          border: 1.5px solid #27506d;
+          box-shadow: inset -1px -1px 0 0.5px #16638f,
+            inset -1px -1px 0 1px #1985c0;
+          box-sizing: border-box;
         }
       }
     }
@@ -157,14 +174,16 @@ input[type="checkbox"] {
       margin-left: var(--checkbox-total-width);
       &::before {
         content: "";
-        position: absolute;
-        left: calc(-1 * (var(--checkbox-total-width-precalc)));
         display: inline-block;
         width: var(--checkbox-width);
         height: var(--checkbox-width);
-        background: var(--button-highlight);
-        box-shadow: var(--border-field);
         margin-right: var(--radio-label-spacing);
+        background: #ddd;
+        border: 1px solid;
+        border-color: var(--button-border-color);
+        box-shadow: inset 0 0 0 1.5px #eee, inset 0 2px 4px #888,
+          inset -2px -3px 4px #fff;
+        box-sizing: border-box;
       }
     }
   }
@@ -188,69 +207,24 @@ input[type="checkbox"] {
     + {
       label {
         &::after {
-          content: "";
+          content: "\2714";
+          font-weight: bold;
           display: block;
           width: var(--checkmark-width);
           height: var(--checkmark-width);
           position: absolute;
-          background: svg-load("./icon/checkmark.svg");
-          top: 1px;
+          top: var(--checkmark-top);
+          left: var(--checkmark-left);
+          color: #16638f;
         }
       }
     }
   }
 }
-input[type="radio"][disabled] {
-  + {
-    label {
-      &::before {
-        background: svg-load("./icon/radio-border-disabled.svg");
-      }
-    }
-  }
-  &:checked {
-    + {
-      label {
-        &::after {
-          background: svg-load("./icon/radio-dot-disabled.svg");
-        }
-      }
-    }
-  }
-}
+input[type="radio"][disabled],
 input[type="checkbox"][disabled] {
-  + {
-    label {
-      &::before {
-        background: var(--surface);
-      }
-    }
-  }
-  &:checked {
-    + {
-      label {
-        &::after {
-          background: svg-load("./icon/checkmark-disabled.svg");
-        }
-      }
-    }
-  }
-}
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  padding: 3px 4px;
-  border: none;
-  background-color: var(--button-highlight);
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
-  height: 21px;
-  line-height: 2;
-  &:focus {
-    outline: none;
+  & + label {
+    opacity: 0.5;
   }
 }
 input[type="range"] {
@@ -277,14 +251,10 @@ input[type="range"] {
   }
   &::-webkit-slider-runnable-track {
     width: 100%;
-    height: 2px;
+    height: 3px;
+    background: var(--surface);
     box-sizing: border-box;
-    background: black;
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
-    box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-      -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white,
-      1px -1px darkgrey;
+    box-shadow: inset 1px 1px 1px #999, inset -1px 0 #999, 0 1px #fff;
   }
   &::-moz-range-track {
     width: 100%;
@@ -320,14 +290,6 @@ input[type="range"].has-box-indicator {
       var(--range-spacing);
     transform-origin: left;
     transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
-    &::-webkit-slider-runnable-track {
-      border-left: 1px solid grey;
-      border-right: 0;
-      border-bottom: 1px solid grey;
-      box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white,
-        1px 0 0 darkgrey, 1px -1px 0 darkgrey, 0 -1px 0 darkgrey,
-        1px 1px 0 white, -1px -1px darkgrey;
-    }
     &::-moz-range-track {
       border-left: 1px solid grey;
       border-right: 0;

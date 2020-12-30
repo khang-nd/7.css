@@ -15,6 +15,7 @@ aside {
   top: 0;
   bottom: 0;
   padding: 8px;
+  z-index: 99;
   display: flex;
   align-items: stretch;
 }
