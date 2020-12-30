@@ -1,8 +1,8 @@
 {
-  "name": "xp.css",
-  "version": "0.2.4",
+  "name": "7.css",
+  "version": "0.1.0",
   "description": "A design system for building faithful recreations of old UIs",
-  "main": "dist/XP.css",
+  "main": "dist/7.css",
   "directories": {
     "doc": "docs"
   },
@@ -13,20 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/botoxparty/XP.css.git"
+    "url": "git+https://github.com/khang-nd/7.css.git"
   },
   "keywords": [
     "css",
-    "windows98",
-    "windowsXP",
+    "windows7",
     "gui"
   ],
   "author": "Adam Hammad <mail@adamham.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/botoxparty/XP.css/issues"
+    "url": "https://github.com/khang-nd/7.css/issues"
   },
-  "homepage": "https://botoxparty.github.io/XP.css/",
+  "homepage": "https://khang-nd.github.io/7.css/",
   "devDependencies": {
     "chokidar": "^3.3.1",
     "cssnano": "^4.1.10",

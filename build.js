@@ -37,42 +37,6 @@ function buildCSS() {
     });
 }
 
-function build98CSS() {
-  const input =
-    `/*! 98.css v${version} - ${homepage} */\n` +
-    fs.readFileSync("themes/98/index.scss");
-
-  return postcssParser
-    .process(input, {
-      from: "themes/98/index.scss",
-      to: "dist/98.css",
-      map: { inline: false },
-    })
-    .then((result) => {
-      mkdirp.sync("dist");
-      fs.writeFileSync("dist/98.css", result.css);
-      fs.writeFileSync("dist/98.css.map", result.map.toString());
-    });
-}
-
-function buildXPCSS() {
-  const input =
-    `/*! XP.css v${version} - ${homepage} */\n` +
-    fs.readFileSync("themes/XP/index.scss");
-
-  return postcssParser
-    .process(input, {
-      from: "themes/XP/index.scss",
-      to: "dist/XP.css",
-      map: { inline: false },
-    })
-    .then((result) => {
-      mkdirp.sync("dist");
-      fs.writeFileSync("dist/XP.css", result.css);
-      fs.writeFileSync("dist/XP.css.map", result.map.toString());
-    });
-}
-
 function buildDocs() {
   let id = 0;
   function getNewId() {
@@ -114,11 +78,7 @@ function buildDocs() {
 }
 
 function build() {
-  build98CSS()
-    .then(buildXPCSS)
-    .then(buildCSS)
-    .then(buildDocs)
-    .catch((err) => console.log(err));
+  buildCSS.then(buildDocs).catch((err) => console.log(err));
 }
 module.exports = build;
 
