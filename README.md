@@ -46,8 +46,6 @@ Usage:
 import "7.css/dist/7.css";
 ```
 
-<!-- Here is an example of [7.css being used with React](https://codesandbox.io/s/silly-bas-dln9t?file=/src/index.js), and [an example with vanilla JavaScript](https://codesandbox.io/s/vigilant-night-2jkz3?file=/index.html). -->
-
 Refer to the [documentation page](https://khang-nd.github.io/7.css/) for specific instructions on this library's components.
 
 ### Developing
