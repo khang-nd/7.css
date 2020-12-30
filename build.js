@@ -21,19 +21,19 @@ const postcssParser = postcss()
 
 function buildCSS() {
   const input =
-    `/*! GUI.css v${version} - ${homepage} */\n` +
+    `/*! 7.css v${version} - ${homepage} */\n` +
     fs.readFileSync("gui/index.scss");
 
   return postcssParser
     .process(input, {
       from: "gui/index.scss",
-      to: "dist/GUI.css",
+      to: "dist/7.css",
       map: { inline: false },
     })
     .then((result) => {
       mkdirp.sync("dist");
-      fs.writeFileSync("dist/GUI.css", result.css);
-      fs.writeFileSync("dist/GUI.css.map", result.map.toString());
+      fs.writeFileSync("dist/7.css", result.css);
+      fs.writeFileSync("dist/7.css.map", result.map.toString());
     });
 }
 
@@ -78,7 +78,9 @@ function buildDocs() {
 }
 
 function build() {
-  buildCSS.then(buildDocs).catch((err) => console.log(err));
+  buildCSS()
+    .then(buildDocs)
+    .catch((err) => console.log(err));
 }
 module.exports = build;
 

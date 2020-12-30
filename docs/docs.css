@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* background: #c0c0c0; */
-  background: #ece9d8;
 }
 
 main {
@@ -155,14 +153,4 @@ button.active {
   pre {
     overflow-x: scroll;
   }
-}
-
-.theme-switcher {
-  position: fixed;
-  top: 1em;
-  right: 1em;
-  background: black;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
 }
