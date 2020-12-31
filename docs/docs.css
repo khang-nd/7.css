@@ -3,6 +3,13 @@ body {
   padding: 0;
 }
 
+#github {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0.5em 0;
+}
+
 main {
   width: 65rem;
   margin-left: 240px;

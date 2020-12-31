@@ -5,9 +5,11 @@
 
 A design system for building faithful recreations of old UIs.
 
-<img alt="a screenshot of a window with the title 'My First Program' and two buttons OK and Cancel, styled like a Windows XP dialog" src="https://github.com/khang-nd/7.css/blob/main/docs/window.png?raw=true" height="133">
+<img alt="a screenshot of a window with the title 'My First Program' and two buttons OK and Cancel, styled like a Windows 7 dialog" src="https://github.com/khang-nd/7.css/blob/main/docs/window.png?raw=true" height="133">
 
-**7.css** is an extension of [XP.css](https://github.com/botoxparty/XP.css), which is an extension of [98.CSS](https://github.com/jdan/98.css). A CSS file that takes semantic HTML and makes it look pretty.
+**7.css** is a tiny CSS library that takes semantic HTML and styles them to the Windows 7 design.
+It is built on top of [XP.css](https://github.com/botoxparty/XP.css), which is an extension of [98.CSS](https://github.com/jdan/98.css).
+
 It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
 ### Installation / Usage
@@ -37,11 +39,13 @@ The easiest way to use 7.css is to import it from [unpkg](https://unpkg.com/).
 ```
 
 Alternatively, you can grab 7.css from [npm](https://www.npmjs.com/package/7.css).
+
 ```
 npm install 7.css
 ```
 
 Usage:
+
 ```
 import "7.css/dist/7.css";
 ```
@@ -60,7 +64,7 @@ You can run a build manually with `npm run build`. This will write to the `dist/
 
 ### Issues, Contributing, etc.
 
-I would love to see other people's work on gui.css, if anyone else if up for creating a theme for another OS using this framework. Also new components and bugs/issues are also welcome! Feel free to contribute in whatever way you like!
+You are so welcome to report issues, help out with contributions or whatever you could think of to improve this lovely UI library.
 
 ### License
 

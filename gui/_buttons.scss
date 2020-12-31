@@ -2,6 +2,7 @@
     Buttons
 \*-------------------------------------------*/
 
+.button,
 button {
   font-family: var(--sans-serif);
   font-size: 11px;
@@ -19,13 +20,14 @@ button {
   min-width: 75px;
   min-height: 23px;
   padding: 0 12px;
+  text-align: center;
   &:not(:disabled) {
     &:hover {
-      border-color: var(--button-border-color-hover);
+      border-color: var(--button-border-color-hovered);
       background: linear-gradient(
         to bottom,
         var(--button-face-hover) 45%,
-        var(--button-shade-light-hover) 45%
+        var(--button-shade-light-hovered) 45%
       );
     }
     &:active,

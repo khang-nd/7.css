@@ -1,69 +1,175 @@
 /*-------------------------------------------*\
     Window
 \*-------------------------------------------*/
-
 :root {
-    --title-bar-bg: black;
+  --window-border: 1px solid;
+  --window-border-radius: 6px;
+  --window-border-color: #666;
+  --window-background-color: rgb(69, 128, 196);
+  --window-background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.4),
+      rgba(0, 0, 0, 0.1),
+      rgba(255, 255, 255, 0.2)
+    ),
+    linear-gradient(
+      50deg,
+      transparent,
+      rgba(0, 0, 0, 0.1) 20%,
+      rgba(0, 0, 0, 0.1) 50%,
+      transparent 55%
+    ),
+    var(--window-background-color);
+  --window-spacing: 6px;
+  --control-border-radius: 5px;
+  --control-background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3) 45%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(255, 255, 255, 0.5)
+  );
 }
 .window {
-    font-size: 11px;
-    box-shadow: var(--border-window-outer), var(--border-window-inner);
-    background: var(--surface);
-    padding: 3px;
-    fieldset {
-        margin-bottom: 9px;
-    }
+  font-size: 11px;
+  box-shadow: 0 0 5px 1px var(--window-border-color);
+  border: var(--window-border) var(--window-border-color);
+  border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
+  background: linear-gradient(
+      transparent 20%,
+      rgba(255, 255, 255, 0.6) 40%,
+      transparent 41%
+    ),
+    var(--window-background);
+  > .title-bar {
+    border: 0;
+    box-shadow: inset 0 1px 0 0 #fff;
+  }
+  fieldset {
+    margin-bottom: 9px;
+  }
 }
 .title-bar {
-    font-size: 11px;
-    background: var(--title-bar-bg);
-    padding: 3px 2px 3px 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  font-size: 11px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border: var(--window-border) var(--window-border-color);
+  border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
+  padding: var(--window-spacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--window-background);
 }
 .title-bar-text {
-    font-weight: bold;
-    color: white;
-    letter-spacing: 0;
-    margin-right: 24px;
+  color: #000;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff,
+    0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
 }
 .title-bar-controls {
-    display: flex;
-    button {
-        padding: 0;
-        display: block;
-        min-width: 16px;
-        min-height: 14px;
-        &:focus {
-            outline: none;
-        }
+  display: flex;
+  background: rgba(255, 255, 255, 0.2);
+  border: var(--window-border) var(--window-border-color);
+  border-top: 0;
+  border-radius: 0 0 var(--control-border-radius) var(--control-border-radius);
+  margin-top: -var(--window-spacing);
+  box-shadow: 0 0 2px #fff;
+  button {
+    min-width: 26px;
+    min-height: 20px;
+    padding: 0;
+    border: 0;
+    border-right: 1px solid var(--window-border-color);
+    border-radius: 0;
+    box-shadow: inset 0 0 0 0.5px #eee;
+    box-sizing: border-box;
+    background: var(--control-background);
+    &:first-child {
+      border-bottom-left-radius: var(--control-border-radius);
     }
-    button[aria-label="Minimize"] {
+    &:last-child {
+      border: 0;
+      border-bottom-right-radius: var(--control-border-radius);
     }
-    button[aria-label="Maximize"] {
+    &:focus {
+      outline: none;
     }
-    button[aria-label="Help"] {
+    &:hover {
+      background: radial-gradient(circle at 50% 100%, #2aceda, transparent 60%),
+        linear-gradient(#a9d2e8 50%, #196c9b 50%);
     }
-    button[aria-label="Close"] {
+    &:active {
+      box-shadow: inset 0 0 0 0.5px #eee;
+      background: radial-gradient(circle at 50% 100%, #0bfdfa, transparent 60%),
+        linear-gradient(#86a7bc 50%, #092747 50%);
     }
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &[aria-label="Minimize"] {
+      &::before {
+        background: url(./icon/minimize.png) no-repeat center 10px;
+      }
+    }
+    &[aria-label="Maximize"] {
+      &::before {
+        background: url(./icon/maximize.png) no-repeat center;
+      }
+    }
+    &[aria-label="Restore"] {
+      &::before {
+        background: url(./icon/restore.png) no-repeat center;
+      }
+    }
+    &[aria-label="Close"] {
+      background-color: #d04a37;
+      width: 45px;
+      &::before {
+        background: url(./icon/close.png) no-repeat center;
+      }
+      &:hover {
+        filter: contrast(1.3);
+        background-image: var(--control-background);
+      }
+      &:active {
+        filter: contrast(1.3) brightness(0.7);
+        background-image: var(--control-background);
+      }
+    }
+  }
 }
 .window-body {
-    margin: var(--element-spacing);
-    pre {
-        margin: -8px;
-    }
+  margin: var(--window-spacing);
+  margin-top: 0;
+  padding: var(--window-spacing);
+  border: var(--window-border) var(--window-border-color);
+  background: var(--surface);
+  box-shadow: 0 0 1px 0.5px #fff;
+  pre {
+    margin: -var(--window-spacing);
+  }
 }
 
 .status-bar {
-    margin: 0px 1px;
-    display: flex;
-    gap: 1px;
+  margin: var(--window-spacing);
+  margin-top: -var(--window-spacing);
+  background: var(--surface);
+  border: var(--window-border) var(--window-border-color);
+  border-top: 0;
+  box-shadow: 0 0.5px 1px 0.5px #fff;
+  display: flex;
+  gap: 1px;
 }
 
 .status-bar-field {
-    box-shadow: var(--border-status-bar-field);
-    flex-grow: 1;
-    padding: 2px 3px;
-    margin: 0;
+  border-right: var(--window-border) #cfcfcf;
+  padding: 2px 3px;
+  margin: 0;
+  &:last-child {
+    border-right: 0;
+  }
 }
