@@ -1,7 +1,7 @@
 {
   "name": "7.css",
   "version": "0.1.0",
-  "description": "A design system for building faithful recreations of old UIs",
+  "description": "A design system for building faithful recreations of the Windows 7 UI.",
   "main": "dist/7.css",
   "directories": {
     "doc": "docs"
@@ -17,15 +17,18 @@
   },
   "keywords": [
     "css",
+    "windows",
     "windows7",
-    "gui"
+    "windows-7",
+    "gui",
+    "ui-design"
   ],
   "author": "khang-nd",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/khang-nd/7.css/issues"
   },
-  "homepage": "https://khang-nd.github.io/7.css/",
+  "homepage": "https://khang-nd.github.io/7.css",
   "devDependencies": {
     "chokidar": "^3.3.1",
     "cssnano": "^4.1.10",
