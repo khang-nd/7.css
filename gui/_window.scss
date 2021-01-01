@@ -43,7 +43,7 @@
     var(--window-background);
   > .title-bar {
     border: 0;
-    box-shadow: inset 0 1px 0 0 #fff;
+    box-shadow: inset 0 0.5px #fff;
   }
   fieldset {
     margin-bottom: 9px;
@@ -51,7 +51,7 @@
 }
 .title-bar {
   font-size: 11px;
-  box-shadow: inset 0 0 0 1px #fff;
+  box-shadow: inset 0 0 0.5px 0.5px #fff;
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
   padding: var(--window-spacing);
@@ -169,6 +169,7 @@
   border-right: var(--window-border) #cfcfcf;
   padding: 2px 3px;
   margin: 0;
+  flex-grow: 1;
   &:last-child {
     border-right: 0;
   }
