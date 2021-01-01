@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="7.css">
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-G4ZQ4HN11K');
+  </script>
 </head>
 
 <body class="surface" ontouchstart>
@@ -118,13 +126,13 @@
     <p>
       The fastest way to use 7.css is to import it from unpkg.
     </p>
-    <pre style="max-width: fit-content"><code>&lt;link rel="stylesheet" href="https://unpkg.com/7.css"&gt;</code></pre>
+    <pre style="max-width: fit-content">&lt;link rel="stylesheet" href="https://unpkg.com/7.css"&gt;</pre>
 
     <p>
       You can also install 7.css <a href="https://www.npmjs.com/package/7.css">from npm</a>.
     </p>
     <p><em>Installation</em></p>
-    <pre style="max-width: fit-content"><code>npm install 7.css</code></pre>
+    <pre style="max-width: fit-content">npm install 7.css</pre>
 
     <p><em>Usage</em></p>
     <pre style="max-width: fit-content">import "7.css/dist/7.css";</pre>
@@ -193,9 +201,8 @@
           being able to click the entire label to select the box).
         </p>
 
-        <%- example(`
-<input type="checkbox" id="example${getNewId()}">
-<label for="example${getCurrentId()}">This is a checkbox</label>
+        <%- example(` <input type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">This is a checkbox</label>
           `) %>
 
           <p>
@@ -208,10 +215,9 @@
             a consistent spacing between inputs.
           </p>
 
-          <%- example(`
-      <div class="field-row">
-        <input checked type="checkbox" id="example${getNewId()}">
-        <label for="example${getCurrentId()}">I am checked</label>
+          <%- example(` <div class="field-row">
+            <input checked type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am checked</label>
       </div>
       <div class="field-row">
         <input disabled type="checkbox" id="example${getNewId()}">
@@ -244,14 +250,13 @@
           elements.
         </p>
 
-        <%- example(`
-        <select>
+        <%- example(` <select>
           <option>5 - Incredible!</option>
           <option>4 - Great!</option>
           <option>3 - Pretty good</option>
           <option>2 - Not so great</option>
           <option>1 - Unfortunate</option>
-        </select>
+          </select>
           `) %>
 
           <p>
@@ -260,14 +265,13 @@
             attribute.
           </p>
 
-          <%- example(`
-          <select>
+          <%- example(` <select>
             <option>5 - Incredible!</option>
             <option>4 - Great!</option>
             <option selected>3 - Pretty good</option>
             <option>2 - Not so great</option>
             <option>1 - Unfortunate</option>
-           </select>
+            </select>
             `) %>
       </div>
     </section>
@@ -289,8 +293,7 @@
           around your controls.
         </p>
 
-        <%- example(`
-        <fieldset>
+        <%- example(` <fieldset>
           <div class="field-row">Select one:</div>
           <div class="field-row">
             <input id="radio${getNewId()}" type="radio" name="fieldset-example">
@@ -304,7 +307,7 @@
             <input id="radio${getNewId()}" type="radio" name="fieldset-example">
             <label for="radio${getCurrentId()}">Dives</label>
           </div>
-        </fieldset>
+          </fieldset>
           `) %>
 
           <p>
@@ -312,8 +315,7 @@
             within the <code>fieldset</code>.
           </p>
 
-          <%- example(`
-          <fieldset>
+          <%- example(` <fieldset>
             <legend>Today's mood</legend>
             <div class="field-row">
               <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
@@ -331,7 +333,7 @@
               <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
               <label for="radio${getCurrentId()}">Carla Lalli Music</label>
             </div>
-          </fieldset>
+            </fieldset>
             `) %>
       </div>
     </section>
@@ -355,10 +357,9 @@
           Specify the width of the inner bar to indicate the progress.
         </p>
 
-        <%- example(`
-        <div class="progress">
+        <%- example(` <div class="progress">
           <div style="width: 50%"></div>
-        </div>`) %>
+      </div>`) %>
       </div>
     </section>
 
@@ -383,15 +384,14 @@
           <code>field-row</code> class to ensure a consistent spacing between inputs.
         </p>
 
-        <%- example(`
-        <div class="field-row">
+        <%- example(` <div class="field-row">
           <input id="radio${getNewId()}" type="radio" name="first-example">
           <label for="radio${getCurrentId()}">Yes</label>
-        </div>
-        <div class="field-row">
-          <input id="radio${getNewId()}" type="radio" name="first-example">
-          <label for="radio${getCurrentId()}">No</label>
-        </div>
+      </div>
+      <div class="field-row">
+        <input id="radio${getNewId()}" type="radio" name="first-example">
+        <label for="radio${getCurrentId()}">No</label>
+      </div>
       `) %>
 
       <p>
@@ -399,10 +399,9 @@
         HTML attributes.
       </p>
 
-      <%- example(`
-        <div class="field-row">
-          <input id="radio${getNewId()}" type="radio" name="second-example">
-          <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+      <%- example(` <div class="field-row">
+        <input id="radio${getNewId()}" type="radio" name="second-example">
+        <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
         </div>
         <div class="field-row">
           <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
@@ -434,12 +433,11 @@
 
         <%- example(`
         <div class="field-row" style="width: 300px">
-          <label for="range${getNewId()}">Volume:</label>
-          <label for="range${getNewId()}">Low</label>
-          <input id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
-          <label for="range${getNewId()}">High</label>
-        </div>
-      `) %>
+          <label>Volume:</label>
+          <label>Low</label>
+          <input type="range" min="1" max="11" value="5" />
+          <label>High</label>
+        </div>`) %>
 
       <p>
         You can make use of the <code>has-box-indicator</code> class replace the
@@ -448,19 +446,17 @@
       </p>
 
       <p>
-        Note: To change the length of a vertical slider, the <code>input</code> width
+        Note: To change the length of a vertical slider, adjust the <code>input</code> width
         and <code>div</code> height.
       </p>
 
       <%- example(`
       <div class="field-row">
-        <label for="range${getNewId()}">Cowbell</label>
+        <label>Cowbell</label>
         <div class="is-vertical">
-          <input id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1"
-            value="2" />
+          <input class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
         </div>
-      </div>
-        `) %>
+      </div>`) %>
         </div>
     </section>
 
@@ -475,24 +471,25 @@
         <%- example(`
         <section class="tabs" style="max-width: 500px">
           <menu role="tablist" aria-label="Sample Tabs">
-            <button role="tab" aria-selected="true" aria-controls="tab-A">Tab A</button>
-            <button role="tab" aria-controls="tab-B">Tab B</button>
-            <button role="tab" aria-controls="tab-C">Tab C</button>
+            <button role="tab" aria-controls="tab-A" aria-selected="true">Instruction</button>
+            <button role="tab" aria-controls="tab-B">Example</button>
+            <button role="tab" aria-controls="tab-C">More instruction</button>
+            <button role="tab" aria-controls="tab-D" disabled>Disabled Tab</button>
           </menu>
           <!-- the tab content -->
           <article role="tabpanel" id="tab-A">
-            <h3>Tab Content</h3>
+            <h3>Creating tabs</h3>
             <p>
-              You create the tabs, you would use a <code>menu role="tablist"</code> element then for the tab titles you
-              use a <code>button</code> with the <code>aria-controls</code> parameter set to match the relative
-              <code>role="tabpanel"</code>'s element.
+              To create a tab, use a <code>menu</code> element with <code>role="tablist"</code>,
+              then for the tab titles, use a <code>button</code> with the <code>aria-controls</code> attribute set to match
+              the corresponding id of the element with <code>role="tabpanel"</code>.
             </p>
             <p>
               Read more at <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role"
                 target="_blank">MDN Web docs - ARIA: tab role</a>
             </p>
           </article>
-          <article role="tabpanel" hidden id="tab-B">
+          <article role="tabpanel" id="tab-B" hidden>
             <h3>More...</h3>
             <p>This tab contains a GroupBox</p>
             <fieldset>
@@ -515,12 +512,16 @@
               </div>
             </fieldset>
           </article>
-          <article role="tabpanel" hidden id="tab-C">
-            <h3>Tab 3</h3>
-            <p>Lorem Ipsum Dolor Sit</p>
+          <article role="tabpanel" id="tab-C" hidden>
+            <h3>Disabling tabs</h3>
+            <p>Simply add a <code>disabled</code> attribute on the tab.</p>
+          </article>
+          <article role="tabpanel" id="tab-D" hidden>
+            <h3>Disabled Tab</h3>
+            <p>This tab is disabled, so you should not be able to read this.</p>
           </article>
         </section>
-        `) %>
+    `) %>
     </div>
     </section>
 
@@ -542,11 +543,10 @@
           attribute, and wrap both in a container with the <code>field-row</code> class.
         </p>
 
-        <%- example(`
-        <div class="field-row">
+        <%- example(` <div class="field-row">
           <label for="text${getNewId()}">Occupation</label>
           <input id="text${getCurrentId()}" type="text" />
-        </div>
+      </div>
       `) %>
 
       <p>
@@ -554,10 +554,9 @@
         to position your label above the input instead of beside it.
       </p>
 
-      <%- example(`
-        <div class="field-row-stacked" style="width: 200px">
-          <label for="text${getNewId()}">Address (Line 1)</label>
-          <input id="text${getCurrentId()}" type="text" />
+      <%- example(` <div class="field-row-stacked" style="width: 200px">
+        <label for="text${getNewId()}">Address (Line 1)</label>
+        <input id="text${getCurrentId()}" type="text" />
         </div>
         <div class="field-row-stacked" style="width: 200px">
           <label for="text${getNewId()}">Address (Line 2)</label>
@@ -570,11 +569,10 @@
           element instead.
         </p>
 
-        <%- example(`
-        <div class="field-row-stacked" style="width: 200px">
+        <%- example(` <div class="field-row-stacked" style="width: 200px">
           <label for="text${getNewId()}">Additional notes</label>
           <textarea id="text${getCurrentId()}" rows="8"></textarea>
-        </div>
+          </div>
           `) %>
           </div>
     </section>
@@ -598,12 +596,11 @@
           elements), can contain whatever you'd like.
         </p>
 
-        <%- example(`
-        <ul class="tree-view">
+        <%- example(` <ul class="tree-view">
           <li>We can put</li>
           <li><strong style="color: purple">✨ Whatever ✨</strong></li>
           <li>We want in here</li>
-        </ul>
+          </ul>
           `) %>
 
           <p>
@@ -616,8 +613,7 @@
             <code>details</code> elements.
           </p>
 
-          <%- example(`
-          <ul class="tree-view">
+          <%- example(` <ul class="tree-view">
             <li>Table of Contents</li>
             <li>What is web development?</li>
             <li>
@@ -659,7 +655,7 @@
             </li>
             <li>HTML</li>
             <li>Special Thanks</li>
-          </ul>
+            </ul>
             `) %>
       </div>
     </section>
@@ -699,13 +695,12 @@
           <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
         </p>
 
-        <%- example(`
-        <div class="title-bar">
+        <%- example(` <div class="title-bar">
           <div class="title-bar-text">A Title Bar</div>
           <div class="title-bar-controls">
             <button aria-label="Close"></button>
           </div>
-        </div>
+      </div>
       `) %>
 
       <p>
@@ -714,26 +709,25 @@
         "Minimize" and "Maximize" like so:
       </p>
 
-      <%- example(`
-      <div class="title-bar">
+      <%- example(` <div class="title-bar">
         <div class="title-bar-text">A Title Bar</div>
         <div class="title-bar-controls">
           <button aria-label="Minimize"></button>
           <button aria-label="Maximize"></button>
           <button aria-label="Close"></button>
         </div>
-      </div>
-
-      <br>
-
-      <div class="title-bar">
-        <div class="title-bar-text">A maximized Title Bar</div>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Restore"></button>
-          <button aria-label="Close"></button>
         </div>
-      </div>
+
+        <br>
+
+        <div class="title-bar">
+          <div class="title-bar-text">A maximized Title Bar</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Restore"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
         `) %>
         </div>
     </section>
@@ -756,8 +750,7 @@
           container style.
         </p>
 
-        <%- example(`
-        <div class="window" style="width: 300px">
+        <%- example(` <div class="window" style="width: 300px">
           <div class="title-bar">
             <div class="title-bar-text">A Complete Window</div>
             <div class="title-bar-controls">
@@ -766,7 +759,7 @@
               <button aria-label="Close"></button>
             </div>
           </div>
-        </div>
+      </div>
       `) %>
 
       <p>
@@ -774,8 +767,7 @@
         class under the title bar.
       </p>
 
-      <%- example(`
-      <div class="window" style="width: 300px">
+      <%- example(` <div class="window" style="width: 300px">
         <div class="title-bar">
           <div class="title-bar-text">A Window With Stuff In It</div>
           <div class="title-bar-controls">
@@ -787,11 +779,10 @@
         <div class="window-body">
           <p>There's so much room for activities!</p>
         </div>
-      </div>
+        </div>
         `) %>
 
-        <%- example(`
-        <div class="window" style="width: 400px">
+        <%- example(` <div class="window" style="max-width: 400px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With Tabs and Groups</div>
             <div class="title-bar-controls">
@@ -851,7 +842,7 @@
               <button>Cancel</button>
             </section>
           </div>
-        </div>
+          </div>
           `) %>
           </div>
     </section>
@@ -875,8 +866,7 @@
           and <code>status-bar-field</code> for every child text element.
         </p>
 
-        <%- example(`
-        <div class="window" style="width: 320px">
+        <%- example(` <div class="window" style="width: 320px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With A Status Bar</div>
           </div>
@@ -893,7 +883,7 @@
             <p class="status-bar-field">Slide 1</p>
             <p class="status-bar-field">CPU Usage: 14%</p>
           </div>
-        </div>
+      </div>
       `) %>
 
 

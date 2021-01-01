@@ -11,9 +11,8 @@ body {
 }
 
 main {
-  width: 65rem;
-  margin-left: 240px;
-  margin-bottom: 60px;
+  margin: 0 30px 60px 220px;
+  box-sizing: border-box;
 }
 
 aside {
@@ -25,6 +24,7 @@ aside {
   z-index: 99;
   display: flex;
   align-items: stretch;
+  box-sizing: border-box;
 }
 
 aside .tree-view {
@@ -70,7 +70,7 @@ h4 {
   padding-top: 20px;
   margin-top: 0;
   display: block;
-  flex: 0 0 180px;
+  flex: 0 0 200px;
 }
 
 p {
@@ -93,11 +93,17 @@ blockquote footer {
   margin: 12px 0 0 12px;
 }
 
+code {
+  background: #e0e0e0;
+  padding: 0 2px;
+}
+
 .example {
   margin: 16px 0;
   padding: 12px 24px;
   border-left: 1px solid #808080;
   width: 100%;
+  box-sizing: border-box;
 }
 
 details {
@@ -118,32 +124,18 @@ details[open] summary {
   margin-bottom: 8px;
 }
 
-/* button.focused {
-  outline: 1px dotted #000000;
-  outline-offset: -4px;
-}
-
-button.active {
-  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
-    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-} */
-
 @media (max-width: 480px) {
   aside {
     display: none;
   }
 
   main {
-    box-sizing: border-box;
     width: 100%;
     margin: 0;
     padding: 16px;
   }
 
-  hr {
-    width: 100%;
-  }
-
+  hr,
   p {
     width: 100%;
   }
