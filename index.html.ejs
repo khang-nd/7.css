@@ -79,7 +79,7 @@
 
     <h2 id="intro">Intro</h2>
     <p>
-      7.css is a CSS library for building interface components that look like Windows 7.
+      7.css is a CSS framework for building interface components that look like Windows 7.
       It is built on top of the GUI backbone of <a href="https://github.com/botoxparty/XP.css">XP.css</a>,
       which is an extension of <a href="https://github.com/jdan/98.css">98.css</a>.
     </p>
@@ -106,7 +106,7 @@
     </div>
 
     <p>
-      This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
+      This framework relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
       to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
       <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
       goal of this project.
@@ -114,12 +114,12 @@
 
     <p>
       You can override many of the styles of your elements while maintaining the appearance provided by
-      this library. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
+      this framework. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
       Be our guest.
     </p>
 
     <p>
-      <strong>This library does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
+      <strong>This framework does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
       This means 7.css is compatible with your frontend framework of choice.
     </p>
 
@@ -201,8 +201,9 @@
           being able to click the entire label to select the box).
         </p>
 
-        <%- example(` <input type="checkbox" id="example${getNewId()}">
-          <label for="example${getCurrentId()}">This is a checkbox</label>
+        <%- example(`
+<input type="checkbox" id="example${getNewId()}">
+<label for="example${getCurrentId()}">This is a checkbox</label>
           `) %>
 
           <p>
@@ -215,9 +216,10 @@
             a consistent spacing between inputs.
           </p>
 
-          <%- example(` <div class="field-row">
-            <input checked type="checkbox" id="example${getNewId()}">
-            <label for="example${getCurrentId()}">I am checked</label>
+          <%- example(`
+      <div class="field-row">
+        <input checked type="checkbox" id="example${getNewId()}">
+        <label for="example${getCurrentId()}">I am checked</label>
       </div>
       <div class="field-row">
         <input disabled type="checkbox" id="example${getNewId()}">
@@ -250,13 +252,14 @@
           elements.
         </p>
 
-        <%- example(` <select>
+        <%- example(`
+        <select>
           <option>5 - Incredible!</option>
           <option>4 - Great!</option>
           <option>3 - Pretty good</option>
           <option>2 - Not so great</option>
           <option>1 - Unfortunate</option>
-          </select>
+        </select>
           `) %>
 
           <p>
@@ -265,13 +268,14 @@
             attribute.
           </p>
 
-          <%- example(` <select>
+          <%- example(`
+          <select>
             <option>5 - Incredible!</option>
             <option>4 - Great!</option>
             <option selected>3 - Pretty good</option>
             <option>2 - Not so great</option>
             <option>1 - Unfortunate</option>
-            </select>
+           </select>
             `) %>
       </div>
     </section>
@@ -293,7 +297,8 @@
           around your controls.
         </p>
 
-        <%- example(` <fieldset>
+        <%- example(`
+        <fieldset>
           <div class="field-row">Select one:</div>
           <div class="field-row">
             <input id="radio${getNewId()}" type="radio" name="fieldset-example">
@@ -307,7 +312,7 @@
             <input id="radio${getNewId()}" type="radio" name="fieldset-example">
             <label for="radio${getCurrentId()}">Dives</label>
           </div>
-          </fieldset>
+        </fieldset>
           `) %>
 
           <p>
@@ -315,7 +320,8 @@
             within the <code>fieldset</code>.
           </p>
 
-          <%- example(` <fieldset>
+          <%- example(`
+          <fieldset>
             <legend>Today's mood</legend>
             <div class="field-row">
               <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
@@ -333,7 +339,7 @@
               <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
               <label for="radio${getCurrentId()}">Carla Lalli Music</label>
             </div>
-            </fieldset>
+          </fieldset>
             `) %>
       </div>
     </section>
@@ -357,9 +363,10 @@
           Specify the width of the inner bar to indicate the progress.
         </p>
 
-        <%- example(` <div class="progress">
+        <%- example(`
+        <div class="progress">
           <div style="width: 50%"></div>
-      </div>`) %>
+        </div>`) %>
       </div>
     </section>
 
@@ -384,14 +391,15 @@
           <code>field-row</code> class to ensure a consistent spacing between inputs.
         </p>
 
-        <%- example(` <div class="field-row">
+        <%- example(`
+        <div class="field-row">
           <input id="radio${getNewId()}" type="radio" name="first-example">
           <label for="radio${getCurrentId()}">Yes</label>
-      </div>
-      <div class="field-row">
-        <input id="radio${getNewId()}" type="radio" name="first-example">
-        <label for="radio${getCurrentId()}">No</label>
-      </div>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="first-example">
+          <label for="radio${getCurrentId()}">No</label>
+        </div>
       `) %>
 
       <p>
@@ -399,9 +407,10 @@
         HTML attributes.
       </p>
 
-      <%- example(` <div class="field-row">
-        <input id="radio${getNewId()}" type="radio" name="second-example">
-        <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+      <%- example(`
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="second-example">
+          <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
         </div>
         <div class="field-row">
           <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
@@ -446,7 +455,7 @@
       </p>
 
       <p>
-        Note: To change the length of a vertical slider, adjust the <code>input</code> width
+        Note: To change the length of a vertical slider, the <code>input</code> width
         and <code>div</code> height.
       </p>
 
@@ -543,10 +552,11 @@
           attribute, and wrap both in a container with the <code>field-row</code> class.
         </p>
 
-        <%- example(` <div class="field-row">
+        <%- example(`
+        <div class="field-row">
           <label for="text${getNewId()}">Occupation</label>
           <input id="text${getCurrentId()}" type="text" />
-      </div>
+        </div>
       `) %>
 
       <p>
@@ -554,9 +564,10 @@
         to position your label above the input instead of beside it.
       </p>
 
-      <%- example(` <div class="field-row-stacked" style="width: 200px">
-        <label for="text${getNewId()}">Address (Line 1)</label>
-        <input id="text${getCurrentId()}" type="text" />
+      <%- example(`
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="text${getNewId()}">Address (Line 1)</label>
+          <input id="text${getCurrentId()}" type="text" />
         </div>
         <div class="field-row-stacked" style="width: 200px">
           <label for="text${getNewId()}">Address (Line 2)</label>
@@ -569,10 +580,11 @@
           element instead.
         </p>
 
-        <%- example(` <div class="field-row-stacked" style="width: 200px">
+        <%- example(`
+        <div class="field-row-stacked" style="width: 200px">
           <label for="text${getNewId()}">Additional notes</label>
           <textarea id="text${getCurrentId()}" rows="8"></textarea>
-          </div>
+        </div>
           `) %>
           </div>
     </section>
@@ -596,11 +608,12 @@
           elements), can contain whatever you'd like.
         </p>
 
-        <%- example(` <ul class="tree-view">
+        <%- example(`
+        <ul class="tree-view">
           <li>We can put</li>
           <li><strong style="color: purple">✨ Whatever ✨</strong></li>
           <li>We want in here</li>
-          </ul>
+        </ul>
           `) %>
 
           <p>
@@ -613,7 +626,8 @@
             <code>details</code> elements.
           </p>
 
-          <%- example(` <ul class="tree-view">
+          <%- example(`
+          <ul class="tree-view">
             <li>Table of Contents</li>
             <li>What is web development?</li>
             <li>
@@ -655,7 +669,7 @@
             </li>
             <li>HTML</li>
             <li>Special Thanks</li>
-            </ul>
+          </ul>
             `) %>
       </div>
     </section>
@@ -695,12 +709,13 @@
           <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
         </p>
 
-        <%- example(` <div class="title-bar">
+        <%- example(`
+        <div class="title-bar">
           <div class="title-bar-text">A Title Bar</div>
           <div class="title-bar-controls">
             <button aria-label="Close"></button>
           </div>
-      </div>
+        </div>
       `) %>
 
       <p>
@@ -709,25 +724,26 @@
         "Minimize" and "Maximize" like so:
       </p>
 
-      <%- example(` <div class="title-bar">
+      <%- example(`
+      <div class="title-bar">
         <div class="title-bar-text">A Title Bar</div>
         <div class="title-bar-controls">
           <button aria-label="Minimize"></button>
           <button aria-label="Maximize"></button>
           <button aria-label="Close"></button>
         </div>
-        </div>
+      </div>
 
-        <br>
+      <br>
 
-        <div class="title-bar">
-          <div class="title-bar-text">A maximized Title Bar</div>
-          <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Restore"></button>
-            <button aria-label="Close"></button>
-          </div>
+      <div class="title-bar">
+        <div class="title-bar-text">A maximized Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Restore"></button>
+          <button aria-label="Close"></button>
         </div>
+      </div>
         `) %>
         </div>
     </section>
@@ -750,7 +766,8 @@
           container style.
         </p>
 
-        <%- example(` <div class="window" style="width: 300px">
+        <%- example(`
+        <div class="window" style="width: 300px">
           <div class="title-bar">
             <div class="title-bar-text">A Complete Window</div>
             <div class="title-bar-controls">
@@ -759,7 +776,7 @@
               <button aria-label="Close"></button>
             </div>
           </div>
-      </div>
+        </div>
       `) %>
 
       <p>
@@ -767,7 +784,8 @@
         class under the title bar.
       </p>
 
-      <%- example(` <div class="window" style="width: 300px">
+      <%- example(`
+      <div class="window" style="width: 300px">
         <div class="title-bar">
           <div class="title-bar-text">A Window With Stuff In It</div>
           <div class="title-bar-controls">
@@ -779,10 +797,11 @@
         <div class="window-body">
           <p>There's so much room for activities!</p>
         </div>
-        </div>
+      </div>
         `) %>
 
-        <%- example(` <div class="window" style="max-width: 400px">
+        <%- example(`
+        <div class="window" style="width: 400px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With Tabs and Groups</div>
             <div class="title-bar-controls">
@@ -842,7 +861,7 @@
               <button>Cancel</button>
             </section>
           </div>
-          </div>
+        </div>
           `) %>
           </div>
     </section>
@@ -866,7 +885,8 @@
           and <code>status-bar-field</code> for every child text element.
         </p>
 
-        <%- example(` <div class="window" style="width: 320px">
+        <%- example(`
+        <div class="window" style="width: 320px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With A Status Bar</div>
           </div>
@@ -883,7 +903,7 @@
             <p class="status-bar-field">Slide 1</p>
             <p class="status-bar-field">CPU Usage: 14%</p>
           </div>
-      </div>
+        </div>
       `) %>
 
 
