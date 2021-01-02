@@ -25,7 +25,7 @@
   </script>
 </head>
 
-<body class="surface" ontouchstart>
+<body class="surface custom-scrollbar" ontouchstart>
   <a class="button" id="github" href="https://github.com/khang-nd/7.css">
     <img src="https://github.githubassets.com/favicons/favicon.svg">
   </a>
@@ -42,6 +42,7 @@
             <li><a href="#group-box">GroupBox</a></li>
             <li><a href="#radio">OptionButton</a></li>
             <li><a href="#progress-bar">ProgressBar</a></li>
+            <li><a href="#scrollbar">Scrollbar</a></li>
             <li><a href="#slider">Slider</a></li>
             <li><a href="#tabs">Tabs</a></li>
             <li><a href="#text-box">TextBox</a></li>
@@ -452,30 +453,94 @@
       <h3 id="progress-bar">ProgressBar</h3>
       <div>
         <blockquote>
-          With a progress bar, users can follow the progress of a lengthy operation
+          A common control that displays the progress of a particular operation as a graphical bar.
 
-          <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/progress-bars">
-              Microsoft Windows User Experience - Progress Bars</a></footer>
+          <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/glossary#p">
+              Microsoft Windows User Experience Glossary</a></footer>
         </blockquote>
 
         <p>
-          Progress bars can be created with a <code>div</code> using a <code>progress</code> class,
+          Progress bars can be created with a <code>div</code> using <code>role="progressbar"</code>,
           and another nested <code>div</code> is required to make the inner bar.
         </p>
 
+        <p>Specify the width of the inner bar to indicate the progress.</p>
+
         <p>
-          Specify the width of the inner bar to indicate the progress.
+          For accessibility, you might want to specify the respective <code>aria-*</code> attributes.
+          Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_progressbar_role">MDN</a> for more information.
         </p>
 
         <div class="example">
-      <div class="progress">
+      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+  <div style="width: 80%"></div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">aria-valuemin</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">aria-valuemax</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">aria-valuenow</span>=<span class="hljs-string">&quot;80&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 80%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          To indicate the progress bar in paused state, add a <code>paused</code> class.
+        </p>
+
+        <div class="example">
+      <div role="progressbar" class="paused">
   <div style="width: 50%"></div>
 </div>
       <details>
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;progress&quot;</span>&gt;</span>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;paused&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          To indicate the progress bar in error state, add an <code>error</code> class.
+        </p>
+
+        <div class="example">
+      <div role="progressbar" class="error">
+  <div style="width: 30%"></div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;error&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 30%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          To animate the progress bar, add an <code>animate</code> class.
+        </p>
+
+        <div class="example">
+      <div role="progressbar" class="animate">
+  <div style="width: 60%"></div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;animate&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 60%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          To create a marquee progress bar, add a <code>marquee</code> class
+          and remove the nested <code>div</code>.
+        </p>
+
+        <div class="example">
+      <div role="progressbar" class="marquee"></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;marquee&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
       </div>
@@ -559,6 +624,23 @@
       </details>
     </div>
         </div>
+    </section>
+
+    <section class="component">
+      <h3 id="scrollbar">Scrollbar</h3>
+      <div>
+        <blockquote>
+          A control that allows users to scroll the content of a window, either vertically or horizontally.
+
+          <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/glossary#s">
+              Microsoft Windows User Experience Glossary</a></footer>
+        </blockquote>
+
+        <p>
+          Upon importing this CSS, the browser's system scrollbar is overridden
+          by the Windows 7 custom scrollbar (WebKit-based browsers only).
+        </p>
+      </div>
     </section>
 
     <section class="component">
