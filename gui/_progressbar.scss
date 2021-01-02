@@ -1,14 +1,18 @@
 /*-------------------------------------------*\
     Progress Bar
 \*-------------------------------------------*/
-
-.progress {
+:root {
+  --progress-color-normal: #0bd82c;
+  --progress-color-paused: #e6df1b;
+  --progress-color-error: #ef0000;
+}
+[role="progressbar"] {
   height: 15px;
   border: 1px solid var(--button-border-color);
   border-radius: var(--border-radius);
   box-shadow: inset 0 0 2px #fff, 0 0 2px #aaa;
-  position: relative;
   margin: 2px 0;
+  overflow: hidden;
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.1),
@@ -25,9 +29,11 @@
     ),
     #ddd;
   > div {
+    overflow: hidden;
     height: 100%;
     box-shadow: inset 0 0 1px #fff;
-    background: linear-gradient(
+    background-color: var(--progress-color-normal);
+    background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.2),
         transparent 20%,
@@ -40,7 +46,47 @@
         rgba(0, 0, 0, 0.05) 30%,
         rgba(0, 0, 0, 0.05) 90%,
         rgba(255, 255, 255, 0.2) 95%
-      ),
-      #0bd82c;
+      );
+  }
+  &.paused > div {
+    background-color: var(--progress-color-paused);
+  }
+  &.error > div {
+    background-color: var(--progress-color-error);
+  }
+  &.animate > div::before,
+  &.marquee::before {
+    content: "";
+    animation: progressbar 3s linear infinite;
+    display: block;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent 40%
+    );
+  }
+  &.marquee::before {
+    opacity: 0.5;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--progress-color-normal),
+      transparent 35%
+    );
+  }
+}
+
+@keyframes progressbar {
+  0% {
+    transform: translateX(-40%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    /* for faking delay */
+    transform: translateX(100%);
   }
 }

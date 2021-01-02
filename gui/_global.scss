@@ -2,7 +2,7 @@
     Global
 \*-------------------------------------------*/
 :root {
-  --sans-serif: "Segoe UI", sans-serif;
+  --font: 9pt "Segoe UI", sans-serif;
   --surface: #f0f0f0;
 
   --button-highlight: #fff;
@@ -86,6 +86,8 @@ summary {
     outline: 1px dotted #000000;
   }
 }
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 16px;
   &:horizontal {

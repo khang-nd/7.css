@@ -2,6 +2,7 @@
     Window
 \*-------------------------------------------*/
 :root {
+  --window-spacing: 6px;
   --window-border: 1px solid;
   --window-border-radius: 6px;
   --window-border-color: #666;
@@ -20,7 +21,6 @@
       transparent 55%
     ),
     var(--window-background-color);
-  --window-spacing: 6px;
   --control-border-radius: 5px;
   --control-background: linear-gradient(
     rgba(255, 255, 255, 0.3),
@@ -31,7 +31,7 @@
   );
 }
 .window {
-  font-size: 11px;
+  font: var(--font);
   box-shadow: 0 0 5px 1px var(--window-border-color);
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
@@ -50,7 +50,7 @@
   }
 }
 .title-bar {
-  font-size: 11px;
+  font: var(--font);
   box-shadow: inset 0 0 0.5px 0.5px #fff;
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;

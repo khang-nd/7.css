@@ -4,8 +4,7 @@
 
 .button,
 button {
-  font-family: var(--sans-serif);
-  font-size: 11px;
+  font: var(--font);
   box-sizing: border-box;
   border: var(--button-border);
   border-color: var(--button-border-color);

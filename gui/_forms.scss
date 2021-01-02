@@ -32,22 +32,19 @@
 }
 
 label {
-  font-family: var(--sans-serif);
-  font-size: 11px;
+  font: var(--font);
   display: inline-flex;
   align-items: center;
 }
 input {
-  font-family: var(--sans-serif);
-  font-size: 11px;
+  font: var(--font);
 }
 input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
 textarea {
-  font-family: var(--sans-serif);
-  font-size: 11px;
+  font: var(--font);
   padding: 3px 4px 5px;
   border: 1px solid #ccc;
   border-top-color: var(--button-border-color);
@@ -71,8 +68,7 @@ input[type="password"] {
   }
 }
 select {
-  font-family: var(--sans-serif);
-  font-size: 11px;
+  font: var(--font);
   padding: 2px 3px;
   border: var(--button-border);
   border-color: var(--button-border-color);
@@ -101,16 +97,6 @@ select {
         var(--button-face-active) 45%,
         var(--button-shade-light-active) 45%
       );
-  }
-}
-&:disabled {
-  color: var(--button-shadow);
-  text-shadow: 1px 1px 0 var(--button-highlight);
-  + {
-    label {
-      color: var(--button-shadow);
-      text-shadow: 1px 1px 0 var(--button-highlight);
-    }
   }
 }
 input[type="radio"] {

@@ -78,6 +78,11 @@ p {
   line-height: 1.5;
 }
 
+p code {
+  background: #e0e0e0;
+  padding: 2px 3px;
+}
+
 .component {
   display: flex;
   margin-top: 24px;
