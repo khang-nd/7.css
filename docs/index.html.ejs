@@ -2,15 +2,23 @@
 <html>
 
 <head>
-  <title>7.css - A design system for building faithful recreations of old UIs</title>
+  <title><%= meta.title + " - A CSS framework for recreating Windows 7 UI" %></title>
   <link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="<%= meta.description %>" />
+  <meta name="keywords" content="7.css,css,scss,framework,windows 7,windows 7 ui,windows 7 css framework,windows 7 web" />
+  <meta name="author" content="© 2020 KhangND" />
 
-  <meta property="og:title" content="7.css" />
-  <meta name="Description" content="A design system for building faithful recreations of old UIs." />
-  <meta property="og:description" content="A design system for building faithful recreations of old UIs." />
-  <meta property="og:image" content="https://github.com/khang-nd/7.css/raw/main/docs/window.png?raw=true" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://khang-nd.github.io/7.css" />
+  <meta property="og:title" content="<%= meta.title %>" />
+  <meta property="og:image" content="<%= meta.image %>" />
+  <meta property="og:description" content="<%= meta.description %>" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@_khangnd" />
+  <meta name="twitter:creator" content="@_khangnd" />
 
   <link rel="stylesheet" href="7.css">
   <link rel="stylesheet" href="docs.css">
@@ -26,9 +34,24 @@
 </head>
 
 <body class="surface custom-scrollbar" ontouchstart>
-  <a class="button" id="github" href="https://github.com/khang-nd/7.css">
-    <img src="https://github.githubassets.com/favicons/favicon.svg">
-  </a>
+  <section id="social">
+    <a class="button" target="_blank" href="https://twitter.com/share?url=https://khang-nd.github.io/7.css">
+      <img src="https://abs.twimg.com/favicons/twitter.ico">
+      Tweet
+    </a>
+    <a class="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://khang-nd.github.io/7.css">
+      <img src="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico">
+      Share
+    </a>
+    <a class="button" target="_blank" href="https://www.linkedin.com/shareArticle?url=https://khang-nd.github.io/7.css">
+      <img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca">
+      Share
+    </a>
+    <a class="button" target="_blank" href="https://github.com/khang-nd/7.css">
+      <img src="https://github.githubassets.com/favicons/favicon.svg">
+      Fork
+    </a>
+  </section>
   <aside>
     <ul class="tree-view">
       <li><a href="#intro">Intro</a></li>
@@ -497,7 +520,7 @@
         </p>
 
         <%- example(`
-        <div class="field-row" style="width: 300px">
+        <div class="field-row" style="max-width: 300px">
           <label>Volume:</label>
           <label>Low</label>
           <input type="range" min="1" max="11" value="5" />
@@ -823,9 +846,9 @@
         </p>
 
         <%- example(`
-        <div class="window" style="width: 300px">
+        <div class="window" style="max-width: 300px">
           <div class="title-bar">
-            <div class="title-bar-text">A Complete Window</div>
+            <div class="title-bar-text">A complete window</div>
             <div class="title-bar-controls">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
@@ -841,9 +864,9 @@
       </p>
 
       <%- example(`
-      <div class="window" style="width: 300px">
+      <div class="window" style="max-width: 300px">
         <div class="title-bar">
-          <div class="title-bar-text">A Window With Stuff In It</div>
+          <div class="title-bar-text">A window with contents</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -857,9 +880,9 @@
         `) %>
 
         <%- example(`
-        <div class="window" style="width: 400px">
+        <div class="window" style="max-width: 400px">
           <div class="title-bar">
-            <div class="title-bar-text">A Window With Tabs and Groups</div>
+            <div class="title-bar-text">Another window with contents</div>
             <div class="title-bar-controls">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
@@ -942,7 +965,7 @@
         </p>
 
         <%- example(`
-        <div class="window" style="width: 320px">
+        <div class="window" style="max-width: 320px">
           <div class="title-bar">
             <div class="title-bar-text">A Window With A Status Bar</div>
           </div>

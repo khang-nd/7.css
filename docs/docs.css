@@ -3,11 +3,26 @@ body {
   padding: 0;
 }
 
-#github {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  padding: 0.5em 0;
+#social {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em 1em -1em;
+  gap: 3px;
+}
+
+#social > .button {
+  min-width: unset;
+  min-height: unset;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+#social img {
+  height: 18px;
 }
 
 main {

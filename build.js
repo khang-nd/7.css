@@ -47,6 +47,13 @@ function buildDocs() {
   }
 
   const template = fs.readFileSync("docs/index.html.ejs", "utf-8");
+  const meta = {
+    title: "7.css",
+    description:
+      "A design system for building faithful recreations of the Windows 7 UI.",
+    image:
+      "https://raw.githubusercontent.com/khang-nd/7.css/main/docs/window.png",
+  };
 
   function example(code) {
     const magicBrackets = /\[\[(.*)\]\]/g;
@@ -73,7 +80,7 @@ function buildDocs() {
   });
   fs.writeFileSync(
     path.join(__dirname, "/dist/index.html"),
-    ejs.render(template, { getNewId, getCurrentId, example })
+    ejs.render(template, { getNewId, getCurrentId, meta, example })
   );
 }
 
