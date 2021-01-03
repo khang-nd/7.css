@@ -3,8 +3,6 @@
 [![npm](https://img.shields.io/npm/v/7.css)](http://npm.im/7.css)
 [![gzip size](https://img.shields.io/bundlephobia/minzip/7.css)](https://unpkg.com/7.css)
 
-A design system for building faithful recreations of the Windows 7 UI components.
-
 ![A screenshot of a window with the title 'My First Program' and two buttons OK and Cancel, styled like a Windows 7 dialog](/docs/window.png)
 
 **7.css** is a tiny CSS framework that takes semantic HTML and styles them to the Windows 7 design.
