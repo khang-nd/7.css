@@ -68,4 +68,4 @@ You are so welcome to report issues, help out with contributions or whatever you
 
 ## Changelog
 
-Refer to [CHANGELOG](/CHANGELOG).
+Refer to [CHANGELOG](/CHANGELOG.md).
