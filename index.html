@@ -24,13 +24,13 @@
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-G4ZQ4HN11K');
-  </script>
+  </script> -->
 </head>
 
 <body class="surface custom-scrollbar" ontouchstart>
@@ -59,6 +59,7 @@
         <details open>
           <summary><a href="#components">Components</a></summary>
           <ul>
+            <li><a href="#balloon">Balloon</a></li>
             <li><a href="#button">Button</a></li>
             <li><a href="#checkbox">CheckBox</a></li>
             <li><a href="#dropdown">Dropdown</a></li>
@@ -77,6 +78,7 @@
                   <li><a href="#title-bar">Title Bar</a></li>
                   <li><a href="#window-contents">Window contents</a></li>
                   <li><a href="#status-bar">Status Bar</a></li>
+                  <li><a href="#glass-frame-color">Glass frame & Color</a></li>
                 </ul>
               </details>
             </li>
@@ -131,9 +133,8 @@
 
     <p>
       This framework relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
-      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
-      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
-      goal of this project.
+      to use a <code>&lt;button&gt;</code>. Input elements require labels. Tabs rely on the <code>role="tab"</code> attribute.
+      This page will guide you through that process, but accessibility is a primary goal of this project.
     </p>
 
     <p>
@@ -164,6 +165,47 @@
     <h2 id="components">Components</h2>
 
     <section class="component">
+      <h3 id="balloon">Balloon</h3>
+      <div>
+        <blockquote>
+          A <em>balloon</em> is a small pop-up window that informs users
+          of a non-critical problem or special condition in a control.
+
+          <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-balloons">Microsoft Windows User Experience - Balloons</a></footer>
+        </blockquote>
+
+        <p>
+          A balloon or tooltip can be created using the <code>role="tooltip"</code> attribute.
+        </p>
+
+        <div class="example">
+      <div class="raw"><div role="tooltip">A balloon is better known as tooltip in web development.</div></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span>&gt;</span>A balloon is better known as tooltip in web development.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+        <p>
+          A control may bind to a balloon with the <code>aria-describedby</code> attribute.
+          You will need to set up an event for the control to trigger the balloon.
+        </p>
+
+        <div class="example">
+      <div class="raw"><input type="text" placeholder="Press Enter" aria-describedby="balloon-password" />
+<div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Press Enter&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Press Backspace to dismiss<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+      </div>
+    </section>
+
+    <section class="component">
       <h3 id="button">Button</h3>
       <div>
         <blockquote>
@@ -179,50 +221,54 @@
         </p>
 
         <div class="example">
-      <button>Click me</button>
+      <div class="raw"><button>Click me</button></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
-          <p>
-            When buttons are clicked, the gray gradient is shifted to corresponding sky blues.
-            The following button is simulated to be in the pressed (active) state.
-          </p>
+        <p>
+          When buttons are clicked, the gray gradient is shifted to corresponding sky blues.
+          The following button is simulated to be in the pressed (active) state.
+        </p>
 
-          
-            <div class="example">
-      <button class="active" >I am being pressed</button>
+        
+        <div class="example">
+      <div class="raw"><button class="active" >I am being pressed</button></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>I am being pressed<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
-              <p>
-                Disabled buttons maintain the same style, but have a "washed out"
-                appearance in their label.
-              </p>
+        <p>
+          Disabled buttons maintain the same style, but have a "washed out"
+          appearance in their label.
+        </p>
 
-              <div class="example">
-      <button disabled>I cannot be clicked</button>
+        <div class="example">
+      <div class="raw"><button disabled>I cannot be clicked</button></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">disabled</span>&gt;</span>I cannot be clicked<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
-                <p>
-                  Button focus is communicated with a dotted border, set 4px within the contents of the button.
-                  The following example is simulated to be focused.
-                </p>
+        <p>
+          Button focus is communicated with a dotted border, set 4px within the contents of the button.
+          The following example is simulated to be focused.
+        </p>
 
-                <div class="example">
-      <button class="focused" >I am focused</button>
+        <div class="example">
+      <div class="raw"><button class="focused" >I am focused</button></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>I am focused<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -250,12 +296,13 @@
         </p>
 
         <div class="example">
-      <input type="checkbox" id="example1">
-<label for="example1">This is a checkbox</label>
+      <div class="raw"><input type="checkbox" id="example1">
+<label for="example1">This is a checkbox</label></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example1&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;example1&quot;</span>&gt;</span>This is a checkbox<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -270,7 +317,7 @@
           </p>
 
           <div class="example">
-      <div class="field-row">
+      <div class="raw"><div class="field-row">
   <input checked type="checkbox" id="example2">
   <label for="example2">I am checked</label>
 </div>
@@ -281,7 +328,7 @@
 <div class="field-row">
   <input checked disabled type="checkbox" id="example4">
   <label for="example4">I am inactive but still checked</label>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
@@ -296,6 +343,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">checked</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example4&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;example4&quot;</span>&gt;</span>I am inactive but still checked<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -321,13 +369,13 @@
         </p>
 
         <div class="example">
-      <select>
+      <div class="raw"><select>
   <option>5 - Incredible!</option>
   <option>4 - Great!</option>
   <option>3 - Pretty good</option>
   <option>2 - Not so great</option>
   <option>1 - Unfortunate</option>
-</select>
+</select></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
@@ -337,6 +385,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>2 - Not so great<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>1 - Unfortunate<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -347,13 +396,13 @@
           </p>
 
           <div class="example">
-      <select>
+      <div class="raw"><select>
   <option>5 - Incredible!</option>
   <option>4 - Great!</option>
   <option selected>3 - Pretty good</option>
   <option>2 - Not so great</option>
   <option>1 - Unfortunate</option>
- </select>
+ </select></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
@@ -363,6 +412,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>2 - Not so great<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>1 - Unfortunate<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -386,7 +436,7 @@
         </p>
 
         <div class="example">
-      <fieldset>
+      <div class="raw"><fieldset>
   <div class="field-row">Select one:</div>
   <div class="field-row">
     <input id="radio5" type="radio" name="fieldset-example">
@@ -400,7 +450,7 @@
     <input id="radio7" type="radio" name="fieldset-example">
     <label for="radio7">Dives</label>
   </div>
-</fieldset>
+</fieldset></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
@@ -418,6 +468,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio7&quot;</span>&gt;</span>Dives<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -427,7 +478,7 @@
           </p>
 
           <div class="example">
-      <fieldset>
+      <div class="raw"><fieldset>
   <legend>Today's mood</legend>
   <div class="field-row">
     <input id="radio8" type="radio" name="fieldset-example2">
@@ -445,7 +496,7 @@
     <input id="radio11" type="radio" name="fieldset-example2">
     <label for="radio11">Carla Lalli Music</label>
   </div>
-</fieldset>
+</fieldset></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
@@ -467,6 +518,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio11&quot;</span>&gt;</span>Carla Lalli Music<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -495,14 +547,15 @@
         </p>
 
         <div class="example">
-      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+      <div class="raw"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
   <div style="width: 80%"></div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">aria-valuemin</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">aria-valuemax</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">aria-valuenow</span>=<span class="hljs-string">&quot;80&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 80%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -511,14 +564,15 @@
         </p>
 
         <div class="example">
-      <div role="progressbar" class="paused">
+      <div class="raw"><div role="progressbar" class="paused">
   <div style="width: 50%"></div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;paused&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -527,14 +581,15 @@
         </p>
 
         <div class="example">
-      <div role="progressbar" class="error">
+      <div class="raw"><div role="progressbar" class="error">
   <div style="width: 30%"></div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;error&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 30%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -543,14 +598,15 @@
         </p>
 
         <div class="example">
-      <div role="progressbar" class="animate">
+      <div class="raw"><div role="progressbar" class="animate">
   <div style="width: 60%"></div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;animate&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 60%&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -560,10 +616,11 @@
         </p>
 
         <div class="example">
-      <div role="progressbar" class="marquee"></div>
+      <div class="raw"><div role="progressbar" class="marquee"></div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;progressbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;marquee&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -591,14 +648,14 @@
         </p>
 
         <div class="example">
-      <div class="field-row">
+      <div class="raw"><div class="field-row">
   <input id="radio12" type="radio" name="first-example">
   <label for="radio12">Yes</label>
 </div>
 <div class="field-row">
   <input id="radio13" type="radio" name="first-example">
   <label for="radio13">No</label>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
@@ -609,6 +666,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio13&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;first-example&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio13&quot;</span>&gt;</span>No<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -618,7 +676,7 @@
       </p>
 
       <div class="example">
-      <div class="field-row">
+      <div class="raw"><div class="field-row">
   <input id="radio14" type="radio" name="second-example">
   <label for="radio14">Peanut butter should be smooth</label>
 </div>
@@ -629,7 +687,7 @@
 <div class="field-row">
   <input disabled id="radio16" type="radio" name="second-example">
   <label for="radio16">Crunchy peanut butter is good</label>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
@@ -644,6 +702,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;radio16&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;second-example&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;radio16&quot;</span>&gt;</span>Crunchy peanut butter is good<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
         </div>
@@ -683,12 +742,12 @@
         </p>
 
         <div class="example">
-      <div class="field-row" style="max-width: 300px">
+      <div class="raw"><div class="field-row" style="max-width: 300px">
   <label>Volume:</label>
   <label>Low</label>
   <input type="range" min="1" max="11" value="5" />
   <label>High</label>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 300px&quot;</span>&gt;</span>
@@ -697,6 +756,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -712,12 +772,12 @@
       </p>
 
       <div class="example">
-      <div class="field-row">
+      <div class="raw"><div class="field-row">
   <label>Cowbell</label>
   <div class="is-vertical">
     <input class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
@@ -726,6 +786,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-box-indicator&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
         </div>
@@ -740,7 +801,7 @@
               User Experience - Tabs</a></footer>
         </blockquote>
         <div class="example">
-      <section class="tabs" style="max-width: 500px">
+      <div class="raw"><section class="tabs" style="max-width: 500px">
   <menu role="tablist" aria-label="Sample Tabs">
     <button role="tab" aria-controls="tab-A" aria-selected="true">Instruction</button>
     <button role="tab" aria-controls="tab-B">Example</button>
@@ -751,8 +812,8 @@
   <article role="tabpanel" id="tab-A">
     <h3>Creating tabs</h3>
     <p>
-      To create a tab, use a <code>menu</code> element with <code>role="tablist"</code>,
-      then for the tab titles, use a <code>button</code> with the <code>aria-controls</code> attribute set to match
+      To create a tab, use a <code>menu</code> element with <code>role="tablist"</code>.
+      Then for the tab titles, use a <code>button</code> with <code>role="tab"</code>, and set the <code>aria-controls</code> attribute to
       the corresponding id of the element with <code>role="tabpanel"</code>.
     </p>
     <p>
@@ -791,7 +852,7 @@
     <h3>Disabled Tab</h3>
     <p>This tab is disabled, so you should not be able to read this.</p>
   </article>
-</section>
+</section></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tabs&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 500px&quot;</span>&gt;</span>
@@ -805,8 +866,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-A&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Creating tabs<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-      To create a tab, use a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>menu<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> element with <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>role=&quot;tablist&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>,
-      then for the tab titles, use a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> with the <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>aria-controls<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> attribute set to match
+      To create a tab, use a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>menu<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> element with <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>role=&quot;tablist&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>.
+      Then for the tab titles, use a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> with <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>role=&quot;tab&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>, and set the <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>aria-controls<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> attribute to
       the corresponding id of the element with <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>role=&quot;tabpanel&quot;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>.
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
@@ -846,9 +907,10 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This tab is disabled, so you should not be able to read this.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
-    </div>
+      </div>
     </section>
 
     <section class="component">
@@ -870,16 +932,17 @@
         </p>
 
         <div class="example">
-      <div class="field-row">
+      <div class="raw"><div class="field-row">
   <label for="text21">Occupation</label>
   <input id="text21" type="text" />
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text21&quot;</span>&gt;</span>Occupation<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text21&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -889,14 +952,14 @@
       </p>
 
       <div class="example">
-      <div class="field-row-stacked" style="width: 200px">
+      <div class="raw"><div class="field-row-stacked" style="width: 200px">
   <label for="text22">Address (Line 1)</label>
   <input id="text22" type="text" />
 </div>
 <div class="field-row-stacked" style="width: 200px">
   <label for="text23">Address (Line 2)</label>
   <input id="text23" type="text" />
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
@@ -907,6 +970,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text23&quot;</span>&gt;</span>Address (Line 2)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text23&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -916,16 +980,17 @@
         </p>
 
         <div class="example">
-      <div class="field-row-stacked" style="width: 200px">
+      <div class="raw"><div class="field-row-stacked" style="width: 200px">
   <label for="text24">Additional notes</label>
   <textarea id="text24" rows="8"></textarea>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text24&quot;</span>&gt;</span>Additional notes<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text24&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
           </div>
@@ -951,11 +1016,11 @@
         </p>
 
         <div class="example">
-      <ul class="tree-view">
+      <div class="raw"><ul class="tree-view">
   <li>We can put</li>
   <li><strong style="color: purple">✨ Whatever ✨</strong></li>
   <li>We want in here</li>
-</ul>
+</ul></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tree-view&quot;</span>&gt;</span>
@@ -963,6 +1028,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: purple&quot;</span>&gt;</span>✨ Whatever ✨<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>We want in here<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -977,7 +1043,7 @@
           </p>
 
           <div class="example">
-      <ul class="tree-view">
+      <div class="raw"><ul class="tree-view">
   <li>Table of Contents</li>
   <li>What is web development?</li>
   <li>
@@ -1019,7 +1085,7 @@
   </li>
   <li>HTML</li>
   <li>Special Thanks</li>
-</ul>
+</ul></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tree-view&quot;</span>&gt;</span>
@@ -1065,6 +1131,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Special Thanks<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
       </div>
@@ -1106,12 +1173,12 @@
         </p>
 
         <div class="example">
-      <div class="title-bar">
+      <div class="raw"><div class="title-bar">
   <div class="title-bar-text">A Title Bar</div>
   <div class="title-bar-controls">
     <button aria-label="Close"></button>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
@@ -1120,6 +1187,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -1130,7 +1198,7 @@
       </p>
 
       <div class="example">
-      <div class="title-bar">
+      <div class="raw"><div class="title-bar">
   <div class="title-bar-text">A Title Bar</div>
   <div class="title-bar-controls">
     <button aria-label="Minimize"></button>
@@ -1148,7 +1216,7 @@
     <button aria-label="Restore"></button>
     <button aria-label="Close"></button>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
@@ -1170,6 +1238,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
         </div>
@@ -1188,13 +1257,12 @@
 
         <p>
           To give our title bar a home, we make use of the <code>window</code>
-          class. This provides a raised outer and inner border, as well as some
-          padding. We can freely resize the window by specifying a width in the
+          class. This provides a drop shadow to it. We can freely resize the window by specifying a width in the
           container style.
         </p>
 
         <div class="example">
-      <div class="window" style="max-width: 300px">
+      <div class="raw"><div class="window" style="max-width: 300px">
   <div class="title-bar">
     <div class="title-bar-text">A complete window</div>
     <div class="title-bar-controls">
@@ -1203,7 +1271,7 @@
       <button aria-label="Close"></button>
     </div>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 300px&quot;</span>&gt;</span>
@@ -1216,6 +1284,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
@@ -1225,7 +1294,7 @@
       </p>
 
       <div class="example">
-      <div class="window" style="max-width: 300px">
+      <div class="raw"><div class="window" style="max-width: 300px">
   <div class="title-bar">
     <div class="title-bar-text">A window with contents</div>
     <div class="title-bar-controls">
@@ -1237,7 +1306,7 @@
   <div class="window-body">
     <p>There's so much room for activities!</p>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 300px&quot;</span>&gt;</span>
@@ -1253,11 +1322,12 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>There&#x27;s so much room for activities!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
         <div class="example">
-      <div class="window" style="max-width: 400px">
+      <div class="raw"><div class="window" style="max-width: 400px">
   <div class="title-bar">
     <div class="title-bar-text">Another window with contents</div>
     <div class="title-bar-controls">
@@ -1268,9 +1338,9 @@
   </div>
   <div class="window-body">
     <menu role="tablist">
-      <button aria-selected="true" aria-controls="music">Music</button>
-      <button aria-controls="dogs">Dogs</button>
-      <button aria-controls="food">Food</button>
+      <button role="tab" aria-controls="music" aria-selected="true">Music</button>
+      <button role="tab" aria-controls="dogs">Dogs</button>
+      <button role="tab" aria-controls="food">Food</button>
     </menu>
     <article role="tabpanel" id="music">
       <p>Set your listening preferences</p>
@@ -1317,7 +1387,7 @@
       <button>Cancel</button>
     </section>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 400px&quot;</span>&gt;</span>
@@ -1331,9 +1401,9 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tablist&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span>Music<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;dogs&quot;</span>&gt;</span>Dogs<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;food&quot;</span>&gt;</span>Food<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;music&quot;</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Music<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;dogs&quot;</span>&gt;</span>Dogs<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;food&quot;</span>&gt;</span>Food<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;music&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Set your listening preferences<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -1381,6 +1451,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
           </div>
@@ -1406,7 +1477,7 @@
         </p>
 
         <div class="example">
-      <div class="window" style="max-width: 320px">
+      <div class="raw"><div class="window" style="max-width: 320px">
   <div class="title-bar">
     <div class="title-bar-text">A Window With A Status Bar</div>
   </div>
@@ -1423,7 +1494,7 @@
     <p class="status-bar-field">Slide 1</p>
     <p class="status-bar-field">CPU Usage: 14%</p>
   </div>
-</div>
+</div></div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
@@ -1444,9 +1515,147 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;status-bar-field&quot;</span>&gt;</span>CPU Usage: 14%<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>
 
+
+    </section>
+
+    <section class="component">
+      <h4 id="glass-frame-color">Glass frame & Color</h4>
+      <div>
+        <blockquote>
+          The glass window frames are a striking new aspect of the Microsoft Windows aesthetic,
+          aiming to be both attractive and lightweight. These translucent frames give windows
+          an open, less intrusive appearance, helping users focus on content and functionality
+          rather than the interface surrounding it.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/win-window-frames#glass-window-frames">Microsoft Windows User Experience - Glass window frames</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          You can produce this "striking aspect" of the window with a <code>glass</code> class.
+          The window frame then becomes translucent, the background is blurred behind the window.
+        </p>
+
+        <div class="example">
+      <div class="raw"><div class="background">
+  <div class="window glass" style="max-width: 320px">
+    <div class="title-bar">
+      <div class="title-bar-text">A glass window frame</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>The background behind is blurred.</p>
+    </div>
+  </div>
+</div></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;background&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window glass&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A glass window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The background behind is blurred.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+      <p>
+        If you want to override the default color of the window, you can specify the
+        <code>background-color</code> attribute in the <code>before</code> pseudo element
+        and the <code>title-bar</code> under the same parent class as <code>window</code>.
+      </p>
+
+      <div class="example">
+      <div class="raw"><style>
+  .violet::before,
+  .violet > .title-bar {
+    background-color: #805ba5;
+  }
+</style>
+
+<div class="window violet" style="max-width: 320px">
+  <div class="title-bar">
+    <div class="title-bar-text">A violet window frame</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <p>You can change the window color just as simple.</p>
+  </div>
+</div>
+
+<div class="background">
+  <div class="window violet glass" style="max-width: 320px">
+    <div class="title-bar">
+      <div class="title-bar-text">A glass violet window frame</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>And even the glass window frame as well.</p>
+    </div>
+  </div>
+</div></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.violet</span><span class="hljs-selector-pseudo">::before</span>,
+  <span class="hljs-selector-class">.violet</span> &gt; <span class="hljs-selector-class">.title-bar</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#805ba5</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You can change the window color just as simple.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;background&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet glass&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A glass violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And even the glass window frame as well.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
 
     </section>
 
