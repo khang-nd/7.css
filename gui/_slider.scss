@@ -1,0 +1,86 @@
+/*-------------------------------------------*\
+    Slider
+\*-------------------------------------------*/
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: var(--thumb-h);
+    width: var(--thumb-w);
+    background: var(--thumb-icon);
+    transform: translateY(-7px);
+    &:active {
+      background: var(--thumb-icon-active);
+    }
+  }
+  &::-moz-range-thumb {
+    height: var(--thumb-h);
+    width: var(--thumb-w);
+    background: var(--thumb-icon);
+    border: 0;
+    border-radius: 0;
+    &:active {
+      background: var(--thumb-icon-active);
+    }
+  }
+  &::-webkit-slider-runnable-track,
+  &::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    background: var(--surface);
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 1px #999, inset -1px 0 #999, 0 1px #fff;
+  }
+}
+
+input[type="range"].has-box-indicator {
+  &::-webkit-slider-thumb {
+    background: var(--thumb-icon-box);
+    &:active {
+      background: var(--thumb-icon-box-active);
+    }
+  }
+  &::-moz-range-thumb {
+    background: var(--thumb-icon-box);
+    &:active {
+      background: var(--thumb-icon-box-active);
+    }
+  }
+}
+
+.is-vertical {
+  display: inline-block;
+  width: 4px;
+  height: 150px;
+  transform: translateY(50%);
+  > input[type="range"] {
+    width: 150px;
+    height: 4px;
+    margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
+      var(--range-spacing);
+    transform-origin: left;
+    transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
+    &::-webkit-slider-thumb {
+      transform: translateY(-8px) scaleX(-1);
+    }
+    &::-moz-range-thumb {
+      transform: translateY(2px) scaleX(-1);
+    }
+  }
+  > input[type="range"].has-box-indicator {
+    &::-webkit-slider-thumb {
+      transform: translateY(-9px) scaleX(-1);
+    }
+    &::-moz-range-thumb {
+      transform: translateY(0px) scaleX(-1);
+    }
+  }
+}

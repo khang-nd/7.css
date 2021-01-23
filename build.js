@@ -63,10 +63,11 @@ function buildDocs() {
       .value;
 
     return `<div class="example">
-      ${inline}
+      <div class="raw">${inline}</div>
       <details>
         <summary>Show code</summary>
         <pre><code>${escaped}</code></pre>
+        <button class="copy">Copy Code</button>
       </details>
     </div>`;
   }

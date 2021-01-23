@@ -1,0 +1,29 @@
+/*-------------------------------------------*\
+    Balloon/Tooltip
+\*-------------------------------------------*/
+
+:root {
+  --balloon-border-color: rgba(0, 0, 0, 0.4);
+  --balloon-tail-size: 18px;
+}
+
+[role="tooltip"] {
+  position: relative;
+  padding: 1em 1em 1em 2.5em;
+  border: 1px solid var(--balloon-border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 5px 5px 3px -3px var(--balloon-border-color);
+  background: linear-gradient(to bottom, #fff, var(--button-shade-light));
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("./icon/balloon-tail.png");
+    width: var(--balloon-tail-size);
+    height: var(--balloon-tail-size);
+    top: -var(--balloon-tail-size);
+    left: 1em;
+  }
+  &[id] {
+    position: absolute;
+  }
+}

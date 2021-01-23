@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+* Added the `balloon` component.
+* Added `glass frame` and `color` for the `window` component.
+
 ## 0.2.0
 
 * Adjusted font size and font family of all components to Segoe UI.
