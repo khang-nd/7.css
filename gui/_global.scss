@@ -33,6 +33,13 @@
   --border-width: 1px;
 }
 
+@font-face {
+  font-family: Perfect DOS VGA\ 437 Win;
+  src: url(https://unpkg.com/xp.css@0.2.4/dist/PerfectDOSVGA437Win.woff2) format("woff2"), url(https://unpkg.com/xp.css@0.2.4/dist/PerfectDOSVGA437Win.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   font-family: Arial;
   font-size: 12px;
@@ -74,12 +81,30 @@ code {
     font-family: monospace;
   }
 }
+
 pre {
   display: block;
-  margin: 0;
   padding: 12px 8px;
-  background: #fff;
-  border: 1px solid var(--button-border-color);
+  background-color: #000;
+  color: silver;
+  font-size: 1rem;
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+pre,
+pre * {
+  font-family: Perfect DOS VGA\ 437 Win;
+}
+
+.window-body pre {
+  margin: -8px;
+  overflow: auto;
+}
+
+.tab {
+  white-space: pre;
 }
 summary {
   &:focus {
