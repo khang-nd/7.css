@@ -1,0 +1,28 @@
+/*-------------------------------------------*\
+    Shared variables
+\*-------------------------------------------*/
+
+:root {
+  --font: 9pt "Segoe UI", sans-serif;
+  --surface: #f0f0f0;
+
+  --button-highlight: #fff;
+  --button-face: #eee;
+  --button-face-hover: #e5f4fd;
+  --button-face-active: #cee9f8;
+  --button-shade-light: #ddd;
+  --button-shade-light-hovered: #b3e0f9;
+  --button-shade-light-active: #86c6e8;
+  --button-shade-dark: #bbb;
+  --button-shadow: inset 0 -1px 1px #fff, inset 0 1px 1px #fff;
+  --button-border: 1.5px solid;
+  --button-border-color: #888;
+  --button-border-color-hovered: #72a2c5;
+  --button-border-color-active: #6d91ab;
+
+  --element-spacing: 8px;
+  --grouped-element-spacing: 6px;
+
+  --border-radius: 3px;
+  --border-width: 1px;
+}
