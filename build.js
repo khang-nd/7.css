@@ -13,7 +13,6 @@ const { homepage, version } = require("./package.json");
 const postcssParser = postcss()
   .use(require("postcss-import"))
   .use(require("postcss-nested"))
-  .use(require("postcss-inline-svg"))
   .use(require("postcss-css-variables"))
   .use(require("postcss-calc"))
   .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))

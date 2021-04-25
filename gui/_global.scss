@@ -119,19 +119,19 @@ summary {
   &:vertical {
     height: 17px;
     &:start {
-      background: svg-load("./icon/button-up.svg"), var(--scrollbar-y);
+      background: url("./icon/button-up.webp"), var(--scrollbar-y);
     }
     &:end {
-      background: svg-load("./icon/button-down.svg"), var(--scrollbar-y);
+      background: url("./icon/button-down.webp"), var(--scrollbar-y);
     }
   }
   &:horizontal {
     width: 16px;
     &:start {
-      background: svg-load("./icon/button-left.svg"), var(--scrollbar-x);
+      background: url("./icon/button-left.webp"), var(--scrollbar-x);
     }
     &:end {
-      background: svg-load("./icon/button-right.svg"), var(--scrollbar-x);
+      background: url("./icon/button-right.webp"), var(--scrollbar-x);
     }
   }
 }
