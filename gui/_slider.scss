@@ -2,6 +2,15 @@
     Slider
 \*-------------------------------------------*/
 
+:root {
+  --thumb-w: 10px;
+  --thumb-h: 18px;
+  --thumb-icon: url("./icon/slider-indicator.png");
+  --thumb-icon-box: url("./icon/slider-indicator-box.png");
+  --thumb-icon-active: url("./icon/slider-indicator-active.png");
+  --thumb-icon-box-active: url("./icon/slider-indicator-box-active.png");
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   -moz-appearance: none;
