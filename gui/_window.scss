@@ -148,24 +148,24 @@
     }
     &[aria-label="Minimize"] {
       &::before {
-        background: url("./icon/minimize.webp") no-repeat center 10px;
+        background: url("./icon/minimize.png") no-repeat center 10px;
       }
     }
     &[aria-label="Maximize"] {
       &::before {
-        background: url("./icon/maximize.webp") no-repeat center;
+        background: url("./icon/maximize.png") no-repeat center;
       }
     }
     &[aria-label="Restore"] {
       &::before {
-        background: url("./icon/restore.webp") no-repeat center;
+        background: url("./icon/restore.png") no-repeat center;
       }
     }
     &[aria-label="Close"] {
       background-color: #d04a37;
       width: 45px;
       &::before {
-        background: url("./icon/close.webp") no-repeat center;
+        background: url("./icon/close.png") no-repeat center;
       }
       &:hover {
         filter: contrast(1.3);

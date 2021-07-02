@@ -75,7 +75,7 @@ select {
   appearance: none;
   position: relative;
   padding-right: 30px;
-  background: url("./icon/button-down.webp"),
+  background: url("./icon/button-down.svg"),
     linear-gradient(
       to bottom,
       var(--button-face) 45%,
@@ -87,7 +87,7 @@ select {
   &:focus {
     outline: none;
     border-color: var(--button-border-color-active);
-    background-image: url("./icon/button-down.webp"),
+    background-image: url("./icon/button-down.svg"),
       linear-gradient(
         to bottom,
         var(--button-face-active) 45%,

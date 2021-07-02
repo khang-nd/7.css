@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.1
+
+* Convert icons back to original due to Safari support.
+* Fix some issues on Safari.
+
+## 0.4.0
+
+* Convert icons to webp.
+
 ## 0.3.1
 
 * Split shared variables to a new file.

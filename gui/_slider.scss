@@ -5,10 +5,10 @@
 :root {
   --thumb-w: 10px;
   --thumb-h: 18px;
-  --thumb-icon: url("./icon/slider-indicator.webp");
-  --thumb-icon-box: url("./icon/slider-indicator-box.webp");
-  --thumb-icon-active: url("./icon/slider-indicator-active.webp");
-  --thumb-icon-box-active: url("./icon/slider-indicator-box-active.webp");
+  --thumb-icon: url("./icon/slider-indicator.png");
+  --thumb-icon-box: url("./icon/slider-indicator-box.png");
+  --thumb-icon-active: url("./icon/slider-indicator-active.png");
+  --thumb-icon-box-active: url("./icon/slider-indicator-box-active.png");
 }
 
 input[type="range"] {
