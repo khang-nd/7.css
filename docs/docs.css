@@ -17,12 +17,12 @@ body {
   text-decoration: none;
   color: #000;
   display: flex;
-  justify-content: center;
-  gap: 3px;
+  align-items: center;
 }
 
 #social img {
   height: 18px;
+  margin-right: 3px;
 }
 
 main {
