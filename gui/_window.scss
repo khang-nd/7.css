@@ -109,6 +109,7 @@
   margin-top: -var(--window-spacing);
   box-shadow: 0 0 2px #fff;
   button {
+    position: relative;
     min-width: 26px;
     min-height: 20px;
     padding: 0;
@@ -139,9 +140,11 @@
     }
     &::before {
       content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
     &[aria-label="Minimize"] {
       &::before {
