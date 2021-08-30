@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="7.css">
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  Global site tag (gtag.js) - Google Analytics
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -847,6 +847,8 @@
   <article role="tabpanel" id="tab-C" hidden>
     <h3>Disabling tabs</h3>
     <p>Simply add a <code>disabled</code> attribute on the tab.</p>
+    <h3>Justified tabs</h3>
+    <p>Add the <code>justified</code> class to the <code>tablist</code> menu to make the tabs, well, justified.</p>
   </article>
   <article role="tabpanel" id="tab-D" hidden>
     <h3>Disabled Tab</h3>
@@ -901,11 +903,44 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-C&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Disabling tabs<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Simply add a <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>disabled<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> attribute on the tab.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Justified tabs<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Add the <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>justified<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> class to the <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>tablist<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> menu to make the tabs, well, justified.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-D&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Disabled Tab<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This tab is disabled, so you should not be able to read this.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+        <p>A simplified template is as below:</p>
+        <div class="example">
+      <div class="raw"><section class="tabs">
+  <menu role="tablist" aria-label="Tabs Template">
+    <button role="tab" aria-controls="tab-A" aria-selected="true">Tab A</button>
+    <button role="tab" aria-controls="tab-B">Tab B</button>
+    <button role="tab" aria-controls="tab-C">Tab C</button>
+    <button role="tab" aria-controls="tab-D" disabled>Tab D</button>
+  </menu>
+  <article role="tabpanel" id="tab-A">Tab A is active</article>
+  <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
+  <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
+  <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
+</section></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tabs&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tablist&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Tabs Template&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tab-A&quot;</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Tab A<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tab-B&quot;</span>&gt;</span>Tab B<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tab-C&quot;</span>&gt;</span>Tab C<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;tab-D&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>Tab D<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-A&quot;</span>&gt;</span>Tab A is active<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-B&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Tab B is active<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-C&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Tab C is active<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tabpanel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab-D&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Tab D is inactive<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
         <button class="copy">Copy Code</button>
       </details>
