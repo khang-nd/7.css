@@ -10,16 +10,17 @@ button {
   border-color: var(--button-border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--button-shadow);
+  min-width: 75px;
+  min-height: 23px;
+  padding: 0 12px;
+  text-align: center;
   background: linear-gradient(
     to bottom,
     var(--button-face) 45%,
     var(--button-shade-light) 45%,
     var(--button-shade-dark)
   );
-  min-width: 75px;
-  min-height: 23px;
-  padding: 0 12px;
-  text-align: center;
+
   &:not(:disabled) {
     &:hover {
       border-color: var(--button-border-color-hovered);
@@ -29,6 +30,7 @@ button {
         var(--button-shade-light-hovered) 45%
       );
     }
+
     &:active,
     &.active {
       box-shadow: none;
@@ -40,6 +42,7 @@ button {
       );
     }
   }
+
   &:focus,
   &.focused {
     box-shadow: inset 0 0 0 2px var(--button-shade-light-active);

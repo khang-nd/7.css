@@ -13,29 +13,29 @@ ul.tree-view {
   border: 1px solid var(--button-border-color);
   padding: 6px 6px 6px var(--treeview-spacing);
   margin: 0;
+
   li {
     list-style-type: none;
     margin-top: 3px;
   }
+
   a {
     text-decoration: none;
     color: #000;
   }
+
   ul {
     margin-top: 3px;
     padding-left: var(--treeview-spacing);
-    details > summary {
-      padding-left: 0;
-      &:before {
-        left: calc(-var(--treeview-chevron-size) * 2);
-      }
-    }
   }
+
   details {
     margin-top: 0;
+
     > summary {
       position: relative;
       margin-bottom: 0;
+
       &:before {
         content: "";
         position: absolute;
@@ -46,12 +46,13 @@ ul.tree-view {
         margin-top: calc(var(--treeview-chevron-size) / 2);
       }
     }
-  }
-  details[open] {
-    > summary {
-      &:before {
-        transform: rotateZ(45deg);
-        margin-top: var(--treeview-chevron-size);
+
+    &[open] {
+      > summary {
+        &:before {
+          transform: rotateZ(45deg);
+          margin-top: var(--treeview-chevron-size);
+        }
       }
     }
   }

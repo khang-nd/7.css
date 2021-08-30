@@ -14,6 +14,7 @@
   border-radius: var(--border-radius);
   box-shadow: 5px 5px 3px -3px var(--balloon-border-color);
   background: linear-gradient(to bottom, #fff, var(--button-shade-light));
+
   &::before {
     content: "";
     position: absolute;
@@ -23,6 +24,7 @@
     top: -var(--balloon-tail-size);
     left: 1em;
   }
+
   &[id] {
     position: absolute;
   }

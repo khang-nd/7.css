@@ -19,6 +19,7 @@ menu[role="tablist"] {
   list-style-type: none;
   display: flex;
   padding-left: 3px;
+
   button {
     padding: 2px 6px;
     border-radius: 0;
@@ -27,6 +28,7 @@ menu[role="tablist"] {
     color: #222;
     text-decoration: none;
     min-width: unset;
+
     &[aria-selected="true"] {
       padding-bottom: 4px;
       margin: -2px -1px 1px -3px;
@@ -36,14 +38,17 @@ menu[role="tablist"] {
       position: relative;
       z-index: 8;
     }
+
     &:focus {
       outline: 1px dotted #222;
       outline-offset: -4px;
     }
+
     &:disabled {
       opacity: 0.6;
     }
   }
+
   &.justified {
     button {
       flex-grow: 1;

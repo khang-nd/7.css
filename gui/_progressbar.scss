@@ -6,6 +6,7 @@
   --progress-color-paused: #e6df1b;
   --progress-color-error: #ef0000;
 }
+
 [role="progressbar"] {
   height: 15px;
   border: 1px solid var(--button-border-color);
@@ -28,6 +29,7 @@
       rgba(255, 255, 255, 0.2) 95%
     ),
     #ddd;
+
   > div {
     overflow: hidden;
     height: 100%;
@@ -48,12 +50,15 @@
         rgba(255, 255, 255, 0.2) 95%
       );
   }
+
   &.paused > div {
     background-color: var(--progress-color-paused);
   }
+
   &.error > div {
     background-color: var(--progress-color-error);
   }
+
   &.animate > div::before,
   &.marquee::before {
     content: "";
@@ -67,6 +72,7 @@
       transparent 40%
     );
   }
+
   &.marquee::before {
     opacity: 0.5;
     background: linear-gradient(
