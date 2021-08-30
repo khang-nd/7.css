@@ -634,11 +634,28 @@
           <article role="tabpanel" id="tab-C" hidden>
             <h3>Disabling tabs</h3>
             <p>Simply add a <code>disabled</code> attribute on the tab.</p>
+            <h3>Justified tabs</h3>
+            <p>Add the <code>justified</code> class to the <code>tablist</code> menu to make the tabs, well, justified.</p>
           </article>
           <article role="tabpanel" id="tab-D" hidden>
             <h3>Disabled Tab</h3>
             <p>This tab is disabled, so you should not be able to read this.</p>
           </article>
+        </section>
+        `) %>
+        <p>A simplified template is as below:</p>
+        <%- example(`
+        <section class="tabs">
+          <menu role="tablist" aria-label="Tabs Template">
+            <button role="tab" aria-controls="tab-A" aria-selected="true">Tab A</button>
+            <button role="tab" aria-controls="tab-B">Tab B</button>
+            <button role="tab" aria-controls="tab-C">Tab C</button>
+            <button role="tab" aria-controls="tab-D" disabled>Tab D</button>
+          </menu>
+          <article role="tabpanel" id="tab-A">Tab A is active</article>
+          <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
+          <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
+          <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
         </section>
         `) %>
       </div>
