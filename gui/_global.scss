@@ -3,8 +3,6 @@
 \*-------------------------------------------*/
 
 :root {
-  --link-color: #0066cc;
-  --link-color-hovered: #3399ff;
   --scrollbar-y: linear-gradient(to right, #e5e5e5, var(--surface) 20%);
   --scrollbar-x: linear-gradient(to bottom, #e5e5e5, var(--surface) 20%);
 }
@@ -38,18 +36,6 @@ h4 {
 u {
   text-decoration: none;
   border-bottom: 0.5px solid #222222;
-}
-
-a {
-  color: var(--link-color);
-
-  &:focus {
-    outline: 1px dotted var(--link-color);
-  }
-
-  &:hover {
-    color: var(--link-color-hovered);
-  }
 }
 
 code {

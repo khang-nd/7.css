@@ -139,6 +139,10 @@ details[open] summary {
   background: url("./flower-aaronburden-unsplash.jpg") no-repeat 0 center;
 }
 
+[role="dialog"] {
+  width: 450px;
+}
+
 @media (max-width: 480px) {
   aside {
     display: none;
@@ -167,5 +171,9 @@ details[open] summary {
 
   pre {
     overflow-x: scroll;
+  }
+
+  [role="dialog"] {
+    width: 90%;
   }
 }

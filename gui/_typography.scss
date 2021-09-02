@@ -1,0 +1,50 @@
+/*-------------------------------------------*\
+    Font size, style, color etc.
+\*-------------------------------------------*/
+
+:root {
+  --link-color: #0066cc;
+  --link-color-hovered: #3399ff;
+  --primary-color: #003399;
+  --secondary-color: #000000;
+}
+
+a {
+  color: var(--link-color);
+
+  &:focus {
+    outline: 1px dotted var(--link-color);
+  }
+
+  &:hover {
+    color: var(--link-color-hovered);
+  }
+}
+
+.instruction {
+  font: var(--font);
+  color: var(--secondary-color);
+  font-weight: normal;
+  margin: 0 0 20px;
+
+  &-primary {
+    font-size: 12pt;
+    color: var(--primary-color);
+  }
+}
+
+.header {
+  font: var(--font);
+  font-weight: normal;
+
+  &-document {
+    font-family: "Calibri";
+    font-size: 17pt;
+    color: var(--secondary-color);  
+  }
+
+  &-group {
+    font-size: 11pt;
+    color: var(--primary-color);
+  }
+}
