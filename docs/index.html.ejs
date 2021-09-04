@@ -1322,15 +1322,21 @@
 
         <p>
           Without JavaScript, a dialog box can be triggered by utilizing the URL fragment of an <code>a</code> element
-          (denoted by the # sign), targetting a corresponding dialog box element with the matching <code>id</code>.
+          (denoted by the # sign), targeting a corresponding dialog box element with the matching <code>id</code>.
+        </p>
+
+        <p>
+          For accessibility, define the <code>role="dialog"</code> attribute on the element.
+          Additionally, label the dialog using the <code>aria-labelledby</code> attribute, with the value
+          pointing to the <code>id</code> of the title bar's text element.
         </p>
 
         <%- example(`
         <a href="#dialog-demo">Open Dialog</a>
 
-        <div role="dialog" class="window is-bright" id="dialog-demo">
+        <div class="window is-bright" id="dialog-demo" role="dialog" aria-labelledby="dialog-title">
           <div class="title-bar">
-            <div class="title-bar-text">Problem Diagnostics</div>
+            <div class="title-bar-text" id="dialog-title">Problem Diagnostics</div>
             <div class="title-bar-controls">
               <button aria-label="Close" onclick="history.back()"></button>
             </div>
