@@ -24,13 +24,13 @@
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4ZQ4HN11K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-G4ZQ4HN11K');
-  </script>
+  </script> -->
 </head>
 
 <body class="surface custom-scrollbar" ontouchstart>
@@ -64,6 +64,7 @@
             <li><a href="#checkbox">CheckBox</a></li>
             <li><a href="#dropdown">Dropdown</a></li>
             <li><a href="#group-box">GroupBox</a></li>
+            <li><a href="#menu">Menu</a></li>
             <li><a href="#radio">OptionButton</a></li>
             <li><a href="#progress-bar">ProgressBar</a></li>
             <li><a href="#scrollbar">Scrollbar</a></li>
@@ -79,6 +80,7 @@
                   <li><a href="#window-contents">Window contents</a></li>
                   <li><a href="#status-bar">Status Bar</a></li>
                   <li><a href="#glass-frame-color">Glass frame & Color</a></li>
+                  <li><a href="#dialog-box">Dialog Box</a></li>
                 </ul>
               </details>
             </li>
@@ -163,6 +165,27 @@
     <pre style="max-width: fit-content">import "7.css/dist/7.css";</pre>
 
     <h2 id="components">Components</h2>
+
+    <!-- Template -->
+    <!-- <section class="component">
+      <h3 id="section-id">Component Name</h3>
+      <div>
+        <blockquote>
+          Introductory citation
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide">
+              Microsoft Windows User Experience - Component</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          Instruction
+        </p>
+
+        <%- example(`
+        `) %>
+    </section> -->
 
     <section class="component">
       <h3 id="balloon">Balloon</h3>
@@ -396,6 +419,174 @@
             </div>
           </fieldset>
             `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="menu">Menu</h3>
+      <div>
+        <blockquote>
+          <em>Menus</em> are hierarchical lists of commands or options available to users in the current context.
+
+          <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/cmd-menus">
+            Microsoft Windows User Experience - Menus</a></footer>
+        </blockquote>
+
+        <p>
+          A menu/menu bar can be rendered using a composition of a parent <code>ul</code> and child items
+          <code>li</code>.
+        </p>
+
+        <p>
+          For accessibility, specify the <code>role="menubar"</code> or <code>role="menu"</code>
+          attribute on the parent <code>ul</code>, and <code>role="menuitem"</code> on the items.
+          Add an <code>aria-haspopup="true"</code> attribute to the items that have a corresponding submenu.
+        </p>
+
+        <p>
+          To make the menu focusable, specify the <code>tabindex</code> attributes on the items.
+          Alternatively, you can use an <code>a</code> to achieve the same.
+        </p>
+
+        <%- example(`
+        <ul role="menubar">
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            File
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">Open</a></li>
+              <li role="menuitem"><a href="#menu">Save</a></li>
+              <li role="menuitem"><a href="#menu">Save As...</a></li>
+              <li role="menuitem"><a href="#menu">Exit</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            Edit
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">Undo</a></li>
+              <li role="menuitem"><a href="#menu">Copy</a></li>
+              <li role="menuitem"><a href="#menu">Cut</a></li>
+              <li role="menuitem"><a href="#menu">Paste</a></li>
+              <li role="menuitem"><a href="#menu">Delete</a></li>
+              <li role="menuitem"><a href="#menu">Find...</a></li>
+              <li role="menuitem"><a href="#menu">Replace...</a></li>
+              <li role="menuitem"><a href="#menu">Go to...</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            View
+            <ul role="menu">
+              <li role="menuitem" tabindex="0" aria-haspopup="true">
+                Zoom
+                <ul role="menu">
+                  <li role="menuitem"><button>Zoom In</button></li>
+                  <li role="menuitem"><button>Zoom Out</button></li>
+                </ul>
+              </li>
+              <li role="menuitem"><a href="#menu">Status Bar</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            Help
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">View Help</a></li>
+              <li role="menuitem"><a href="#menu">About</a></li>
+            </ul>
+          </li>
+        </ul>
+        `) %>
+
+        <p>
+          By default, the submenu is only shown when the linked item is focused/clicked.
+          To add the hovering/mouse-over trigger, you can add a <code>can-hover</code> class to the root container.
+        </p>
+
+        <p>
+          Menu items can be divided using a <code>has-divider</code> class. The menu item with this class
+          specified will receive a horizontal line appended after itself.
+        </p>
+
+        <%- example(`
+        <ul role="menubar" class="can-hover">
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            File
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">Open</a></li>
+              <li role="menuitem"><a href="#menu">Save</a></li>
+              <li role="menuitem" class="has-divider"><a href="#menu">Save As...</a></li>
+              <li role="menuitem"><a href="#menu">Exit</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            Edit
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">Undo</a></li>
+              <li role="menuitem"><a href="#menu">Copy</a></li>
+              <li role="menuitem"><a href="#menu">Cut</a></li>
+              <li role="menuitem" class="has-divider"><a href="#menu">Paste</a></li>
+              <li role="menuitem"><a href="#menu">Delete</a></li>
+              <li role="menuitem"><a href="#menu">Find...</a></li>
+              <li role="menuitem"><a href="#menu">Replace...</a></li>
+              <li role="menuitem"><a href="#menu">Go to...</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            View
+            <ul role="menu">
+              <li role="menuitem" tabindex="0" aria-haspopup="true">
+                Zoom
+                <ul role="menu">
+                  <li role="menuitem"><button>Zoom In</button></li>
+                  <li role="menuitem"><button>Zoom Out</button></li>
+                </ul>
+              </li>
+              <li role="menuitem"><a href="#menu">Status Bar</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            Help
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">View Help</a></li>
+              <li role="menuitem"><a href="#menu">About</a></li>
+            </ul>
+          </li>
+        </ul>
+        `) %>
+
+        <p>
+          You can also render a standalone menu and use some <code>img</code>s to make the items standout,
+          just like the marvelous desktop menu.
+          (Icons provided by <a href="https://icons8.com/" target="_blank">Icons8</a>)
+        </p>
+
+        <%- example(`
+        <ul role="menu" class="can-hover" style="width: 200px">
+          <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
+          <li role="menuitem" tabindex="0" aria-haspopup="true">
+            Sort by
+            <ul role="menu">
+              <li role="menuitem"><a href="#menu">Name</a></li>
+              <li role="menuitem"><a href="#menu">Size</a></li>
+              <li role="menuitem"><a href="#menu">Item type</a></li>
+              <li role="menuitem"><a href="#menu">Date modified</a></li>
+            </ul>
+          </li>
+          <li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
+          <li role="menuitem"><a href="#menu">Paste</a></li>
+          <li role="menuitem" class="has-divider"><a href="#menu">Paste shortcut</a></li>
+          <li role="menuitem">
+            <img src="https://img.icons8.com/color/18/000000/monitor--v1.png"/>
+            <a href="#menu">Screen resolution</a>
+          </li>
+          <li role="menuitem">
+            <img src="https://img.icons8.com/color/18/000000/virtual-machine2.png"/>
+            <a href="#menu">Gadgets</a>
+          </li>
+          <li role="menuitem">
+            <img src="https://img.icons8.com/color/18/000000/remote-desktop.png"/>
+            <a href="#menu">Personalize</a>
+          </li>
+        </ul>
+        `) %>
       </div>
     </section>
 
@@ -1114,6 +1305,51 @@
         </div>
        `) %>
 
+    </section>
+
+    <section class="component">
+      <h4 id="dialog-box">Dialog Box</h4>
+      <div>
+        <blockquote>
+          A dialog box is a secondary window that allows users to perform a command,
+          asks users a question, or provides users with information or progress feedback.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/win-dialog-box">
+              Microsoft Windows User Experience - Dialog Boxes</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          Without JavaScript, a dialog box can be triggered by utilizing the URL fragment of an <code>a</code> element
+          (denoted by the # sign), targeting a corresponding dialog box element with the matching <code>id</code>.
+        </p>
+
+        <p>
+          For accessibility, define the <code>role="dialog"</code> attribute on the element.
+          Additionally, label the dialog using the <code>aria-labelledby</code> attribute, with the value
+          pointing to the <code>id</code> of the title bar's text element.
+        </p>
+
+        <%- example(`
+        <a href="#dialog-demo">Open Dialog</a>
+
+        <div class="window is-bright" id="dialog-demo" role="dialog" aria-labelledby="dialog-title">
+          <div class="title-bar">
+            <div class="title-bar-text" id="dialog-title">Problem Diagnostics</div>
+            <div class="title-bar-controls">
+              <button aria-label="Close" onclick="history.back()"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <h2 class="instruction instruction-primary">Identifying your problem...</h2>
+            <div role="progressbar" class="marquee"></div>
+          </div>
+          <footer style="text-align: right">
+            <button onclick="history.back()">Cancel</button>
+          </footer>
+        </div>        
+        `) %>
     </section>
 
     <h2 id="issues-contributing-etc">Issues, Contributing, etc.</h2>
