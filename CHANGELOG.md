@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0
+
+* Added the `menubar`/`menu` component.
+* Added the `dialog box` variant for `window`.
+* Documentation:
+  * Added an instruction for justified tabs.
+  * Added a simplified tabs template.
+
 ## 0.4.1
 
 * Convert icons back to original due to Safari support.
@@ -22,7 +30,8 @@
 
 * Adjusted font size and font family of all components to Segoe UI.
 * Changed `progress bar` setup for a11y, and major additions.
-* Added `scrollbar` documentation.
+* Documentation:
+  * Added `scrollbar`.
 
 ## 0.1.1
 
