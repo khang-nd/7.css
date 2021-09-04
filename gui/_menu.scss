@@ -12,17 +12,17 @@ ul {
 
   &[role="menubar"] {
     display: flex;
+    background: linear-gradient(
+      #fff 20%,
+      #f1f4fa 25%,
+      #f1f4fa 43%,
+      #d4dbee 48%,
+      #e6eaf6
+    );
 
     > [role="menuitem"] {
       position: relative;
       padding: 6px 10px;
-      background: linear-gradient(
-        #fff 20%,
-        #f1f4fa 25%,
-        #f1f4fa 43%,
-        #d4dbee 48%,
-        #e6eaf6
-      );
 
       &:focus,
       &:focus-within,
