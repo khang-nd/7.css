@@ -69,7 +69,7 @@
   &-footer,
   footer {
     margin: var(--window-spacing);
-    margin-top: calc(-var(--window-spacing) - 1px);
+    margin-top: calc(0 - var(--window-spacing) - 1px);
     background: var(--surface);
     border: var(--window-border) var(--window-border-color);
     border-top: 0;
