@@ -21,6 +21,12 @@ button {
     var(--button-shade-dark)
   );
 
+  &:disabled {
+    background: var(--button-face-disabled);
+    border-color: var(--button-border-color-disabled);
+    color: var(--button-text-color-disabled);
+  }
+
   &:not(:disabled) {
     &:hover {
       border-color: var(--button-border-color-hovered);
