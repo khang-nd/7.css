@@ -10,6 +10,7 @@
   --button-face: #eee;
   --button-face-hover: #e5f4fd;
   --button-face-active: #cee9f8;
+  --button-face-disabled: #f4f4f4;
   --button-shade-light: #ddd;
   --button-shade-light-hovered: #b3e0f9;
   --button-shade-light-active: #86c6e8;
@@ -19,6 +20,8 @@
   --button-border-color: #888;
   --button-border-color-hovered: #72a2c5;
   --button-border-color-active: #6d91ab;
+  --button-border-color-disabled: #aeb2b5;
+  --button-text-color-disabled: #838383;
 
   --element-spacing: 8px;
   --grouped-element-spacing: 6px;
