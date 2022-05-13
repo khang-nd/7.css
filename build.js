@@ -58,14 +58,13 @@ function buildDocs() {
     const magicBrackets = /\[\[(.*)\]\]/g;
     const dedented = dedent(code);
     const inline = dedented.replace(magicBrackets, "$1");
-    const escaped = hljs.highlight("html", dedented.replace(magicBrackets, ""))
-      .value;
+    const escaped = hljs.highlight("html", dedented.replace(magicBrackets, ""));
 
     return `<div class="example">
       <div class="raw">${inline}</div>
       <details>
         <summary>Show code</summary>
-        <pre><code>${escaped}</code></pre>
+        <pre><code>${escaped.value}</code></pre>
         <button class="copy">Copy Code</button>
       </details>
     </div>`;
@@ -73,9 +72,11 @@ function buildDocs() {
 
   glob("docs/*", (err, files) => {
     if (!err) {
-      files.forEach((srcFile) =>
-        fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
-      );
+      files
+        .filter((srcFile) => !srcFile.endsWith(".ejs"))
+        .forEach((srcFile) =>
+          fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
+        );
     } else throw "error globbing dist directory.";
   });
   fs.writeFileSync(
