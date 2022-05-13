@@ -37,6 +37,7 @@
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius);
   position: relative;
+  z-index: 0;
 
   &::before {
     content: "";
