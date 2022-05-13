@@ -1,6 +1,6 @@
 {
   "name": "7.css",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A design system for building faithful recreations of the Windows 7 UI.",
   "main": "dist/7.css",
   "directories": {
@@ -31,7 +31,7 @@
   "homepage": "https://khang-nd.github.io/7.css",
   "devDependencies": {
     "chokidar": "^3.3.1",
-    "cssnano": "^4.1.10",
+    "cssnano": "^5.1.7",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
     "gh-pages": "^2.2.0",
@@ -42,7 +42,7 @@
     "postcss": "^8.3.5",
     "postcss-calc": "^7.0.2",
     "postcss-copy": "^7.1.0",
-    "postcss-css-variables": "^0.14.0",
+    "postcss-css-variables": "^0.18.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1"
   }
