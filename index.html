@@ -56,6 +56,12 @@
     <ul class="tree-view">
       <li><a href="#intro">Intro</a></li>
       <li>
+        <a href="#install">Installation</a>
+        <ul>
+          <li><a href="#scoping">Scoping</a></li>
+        </ul>
+      </li>      
+      <li>
         <details open>
           <summary><a href="#components">Components</a></summary>
           <ul>
@@ -150,6 +156,7 @@
       This means 7.css is compatible with your frontend framework of choice.
     </p>
 
+    <h2 id="install">Installation / Usage</h2>
     <p>
       The fastest way to use 7.css is to import it from unpkg.
     </p>
@@ -163,6 +170,35 @@
 
     <p><em>Usage</em></p>
     <pre style="max-width: fit-content">import "7.css/dist/7.css";</pre>
+
+    <h3 id="scoping">Scoping</h3>
+
+    <p>In case you need 7.css to coexist with another CSS/styling framework, you may use the <code>7.scoped.css</code>
+      stylesheet instead to scope the styling within a <code>win7</code> class.</p>
+
+    <p>unpkg:</p>
+    <pre>https://unpkg.com/7.css/dist/7.scoped.css</pre>
+
+    <p>or npm:</p>
+    <pre>import "7.css/dist/7.scoped.css"</pre>
+    </ul>
+
+    <p>Then in your code, wrap the component with <code>.win7</code>:</p>
+
+    <div class="example">
+      <div class="raw"><div class="win7">
+  <button>A Win7-styled button</button>
+</div></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;win7&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>A Win7-styled button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+    <p>Also note that using the scoped stylesheet will eliminate the scrollbar styling as well.</p>
 
     <h2 id="components">Components</h2>
 
@@ -274,8 +310,7 @@
     </div>
 
         <p>
-          Disabled buttons maintain the same style, but have a "washed out"
-          appearance in their label.
+          Disabled buttons have solid background and lighter border.
         </p>
 
         <div class="example">
