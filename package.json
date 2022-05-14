@@ -1,6 +1,6 @@
 {
   "name": "7.css",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A design system for building faithful recreations of the Windows 7 UI.",
   "main": "dist/7.css",
   "directories": {
@@ -42,8 +42,9 @@
     "postcss": "^8.3.5",
     "postcss-calc": "^7.0.2",
     "postcss-copy": "^7.1.0",
-    "postcss-css-variables": "^0.18.0",
+    "postcss-css-variables": "^0.14.0",
     "postcss-import": "^12.0.1",
-    "postcss-nested": "^4.2.1"
+    "postcss-nested": "^4.2.1",
+    "postcss-prefix-selector": "^1.15.0"
   }
 }

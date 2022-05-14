@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0
+
+* Added a scoped css file that can coexist with other styling systems.
+
 ## 0.5.0
 
 * Added the `menubar`/`menu` component.

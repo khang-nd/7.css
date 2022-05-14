@@ -7,33 +7,44 @@ const hljs = require("highlight.js");
 const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
+const plugins = [
+  require("postcss-import"),
+  require("postcss-nested"),
+  require("postcss-css-variables"),
+  require("postcss-calc"),
+  require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }),
+  require("cssnano"),
+];
 
 const { homepage, version } = require("./package.json");
 
-const postcssParser = postcss()
-  .use(require("postcss-import"))
-  .use(require("postcss-nested"))
-  .use(require("postcss-css-variables"))
-  .use(require("postcss-calc"))
-  .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))
-  .use(require("cssnano"));
+const parser = postcss(plugins);
 
-function buildCSS() {
+const parserWithPrefix = postcss([
+  ...plugins,
+  require("postcss-prefix-selector")({
+    prefix: ".win7",
+    transform: (prefix, selector, prefixed) =>
+      ["body", ".surface"].includes(selector) ? selector + prefix : prefixed,
+  }),
+]);
+
+async function buildCSS(usePrefix) {
   const input =
     `/*! 7.css v${version} - ${homepage} */\n` +
     fs.readFileSync("gui/index.scss");
 
-  return postcssParser
-    .process(input, {
-      from: "gui/index.scss",
-      to: "dist/7.css",
-      map: { inline: false },
-    })
-    .then((result) => {
-      mkdirp.sync("dist");
-      fs.writeFileSync("dist/7.css", result.css);
-      fs.writeFileSync("dist/7.css.map", result.map.toString());
-    });
+  const targetFile = usePrefix ? "dist/7.scoped.css" : "dist/7.css";
+
+  const result = await (usePrefix ? parserWithPrefix : parser).process(input, {
+    from: "gui/index.scss",
+    to: targetFile,
+    map: { inline: false },
+  });
+
+  mkdirp.sync("dist");
+  fs.writeFileSync(targetFile, result.css);
+  fs.writeFileSync(targetFile + ".map", result.map.toString());
 }
 
 function buildDocs() {
@@ -85,10 +96,14 @@ function buildDocs() {
   );
 }
 
-function build() {
-  buildCSS()
-    .then(buildDocs)
-    .catch((err) => console.log(err));
+async function build() {
+  try {
+    await buildCSS();
+    await buildCSS(true);
+    buildDocs();
+  } catch (err) {
+    console.error(err);
+  }
 }
 module.exports = build;
 

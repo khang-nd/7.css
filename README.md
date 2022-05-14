@@ -12,7 +12,7 @@ It does not ship with any JavaScript, so it is compatible with your frontend fra
 
 ## Installation / Usage
 
-The easiest way to use 7.css is to import it from [unpkg](https://unpkg.com/).
+Directly via [unpkg](https://unpkg.com/):
 
 ```html
 <!DOCTYPE html>
@@ -36,11 +36,13 @@ The easiest way to use 7.css is to import it from [unpkg](https://unpkg.com/).
 </html>
 ```
 
-Alternatively, you can grab 7.css from [npm](https://www.npmjs.com/package/7.css).
+Via [npm](https://www.npmjs.com/package/7.css):
 
-`npm install 7.css`
+```sh
+npm install 7.css
+```
 
-Usage:
+Then import it as below:
 
 ```javascript
 import "7.css/dist/7.css";
