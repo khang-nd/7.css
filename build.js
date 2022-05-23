@@ -8,12 +8,15 @@ const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
 const plugins = [
+  require("cssnano"),
   require("postcss-import"),
   require("postcss-nested"),
   require("postcss-css-variables"),
   require("postcss-calc"),
-  require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }),
-  require("cssnano"),
+  require("postcss-base64")({
+    root: process.cwd() + "/gui",
+    extensions: [".png", ".svg"],
+  }),
 ];
 
 const { homepage, version } = require("./package.json");
