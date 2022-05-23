@@ -10,7 +10,7 @@ body {
   gap: 3px;
 }
 
-#social > .button {
+#social > [role="button"] {
   min-width: unset;
   min-height: unset;
   padding: 0.2em 0.5em;

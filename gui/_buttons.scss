@@ -2,8 +2,8 @@
     Buttons
 \*-------------------------------------------*/
 
-.button,
-button {
+button,
+[role="button"] {
   font: var(--font);
   box-sizing: border-box;
   border: var(--button-border);
