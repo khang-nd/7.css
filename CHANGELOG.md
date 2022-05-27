@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.0
+
+* Added button's `default` variant.
+* Added hover state to radio, checkbox, select.
+* Optimized and transformed icon path references to in-place base64 url.
+
 ## 0.6.0
 
 * Added a scoped css file that can coexist with other styling systems.
