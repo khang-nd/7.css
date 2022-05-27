@@ -35,19 +35,19 @@
 
 <body class="surface custom-scrollbar" ontouchstart>
   <section id="social">
-    <a class="button" target="_blank" href="https://twitter.com/share?url=https://khang-nd.github.io/7.css">
+    <a role="button" target="_blank" href="https://twitter.com/share?url=https://khang-nd.github.io/7.css">
       <img src="https://abs.twimg.com/favicons/twitter.ico">
       Tweet
     </a>
-    <a class="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://khang-nd.github.io/7.css">
+    <a role="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://khang-nd.github.io/7.css">
       <img src="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico">
       Share
     </a>
-    <a class="button" target="_blank" href="https://www.linkedin.com/shareArticle?url=https://khang-nd.github.io/7.css">
+    <a role="button" target="_blank" href="https://www.linkedin.com/shareArticle?url=https://khang-nd.github.io/7.css">
       <img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca">
       Share
     </a>
-    <a class="button" target="_blank" href="https://github.com/khang-nd/7.css">
+    <a role="button" target="_blank" href="https://github.com/khang-nd/7.css">
       <img src="https://github.githubassets.com/favicons/favicon.svg">
       Fork
     </a>
@@ -133,7 +133,7 @@
       <div class="window-body">
         <p>Hello, world!</p>
         <section class="field-row" style="justify-content: flex-end">
-          <button>OK</button>
+          <button class="default">OK</button>
           <button>Cancel</button>
         </section>
       </div>
@@ -332,6 +332,20 @@
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>I am focused<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+        <p>
+          A default button (in Windows, hitting the Enter key in a dialog context triggers the button)
+          has a greenish-blue border and a light blue gradient shade.
+        </p>
+
+        <div class="example">
+      <div class="raw"><button class="default">I am the one!</button></div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span>I am the one!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
         <button class="copy">Copy Code</button>
       </details>
     </div>
