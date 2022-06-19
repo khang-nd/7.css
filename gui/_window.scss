@@ -106,6 +106,7 @@
   }
 
   &.glass {
+    -webkit-backdrop-filter: blur(1.5px);
     backdrop-filter: blur(1.5px);
 
     &::before {
