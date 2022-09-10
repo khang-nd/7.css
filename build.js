@@ -9,6 +9,7 @@ const path = require("path");
 const postcss = require("postcss");
 const plugins = [
   require("cssnano"),
+  require("autoprefixer"),
   require("postcss-import"),
   require("postcss-nested"),
   require("postcss-css-variables"),
