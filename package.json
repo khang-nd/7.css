@@ -30,6 +30,7 @@
   },
   "homepage": "https://khang-nd.github.io/7.css",
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
     "chokidar": "^3.3.1",
     "cssnano": "^5.1.7",
     "dedent": "^0.7.0",
