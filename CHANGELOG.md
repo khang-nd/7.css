@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0
+
+* Added separate CSS for each GUI component.
+* Added glow effect to title bar buttons & tweaked window shadow.
+
 ## 0.7.0
 
 * Added button's `default` variant.

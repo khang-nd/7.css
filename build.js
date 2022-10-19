@@ -51,6 +51,40 @@ async function buildCSS(usePrefix) {
   fs.writeFileSync(targetFile + ".map", result.map.toString());
 }
 
+function buildComponents() {
+  fs.readdir("gui", async (err, files) => {
+    const targetFolder = "dist/gui";
+    const variablesFile = "_variables.scss";
+
+    const fileResults = files
+      .filter((file) => file.startsWith("_") && file !== variablesFile)
+      .map((file) => ({
+        name: file.slice(1),
+        content:
+          fs.readFileSync("gui/" + variablesFile) +
+          fs.readFileSync("gui/" + file),
+      }));
+
+    const parsedResults = fileResults.map(async (file) => {
+      const target = targetFolder + "/" + file.name.replace("scss", "css");
+      return {
+        target,
+        parsed: await parser.process(file.content, {
+          from: "gui/" + file.name,
+          to: target,
+          map: { inline: false },
+        }),
+      };
+    });
+
+    mkdirp.sync(targetFolder);
+    const results = await Promise.all(parsedResults);
+    results.forEach((result) =>
+      fs.writeFile(result.target, result.parsed.css, () => {})
+    );
+  });
+}
+
 function buildDocs() {
   let id = 0;
   function getNewId() {
@@ -104,6 +138,7 @@ async function build() {
   try {
     await buildCSS();
     await buildCSS(true);
+    await buildComponents();
     buildDocs();
   } catch (err) {
     console.error(err);
