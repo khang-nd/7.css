@@ -1,0 +1,28 @@
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="number"],
+  &[type="password"] {
+    height: 23px;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
+  font: var(--font);
+  padding: 3px 4px 5px;
+  border: 1px solid #ccc;
+  border-top-color: var(--button-border-color);
+  border-radius: 2px;
+  background-color: var(--button-highlight);
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: var(--button-shade-light-hovered);
+    border-top-color: var(--button-shade-light-active);
+  }
+}

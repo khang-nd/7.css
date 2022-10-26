@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.1
+
+* Broke down `forms.css` into smaller components (`checkbox`, `radiobutton`, `select`, `textbox`)
+* Renamed `buttons.css` to `button.css` for consistency.
+
 ## 0.8.0
 
 * Added separate CSS for each GUI component.
