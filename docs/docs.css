@@ -26,12 +26,12 @@ body {
 }
 
 main {
-  margin: 0 30px 60px 220px;
+  margin: 0 30px 60px 260px;
   box-sizing: border-box;
 }
 
 aside {
-  width: 200px;
+  width: 240px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -110,26 +110,20 @@ blockquote footer {
   box-sizing: border-box;
 }
 
-details {
+.code {
   margin-top: 12px;
 }
 
-details > .copy {
+.code summary {
+  text-decoration: underline;
+}
+
+.code > .copy {
   display: block;
   margin-left: auto;
 }
 
-summary {
-  user-select: none;
-  cursor: pointer;
-  display: inline;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-details[open] summary {
+.code[open] summary {
   margin-bottom: 8px;
 }
 

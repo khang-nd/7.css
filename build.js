@@ -111,7 +111,7 @@ function buildDocs() {
 
     return `<div class="example">
       <div class="raw">${inline}</div>
-      <details>
+      <details class="code">
         <summary>Show code</summary>
         <pre><code>${escaped.value}</code></pre>
         <button class="copy">Copy Code</button>
@@ -134,16 +134,19 @@ function buildDocs() {
   );
 }
 
-async function build() {
+async function build(mode) {
   try {
-    await buildCSS();
-    await buildCSS(true);
-    await buildComponents();
     buildDocs();
+    await buildCSS();
+
+    if (mode === "production") {
+      buildCSS(true);
+      buildComponents();
+    }
   } catch (err) {
     console.error(err);
   }
 }
 module.exports = build;
 
-build();
+build("production");
