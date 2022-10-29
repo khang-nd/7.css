@@ -20,6 +20,7 @@
     var(--window-background-color);
   --control-border-color: rgba(0, 0, 0, 0.3);
   --control-border-radius: 5px;
+  --control-inset-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
   --control-background: linear-gradient(
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0.3) 45%,
@@ -192,7 +193,7 @@
       border: 0;
       border-right: var(--window-border) var(--control-border-color);
       border-radius: 0;
-      box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
+      box-shadow: var(--control-inset-shadow);
       box-sizing: border-box;
       background: none;
 
@@ -201,7 +202,13 @@
         /* resolve the conflict with button styles */
         background: none;
         border-color: var(--control-border-color);
-        box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
+        box-shadow: var(--control-inset-shadow);
+      }
+
+      &:disabled {
+        &::before {
+          opacity: 0.4;
+        }
       }
 
       &::before {
@@ -301,6 +308,14 @@
           &:active {
             filter: contrast(1.3) brightness(0.7);
             background-image: var(--control-background);
+          }
+        }
+
+        &:disabled {
+          &:hover,
+          &:active {
+            background: var(--control-background);
+            box-shadow: var(--control-inset-shadow);
           }
         }
       }
