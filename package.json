@@ -1,11 +1,15 @@
 {
   "name": "7.css",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "A design system for building faithful recreations of the Windows 7 UI.",
   "main": "dist/7.css",
+  "files": [
+    "dist/gui",
+    "dist/7*"
+  ],
   "scripts": {
     "build": "node build.js",
-    "deploy:docs": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist",
     "release": "npm run build && npm publish"
   },
   "repository": {
