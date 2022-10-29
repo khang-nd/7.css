@@ -53,7 +53,7 @@
     </a>
   </section>
   <aside>
-    <ul class="tree-view">
+    <ul class="tree-view has-connector has-collapse-button has-container">
       <li><a href="#intro">Intro</a></li>
       <li>
         <a href="#install">Installation</a>
@@ -69,6 +69,7 @@
             <li><a href="#balloon">Balloon</a></li>
             <li><a href="#button">Button</a></li>
             <li><a href="#checkbox">CheckBox</a></li>
+            <li><a href="#collapse">Collapse</a></li>
             <li><a href="#dropdown">Dropdown</a></li>
             <li><a href="#group-box">GroupBox</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -359,6 +360,45 @@ import "7.css/dist/gui/tabs.css"</pre>
         <label for="example${getCurrentId()}">I am inactive but still checked</label>
       </div>
       `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="collapse">Collapse</h3>
+      <div>
+        <blockquote>
+          Users can show or hide additional information including data, options, or commands.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-progressive-disclosure-controls">
+              Microsoft Windows User Experience - Progressive Disclosure</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          A collapsible section can be created using the HTML elements <code>details</code> and
+          <code>summary</code>.
+        </p>
+
+        <%- example(`
+          <details>
+            <summary>Expand me to see something interesting</summary>
+            <p>🎉 Tadah!</p>
+          </details>
+        `) %>
+
+        <p>Add an <code>open</code> attribute to expand the content by default.</p>
+
+        <%- example(`
+          <details open>
+            <summary>I open myself willingly</summary>
+            <ul>
+              <li>This is my family</li>
+              <li>This is my house</li>
+              <li>This is my car</li>
+            </ul>
+          </details>
+        `) %>
       </div>
     </section>
 
@@ -978,7 +1018,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         </p>
 
         <%- example(`
-        <ul class="tree-view">
+        <ul class="tree-view has-container">
           <li>We can put</li>
           <li><strong style="color: purple">✨ Whatever ✨</strong></li>
           <li>We want in here</li>
@@ -991,12 +1031,11 @@ import "7.css/dist/gui/tabs.css"</pre>
             border and indentation to illustrate the structure of the tree.
           </p>
           <p>
-            To create expandable sections, wrap child lists inside of
-            <code>details</code> elements.
+            To create collapsible sections, wrap child lists inside <code>details</code> elements.
           </p>
 
           <%- example(`
-          <ul class="tree-view">
+          <ul class="tree-view has-container">
             <li>Table of Contents</li>
             <li>What is web development?</li>
             <li>
@@ -1040,6 +1079,44 @@ import "7.css/dist/gui/tabs.css"</pre>
             <li>Special Thanks</li>
           </ul>
             `) %>
+
+          <p>
+            You may use the <code>has-connector</code> classes to render the hierarchies
+            of the tree view more clearly, and use <code>has-collapse-button</code> to change
+            the expand/collapse indicators to buttons.
+          </p>
+
+          <%- example(`
+          <ul class="tree-view has-collapse-button has-connector has-container">
+            <details open>
+              <summary>JavaScript</summary>
+              <ul>
+                <li>Avoid at all costs</li>
+                <li>
+                  <details>
+                    <summary>Unless</summary>
+                    <ul>
+                      <li>Avoid</li>
+                      <li>
+                        <details>
+                          <summary>At</summary>
+                          <ul>
+                            <li>Avoid</li>
+                            <li>At</li>
+                            <li>All</li>
+                            <li>Cost</li>
+                          </ul>
+                        </details>
+                      </li>
+                      <li>All</li>
+                      <li>Cost</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </ul>
+          `) %>
       </div>
     </section>
 
