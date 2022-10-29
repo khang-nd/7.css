@@ -237,27 +237,31 @@
         right: 0;
       }
 
-      &[aria-label="Minimize"] {
+      &[aria-label="Minimize"],
+      &.is-minimize {
         &::before {
           background: url("./icon/minimize.png") no-repeat center 10px;
         }
       }
 
-      &[aria-label="Maximize"] {
+      &[aria-label="Maximize"],
+      &.is-maximize {
         &::before {
           background: url("./icon/maximize.png") no-repeat center;
         }
       }
 
-      &[aria-label="Restore"] {
+      &[aria-label="Restore"],
+      &.is-restore {
         &::before {
           background: url("./icon/restore.png") no-repeat center;
         }
       }
 
-      &[aria-label="Close"] {
+      &[aria-label="Close"],
+      &.is-close {
         background-color: #d04a37;
-        width: 45px;
+        min-width: 45px;
 
         &::before {
           background: url("./icon/close.png") no-repeat center;
