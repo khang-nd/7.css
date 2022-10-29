@@ -2,7 +2,7 @@
   --window-spacing: 6px;
   --window-border: 1px solid;
   --window-border-radius: 6px;
-  --window-border-color: rgba(0, 0, 0, .7);
+  --window-border-color: rgba(0, 0, 0, 0.7);
   --window-background-color: #4580c4;
   --window-background: linear-gradient(
       to right,
@@ -54,10 +54,13 @@
   &-body {
     margin: var(--window-spacing);
     margin-top: 0;
-    padding: var(--window-spacing);
     border: var(--window-border) var(--window-border-color);
     background: var(--surface);
     box-shadow: 0 0 1px 0.5px #fff;
+
+    &.has-space {
+      padding: var(--window-spacing);
+    }
 
     pre {
       margin: -var(--window-spacing);
@@ -212,7 +215,7 @@
             transparent 60%
           ),
           linear-gradient(#a9d2e8 50%, #196c9b 50%);
-          box-shadow: 0 0 15px #2aceda;
+        box-shadow: 0 0 15px #2aceda;
       }
 
       &:active {

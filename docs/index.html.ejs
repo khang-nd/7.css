@@ -131,7 +131,7 @@
           <button aria-label="Close"></button>
         </div>
       </div>
-      <div class="window-body">
+      <div class="window-body has-space">
         <p>Hello, world!</p>
         <section class="field-row" style="justify-content: flex-end">
           <button class="default">OK</button>
@@ -1149,7 +1149,8 @@ import "7.css/dist/gui/tabs.css"</pre>
 
       <p>
         To draw the contents of the window, we use the <code>window-body</code>
-        class under the title bar.
+        class under the title bar. You may use the <code>has-space</code> class to add some padding
+        to the window body.
       </p>
 
       <%- example(`
@@ -1162,7 +1163,7 @@ import "7.css/dist/gui/tabs.css"</pre>
             <button aria-label="Close"></button>
           </div>
         </div>
-        <div class="window-body">
+        <div class="window-body has-space">
           <p>There's so much room for activities!</p>
         </div>
       </div>
@@ -1178,7 +1179,7 @@ import "7.css/dist/gui/tabs.css"</pre>
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div class="window-body">
+          <div class="window-body has-space">
             <menu role="tablist">
               <button role="tab" aria-controls="music" aria-selected="true">Music</button>
               <button role="tab" aria-controls="dogs">Dogs</button>
@@ -1225,7 +1226,7 @@ import "7.css/dist/gui/tabs.css"</pre>
                 allowfullscreen></iframe>
             </article>
             <section class="field-row" style="justify-content: flex-end">
-              <button>OK</button>
+              <button class="default">OK</button>
               <button>Cancel</button>
             </section>
           </div>
@@ -1258,7 +1259,7 @@ import "7.css/dist/gui/tabs.css"</pre>
           <div class="title-bar">
             <div class="title-bar-text">A Window With A Status Bar</div>
           </div>
-          <div class="window-body">
+          <div class="window-body has-space">
             <p> There are just so many possibilities:</p>
             <ul>
               <li>A Task Manager</li>
@@ -1306,7 +1307,7 @@ import "7.css/dist/gui/tabs.css"</pre>
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div class="window-body">
+            <div class="window-body has-space">
               <p>The background behind is blurred.</p>
             </div>
           </div>
@@ -1335,7 +1336,7 @@ import "7.css/dist/gui/tabs.css"</pre>
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div class="window-body">
+          <div class="window-body has-space">
             <p>You can change the window color just as simple.</p>
           </div>
         </div>
@@ -1349,7 +1350,7 @@ import "7.css/dist/gui/tabs.css"</pre>
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div class="window-body">
+            <div class="window-body has-space">
               <p>And even the glass window frame as well.</p>
             </div>
           </div>
@@ -1392,7 +1393,7 @@ import "7.css/dist/gui/tabs.css"</pre>
               <button aria-label="Close" onclick="history.back()"></button>
             </div>
           </div>
-          <div class="window-body">
+          <div class="window-body has-space">
             <h2 class="instruction instruction-primary">Identifying your problem...</h2>
             <div role="progressbar" class="marquee"></div>
           </div>
