@@ -1,0 +1,2 @@
+details{margin-top:0}details>summary{cursor:pointer;display:inline;margin-bottom:0;position:relative}details>summary:before{border:5px solid transparent;border-left-color:#000;border-radius:3px;content:"";position:absolute;right:100%;top:calc(50% - 5px)}details[open]>summary:before{top:calc(50% - 2.5px);transform:rotate(45deg)}
+/*# sourceMappingURL=collapse.css.map */
