@@ -136,8 +136,8 @@ function buildDocs() {
 
 async function build(mode) {
   try {
-    buildDocs();
     await buildCSS();
+    buildDocs();
 
     if (mode === "production") {
       buildCSS(true);
