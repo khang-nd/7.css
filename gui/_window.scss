@@ -18,6 +18,7 @@
       transparent 53%
     ),
     var(--window-background-color);
+  --control-border-color: rgba(0, 0, 0, 0.3);
   --control-border-radius: 5px;
   --control-background: linear-gradient(
     rgba(255, 255, 255, 0.3),
@@ -177,7 +178,7 @@
   &-controls {
     display: flex;
     background: rgba(255, 255, 255, 0.2);
-    border: var(--window-border) var(--window-border-color);
+    border: var(--window-border) var(--control-border-color);
     border-top: 0;
     border-radius: 0 0 var(--control-border-radius) var(--control-border-radius);
     margin-top: -var(--window-spacing);
@@ -185,47 +186,22 @@
 
     button {
       position: relative;
-      min-width: 26px;
-      min-height: 20px;
+      min-width: 29px;
+      min-height: 19px;
       padding: 0;
       border: 0;
-      border-right: 1px solid var(--window-border-color);
+      border-right: var(--window-border) var(--control-border-color);
       border-radius: 0;
-      box-shadow: inset 0 0 0 0.5px #eee;
+      box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
       box-sizing: border-box;
-      background: var(--control-background);
+      background: none;
 
-      &:first-child {
-        border-bottom-left-radius: var(--control-border-radius);
-      }
-
-      &:last-child {
-        border: 0;
-        border-bottom-right-radius: var(--control-border-radius);
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:hover {
-        background: radial-gradient(
-            circle at 50% 100%,
-            #2aceda,
-            transparent 60%
-          ),
-          linear-gradient(#a9d2e8 50%, #196c9b 50%);
-        box-shadow: 0 0 15px #2aceda;
-      }
-
+      &:hover,
       &:active {
-        box-shadow: inset 0 0 0 0.5px #eee, 0 0 15px #2aceda;
-        background: radial-gradient(
-            circle at 50% 100%,
-            #0bfdfa,
-            transparent 60%
-          ),
-          linear-gradient(#86a7bc 50%, #092747 50%);
+        /* resolve the conflict with button styles */
+        background: none;
+        border-color: var(--control-border-color);
+        box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
       }
 
       &::before {
@@ -260,22 +236,72 @@
 
       &[aria-label="Close"],
       &.is-close {
-        background-color: #d04a37;
-        min-width: 45px;
+        min-width: 48px;
 
         &::before {
           background: url("./icon/close.png") no-repeat center;
         }
+      }
+
+      &:first-child {
+        border-bottom-left-radius: var(--control-border-radius);
+      }
+
+      &:last-child {
+        border: 0;
+        border-bottom-right-radius: var(--control-border-radius);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  /* Active title-bar */
+  .window.active &,
+  &.active {
+    .title-bar-controls {
+      border-color: var(--window-border-color);
+
+      button {
+        background: var(--control-background);
+        border-color: var(--window-border-color);
 
         &:hover {
-          filter: contrast(1.3);
-          background-image: var(--control-background);
-          box-shadow: 0 0 15px #d04a37, inset 0 -1px 5px orange;
+          background: radial-gradient(
+              circle at 50% 100%,
+              #2aceda,
+              transparent 60%
+            ),
+            linear-gradient(#a9d2e8 50%, #196c9b 50%);
+          box-shadow: 0 0 15px #2aceda;
         }
 
         &:active {
-          filter: contrast(1.3) brightness(0.7);
-          background-image: var(--control-background);
+          box-shadow: inset 0 0 0 0.5px #eee, 0 0 15px #2aceda;
+          background: radial-gradient(
+              circle at 50% 100%,
+              #0bfdfa,
+              transparent 60%
+            ),
+            linear-gradient(#86a7bc 50%, #092747 50%);
+        }
+
+        &[aria-label="Close"],
+        &.is-close {
+          background-color: #d04a37;
+
+          &:hover {
+            filter: contrast(1.3);
+            background-image: var(--control-background);
+            box-shadow: 0 0 15px #d04a37, inset 0 -1px 5px orange;
+          }
+
+          &:active {
+            filter: contrast(1.3) brightness(0.7);
+            background-image: var(--control-background);
+          }
         }
       }
     }

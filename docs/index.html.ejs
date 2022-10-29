@@ -84,7 +84,7 @@
                 <summary><a href="#window">Window</a></summary>
                 <ul>
                   <li><a href="#title-bar">Title Bar</a></li>
-                  <li><a href="#window-contents">Window contents</a></li>
+                  <li><a href="#window-body">Window body</a></li>
                   <li><a href="#status-bar">Status Bar</a></li>
                   <li><a href="#glass-frame-color">Glass frame & Color</a></li>
                   <li><a href="#dialog-box">Dialog Box</a></li>
@@ -119,7 +119,7 @@
       which is an extension of <a href="https://github.com/jdan/98.css">98.css</a>.
     </p>
 
-    <div class="window" style="margin: 32px; width: 250px">
+    <div class="window active" style="margin: 32px; width: 250px">
       <div class="title-bar">
         <div class="title-bar-text">
           My First Program
@@ -1118,13 +1118,50 @@ import "7.css/dist/gui/tabs.css"</pre>
       <p>
         Alternatively, you can use the <code>is-close</code>, <code>is-minimize</code>,
         <code>is-maximize</code>, <code>is-restore</code> classes to target the respective
-        controls for your preference.
+        controls for your styling preference.
       </p>
+
+      <p>
+        To give our title bar a home, we wrap it in a <code>window</code> container.
+        This provides a drop shadow to it. We can freely resize the window by specifying
+        a width in the container style.
+      </p>
+
+      <%- example(`
+      <div class="window" style="max-width: 300px">
+        <div class="title-bar">
+          <div class="title-bar-text">A complete window</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+      `) %>
+
+      <p>
+        Place an <code>active</code> class either on the <code>window</code> container or
+        the title bar itself to enable the active styles for the controls.
+      </p>
+
+      <%- example(`
+      <div class="window active" style="max-width: 300px">
+        <div class="title-bar">
+          <div class="title-bar-text">A complete window</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+      `) %>
       </div>
     </section>
 
     <section class="component">
-      <h4 id="window-contents">Window contents</h4>
+      <h4 id="window-body">Window body</h4>
       <div>
         <blockquote>
           Every window has a boundary that defines its shape.
@@ -1134,25 +1171,6 @@ import "7.css/dist/gui/tabs.css"</pre>
           </footer>
         </blockquote>
 
-        <p>
-          To give our title bar a home, we make use of the <code>window</code>
-          class. This provides a drop shadow to it. We can freely resize the window by specifying a width in the
-          container style.
-        </p>
-
-        <%- example(`
-        <div class="window" style="max-width: 300px">
-          <div class="title-bar">
-            <div class="title-bar-text">A complete window</div>
-            <div class="title-bar-controls">
-              <button aria-label="Minimize"></button>
-              <button aria-label="Maximize"></button>
-              <button aria-label="Close"></button>
-            </div>
-          </div>
-        </div>
-      `) %>
-
       <p>
         To draw the contents of the window, we use the <code>window-body</code>
         class under the title bar. You may use the <code>has-space</code> class to add some padding
@@ -1160,7 +1178,7 @@ import "7.css/dist/gui/tabs.css"</pre>
       </p>
 
       <%- example(`
-      <div class="window" style="max-width: 300px">
+      <div class="window active" style="max-width: 300px">
         <div class="title-bar">
           <div class="title-bar-text">A window with contents</div>
           <div class="title-bar-controls">
@@ -1176,7 +1194,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         `) %>
 
         <%- example(`
-        <div class="window" style="max-width: 400px">
+        <div class="window active" style="max-width: 400px">
           <div class="title-bar">
             <div class="title-bar-text">Another window with contents</div>
             <div class="title-bar-controls">
@@ -1305,7 +1323,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 
         <%- example(`
         <div class="background">
-          <div class="window glass" style="max-width: 320px">
+          <div class="window glass active" style="max-width: 320px">
             <div class="title-bar">
               <div class="title-bar-text">A glass window frame</div>
               <div class="title-bar-controls">
@@ -1334,7 +1352,7 @@ import "7.css/dist/gui/tabs.css"</pre>
           }
         </style>
 
-        <div class="window violet" style="max-width: 320px">
+        <div class="window violet active" style="max-width: 320px">
           <div class="title-bar">
             <div class="title-bar-text">A violet window frame</div>
             <div class="title-bar-controls">
@@ -1348,7 +1366,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         </div>
 
         <div class="background">
-          <div class="window violet glass" style="max-width: 320px">
+          <div class="window violet glass active" style="max-width: 320px">
             <div class="title-bar">
               <div class="title-bar-text">A glass violet window frame</div>
               <div class="title-bar-controls">
