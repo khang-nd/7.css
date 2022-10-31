@@ -70,15 +70,17 @@
             <li><a href="#button">Button</a></li>
             <li><a href="#checkbox">CheckBox</a></li>
             <li><a href="#collapse">Collapse</a></li>
+            <li><a href="#combobox">ComboBox</a></li>
             <li><a href="#dropdown">Dropdown</a></li>
-            <li><a href="#group-box">GroupBox</a></li>
+            <li><a href="#groupbox">GroupBox</a></li>
+            <li><a href="#listbox">ListBox</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#radio">OptionButton</a></li>
-            <li><a href="#progress-bar">ProgressBar</a></li>
+            <li><a href="#progressbar">ProgressBar</a></li>
             <li><a href="#scrollbar">Scrollbar</a></li>
             <li><a href="#slider">Slider</a></li>
             <li><a href="#tabs">Tabs</a></li>
-            <li><a href="#text-box">TextBox</a></li>
+            <li><a href="#textbox">TextBox</a></li>
             <li><a href="#tree-view">TreeView</a></li>
             <li>
               <details open>
@@ -403,6 +405,56 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
+      <h3 id="combobox">Combobox</h3>
+      <div>
+        <blockquote>
+          A <i>combo box</i> is a combination of a standard list box or a drop-down list
+          and an editable text box, thus allowing users to enter a value that isn't in the list.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-drop">
+              Microsoft Windows User Experience - Combo Boxes</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          To render a combo box, use a text <code>input</code>, a <code>button</code>,
+          a parent <code>ul</code>, and children <code>li</code> together,
+          wrapped inside a container element with the <code>combobox</code> class.
+          For accessibility, follow the minimum requirements as below:
+        </p>
+        
+        <ul>
+          <li>Add a <code>role="combobox"</code> attribute to the text <code>input</code></li>
+          <li>Add a <code>role="listbox"</code> attribute to the <code>ul</code></li>
+          <li>Add a <code>role="option"</code> attribute to each <code>li</code></li>
+          <li>
+            Specify the relationship between the list box and the text box by combining
+            the <code>id</code> of the <code>listbox</code> with the <code>aria-owns</code> attribute
+            on the text <code>input</code>
+          </li>
+        </ul>
+
+        <%- example(`
+          <div class="combobox">
+            <input type="text" role="combobox" aria-owns="company" />
+            <button></button>
+            <ul role="listbox" id="company">
+              <li role="option">Facebook</li>
+              <li role="option">Amazon</li>
+              <li role="option">Apple</li>
+              <li role="option">Netflix</li>
+              <li role="option">Google</li>
+            </ul>
+          </div>
+        `) %>
+
+        <p>
+          For more options of the list box, see the <a href="#listbox">ListBox</a> section.
+        </p>
+    </section>
+
+    <section class="component">
       <h3 id="dropdown">Dropdown</h3>
       <div>
         <blockquote>
@@ -450,7 +502,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="group-box">GroupBox</h3>
+      <h3 id="groupbox">GroupBox</h3>
       <div>
         <blockquote>
           A <em>group box</em> is a special control you can use to organize a set of
@@ -511,6 +563,70 @@ import "7.css/dist/gui/tabs.css"</pre>
           </fieldset>
             `) %>
       </div>
+    </section>
+
+    <section class="component">
+      <h3 id="listbox">ListBox</h3>
+      <div>
+        <blockquote>
+          With a <i>list box</i>, users can select from a set of values presented in a list that is always visible.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-list-boxes">
+              Microsoft Windows User Experience - List Boxes</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          There are 2 ways you can render a list box. The simple one is using the <code>select</code>
+          element with a <code>multiple</code> attribute specified.
+        </p>
+
+        <%- example(`
+          <select multiple>
+            <option>5 - Incredible!</option>
+            <option selected>4 - Great!</option>
+            <option>3 - Pretty good</option>
+            <option>2 - Not so great</option>
+            <option>1 - Unfortunate</option>
+           </select>
+        `) %>
+
+        <p>
+          The complex one is using a combination of the <code>ul</code>/<code>li</code> elements
+          with the <code>role</code> attributes.
+        </p>
+
+        <%- example(`
+          <ul role="listbox">
+            <li role="option">Facebook</li>
+            <li role="option" aria-selected="true">Amazon</li>
+            <li role="option">Apple</li>
+            <li role="option">Netflix</li>
+            <li role="option">Google</li>
+          </ul>
+        `) %>
+
+        <p>
+          The latter offers more flexibility over using a mere <code>select</code> element.
+          Choose the one that is more appropriate depending on your context or use case.
+        </p>
+
+        <p>
+          To add a drop shadow to the list box, use the <code>has-shadow</code> class.
+          To add a hovering style on the list box items (using <code>role</code> attribute only),
+          use the <code>has-hover</code> class.
+        </p>
+
+        <%- example(`
+          <ul role="listbox" class="has-shadow has-hover">
+            <li role="option">Facebook</li>
+            <li role="option">Amazon</li>
+            <li role="option">Apple</li>
+            <li role="option">Netflix</li>
+            <li role="option">Google</li>
+          </ul>
+        `) %>
     </section>
 
     <section class="component">
@@ -682,7 +798,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="progress-bar">ProgressBar</h3>
+      <h3 id="progressbar">ProgressBar</h3>
       <div>
         <blockquote>
           A common control that displays the progress of a particular operation as a graphical bar.
@@ -944,7 +1060,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="text-box">TextBox</h3>
+      <h3 id="textbox">TextBox</h3>
       <div>
         <blockquote>
           A <em>text box</em> (also referred to as an edit control) is a

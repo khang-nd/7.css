@@ -1,0 +1,37 @@
+:root {
+  --combobox-chevron-size: 4px;
+}
+
+.combobox {
+  position: relative;
+  display: inline-block;
+
+  input[type="text"] {
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    padding: 0;
+    min-width: 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - var(--combobox-chevron-size) / 4);
+      left: calc(50% - var(--combobox-chevron-size));
+      border: var(--combobox-chevron-size) solid transparent;
+      border-top-color: #000;
+      border-radius: 2px;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}

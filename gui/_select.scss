@@ -1,4 +1,4 @@
-select {
+select:not([multiple]) {
   font: var(--font);
   padding: 2px 3px;
   border: var(--button-border);
