@@ -82,7 +82,8 @@ p {
   line-height: 1.5;
 }
 
-p code {
+p code,
+ul code {
   background: #e0e0e0;
   padding: 2px 3px;
 }
@@ -90,6 +91,10 @@ p code {
 .component {
   display: flex;
   margin-top: 24px;
+}
+
+.component li:not([role]) {
+  margin-bottom: 8px;
 }
 
 blockquote {
