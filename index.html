@@ -70,15 +70,17 @@
             <li><a href="#button">Button</a></li>
             <li><a href="#checkbox">CheckBox</a></li>
             <li><a href="#collapse">Collapse</a></li>
+            <li><a href="#combobox">ComboBox</a></li>
             <li><a href="#dropdown">Dropdown</a></li>
-            <li><a href="#group-box">GroupBox</a></li>
+            <li><a href="#groupbox">GroupBox</a></li>
+            <li><a href="#listbox">ListBox</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#radio">OptionButton</a></li>
-            <li><a href="#progress-bar">ProgressBar</a></li>
+            <li><a href="#progressbar">ProgressBar</a></li>
             <li><a href="#scrollbar">Scrollbar</a></li>
             <li><a href="#slider">Slider</a></li>
             <li><a href="#tabs">Tabs</a></li>
-            <li><a href="#text-box">TextBox</a></li>
+            <li><a href="#textbox">TextBox</a></li>
             <li><a href="#tree-view">TreeView</a></li>
             <li>
               <details open>
@@ -505,6 +507,71 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
+      <h3 id="combobox">Combobox</h3>
+      <div>
+        <blockquote>
+          A <i>combo box</i> is a combination of a standard list box or a drop-down list
+          and an editable text box, thus allowing users to enter a value that isn't in the list.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-drop">
+              Microsoft Windows User Experience - Combo Boxes</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          To render a combo box, use a text <code>input</code>, a <code>button</code>,
+          a parent <code>ul</code>, and children <code>li</code> together,
+          wrapped inside a container element with the <code>combobox</code> class.
+          For accessibility, follow the minimum requirements as below:
+        </p>
+        
+        <ul>
+          <li>Add a <code>role="combobox"</code> attribute to the text <code>input</code></li>
+          <li>Add a <code>role="listbox"</code> attribute to the <code>ul</code></li>
+          <li>Add a <code>role="option"</code> attribute to each <code>li</code></li>
+          <li>
+            Specify the relationship between the list box and the text box by combining
+            the <code>id</code> of the <code>listbox</code> with the <code>aria-owns</code> attribute
+            on the text <code>input</code>
+          </li>
+        </ul>
+
+        <div class="example">
+      <div class="raw"><div class="combobox">
+  <input type="text" role="combobox" aria-owns="company" />
+  <button></button>
+  <ul role="listbox" id="company">
+    <li role="option">Facebook</li>
+    <li role="option">Amazon</li>
+    <li role="option">Apple</li>
+    <li role="option">Netflix</li>
+    <li role="option">Google</li>
+  </ul>
+</div></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;combobox&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;combobox&quot;</span> <span class="hljs-attr">aria-owns</span>=<span class="hljs-string">&quot;company&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;listbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;company&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Amazon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Netflix<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+        <p>
+          For more options of the list box, see the <a href="#listbox">ListBox</a> section.
+        </p>
+    </section>
+
+    <section class="component">
       <h3 id="dropdown">Dropdown</h3>
       <div>
         <blockquote>
@@ -574,7 +641,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="group-box">GroupBox</h3>
+      <h3 id="groupbox">GroupBox</h3>
       <div>
         <blockquote>
           A <em>group box</em> is a special control you can use to organize a set of
@@ -677,6 +744,103 @@ import "7.css/dist/gui/tabs.css"</pre>
       </details>
     </div>
       </div>
+    </section>
+
+    <section class="component">
+      <h3 id="listbox">ListBox</h3>
+      <div>
+        <blockquote>
+          With a <i>list box</i>, users can select from a set of values presented in a list that is always visible.
+
+          <footer>
+            &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-list-boxes">
+              Microsoft Windows User Experience - List Boxes</a>
+          </footer>
+        </blockquote>
+
+        <p>
+          There are 2 ways you can render a list box. The simple one is using the <code>select</code>
+          element with a <code>multiple</code> attribute specified.
+        </p>
+
+        <div class="example">
+      <div class="raw"><select multiple>
+  <option>5 - Incredible!</option>
+  <option selected>4 - Great!</option>
+  <option>3 - Pretty good</option>
+  <option>2 - Not so great</option>
+  <option>1 - Unfortunate</option>
+ </select></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>5 - Incredible!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>4 - Great!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>3 - Pretty good<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>2 - Not so great<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>1 - Unfortunate<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+        <p>
+          The complex one is using a combination of the <code>ul</code>/<code>li</code> elements
+          with the <code>role</code> attributes.
+        </p>
+
+        <div class="example">
+      <div class="raw"><ul role="listbox">
+  <li role="option">Facebook</li>
+  <li role="option" aria-selected="true">Amazon</li>
+  <li role="option">Apple</li>
+  <li role="option">Netflix</li>
+  <li role="option">Google</li>
+</ul></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;listbox&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Amazon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Netflix<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+        <p>
+          The latter offers more flexibility over using a mere <code>select</code> element.
+          Choose the one that is more appropriate depending on your context or use case.
+        </p>
+
+        <p>
+          To add a drop shadow to the list box, use the <code>has-shadow</code> class.
+          To add a hovering style on the list box items (using <code>role</code> attribute only),
+          use the <code>has-hover</code> class.
+        </p>
+
+        <div class="example">
+      <div class="raw"><ul role="listbox" class="has-shadow has-hover">
+  <li role="option">Facebook</li>
+  <li role="option">Amazon</li>
+  <li role="option">Apple</li>
+  <li role="option">Netflix</li>
+  <li role="option">Google</li>
+</ul></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;listbox&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-shadow has-hover&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Amazon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Netflix<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
     </section>
 
     <section class="component">
@@ -810,14 +974,34 @@ import "7.css/dist/gui/tabs.css"</pre>
           specified will receive a horizontal line appended after itself.
         </p>
 
+        <p>
+          To accommodate an extra piece of info for a menu item (like a shortcut mnemonic)
+          on the right side, nest it with an <code>i</code> element.
+        </p>
+
         <div class="example">
       <div class="raw"><ul role="menubar" class="can-hover">
   <li role="menuitem" tabindex="0" aria-haspopup="true">
     File
     <ul role="menu">
-      <li role="menuitem"><a href="#menu">Open</a></li>
-      <li role="menuitem"><a href="#menu">Save</a></li>
-      <li role="menuitem" class="has-divider"><a href="#menu">Save As...</a></li>
+      <li role="menuitem">
+        <a href="#menu">
+          Open
+          <i>Ctrl+O</i>
+        </a>
+      </li>
+      <li role="menuitem">
+        <a href="#menu">
+          Save
+          <i>Ctrl+S</i>
+        </a>
+      </li>
+      <li role="menuitem" class="has-divider">
+        <a href="#menu">
+          Save As...
+          <i>Ctrl+Shift+S</i>
+        </a>
+      </li>
       <li role="menuitem"><a href="#menu">Exit</a></li>
     </ul>
   </li>
@@ -861,9 +1045,24 @@ import "7.css/dist/gui/tabs.css"</pre>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
     File
     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Open<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-divider&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Save As...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>
+          Open
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Ctrl+O<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>
+          Save
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Ctrl+S<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-divider&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>
+          Save As...
+          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Ctrl+Shift+S<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Exit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -911,6 +1110,10 @@ import "7.css/dist/gui/tabs.css"</pre>
           (Icons provided by <a href="https://icons8.com/" target="_blank">Icons8</a>)
         </p>
 
+        <p>
+          Disable a menu item by placing an <code>aria-disabled</code> attribute on it.
+        </p>
+
         <div class="example">
       <div class="raw"><ul role="menu" class="can-hover" style="width: 200px">
   <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
@@ -924,8 +1127,10 @@ import "7.css/dist/gui/tabs.css"</pre>
     </ul>
   </li>
   <li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
-  <li role="menuitem"><a href="#menu">Paste</a></li>
-  <li role="menuitem" class="has-divider"><a href="#menu">Paste shortcut</a></li>
+  <li role="menuitem" aria-disabled="true"><a href="#menu">Paste</a></li>
+  <li role="menuitem" aria-disabled="true" class="has-divider">
+    <a href="#menu">Paste shortcut</a>
+  </li>
   <li role="menuitem">
     <img src="https://img.icons8.com/color/18/000000/monitor--v1.png"/>
     <a href="#menu">Screen resolution</a>
@@ -953,8 +1158,10 @@ import "7.css/dist/gui/tabs.css"</pre>
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-divider&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Refresh<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Paste<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-divider&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Paste shortcut<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Paste<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-divider&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Paste shortcut<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/18/000000/monitor--v1.png&quot;</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#menu&quot;</span>&gt;</span>Screen resolution<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -975,7 +1182,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="progress-bar">ProgressBar</h3>
+      <h3 id="progressbar">ProgressBar</h3>
       <div>
         <blockquote>
           A common control that displays the progress of a particular operation as a graphical bar.
@@ -1399,7 +1606,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </section>
 
     <section class="component">
-      <h3 id="text-box">TextBox</h3>
+      <h3 id="textbox">TextBox</h3>
       <div>
         <blockquote>
           A <em>text box</em> (also referred to as an edit control) is a
@@ -2213,7 +2420,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 </div></div>
       <details class="code">
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
   <span class="hljs-selector-class">.violet</span><span class="hljs-selector-pseudo">::before</span>,
   <span class="hljs-selector-class">.violet</span> &gt; <span class="hljs-selector-class">.title-bar</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#805ba5</span>;
