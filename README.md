@@ -10,7 +10,7 @@ It is built on top of [XP.css](https://github.com/botoxparty/XP.css), which is a
 
 It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
-## Installation / Usage
+## 📦 Installation / Usage
 
 Directly via [unpkg](https://unpkg.com/):
 
@@ -48,9 +48,11 @@ Then import it as below:
 import "7.css/dist/7.css";
 ```
 
+## 📚 Documentation / Demo
+
 Refer to the [documentation page](https://khang-nd.github.io/7.css/) for specific instructions on this framework's components.
 
-## Developing
+## 🛠 Developing
 
 Clone the repo and run `npm install`.
 
@@ -60,14 +62,10 @@ You can use `npm start` to start a development environment that will watch for f
 
 You can run a build manually with `npm run build`. This will write to the `dist/` directory.
 
-## Issues, Contributing, etc.
+## 📝 Issues, Contributing, etc.
 
 You are so welcome to report issues, help out with contributions or whatever you could think of to improve this lovely UI framework.
 
-## License
-
-[MIT](https://github.com/khang-nd/7.css/blob/main/LICENSE)
-
-## Changelog
+## 📜 Changelog
 
 Refer to [CHANGELOG](/CHANGELOG.md).
