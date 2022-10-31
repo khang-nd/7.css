@@ -712,14 +712,34 @@ import "7.css/dist/gui/tabs.css"</pre>
           specified will receive a horizontal line appended after itself.
         </p>
 
+        <p>
+          To accommodate an extra piece of info for a menu item (like a shortcut mnemonic)
+          on the right side, nest it with an <code>i</code> element.
+        </p>
+
         <%- example(`
         <ul role="menubar" class="can-hover">
           <li role="menuitem" tabindex="0" aria-haspopup="true">
             File
             <ul role="menu">
-              <li role="menuitem"><a href="#menu">Open</a></li>
-              <li role="menuitem"><a href="#menu">Save</a></li>
-              <li role="menuitem" class="has-divider"><a href="#menu">Save As...</a></li>
+              <li role="menuitem">
+                <a href="#menu">
+                  Open
+                  <i>Ctrl+O</i>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#menu">
+                  Save
+                  <i>Ctrl+S</i>
+                </a>
+              </li>
+              <li role="menuitem" class="has-divider">
+                <a href="#menu">
+                  Save As...
+                  <i>Ctrl+Shift+S</i>
+                </a>
+              </li>
               <li role="menuitem"><a href="#menu">Exit</a></li>
             </ul>
           </li>
@@ -765,6 +785,10 @@ import "7.css/dist/gui/tabs.css"</pre>
           (Icons provided by <a href="https://icons8.com/" target="_blank">Icons8</a>)
         </p>
 
+        <p>
+          Disable a menu item by placing an <code>aria-disabled</code> attribute on it.
+        </p>
+
         <%- example(`
         <ul role="menu" class="can-hover" style="width: 200px">
           <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
@@ -778,8 +802,10 @@ import "7.css/dist/gui/tabs.css"</pre>
             </ul>
           </li>
           <li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
-          <li role="menuitem"><a href="#menu">Paste</a></li>
-          <li role="menuitem" class="has-divider"><a href="#menu">Paste shortcut</a></li>
+          <li role="menuitem" aria-disabled="true"><a href="#menu">Paste</a></li>
+          <li role="menuitem" aria-disabled="true" class="has-divider">
+            <a href="#menu">Paste shortcut</a>
+          </li>
           <li role="menuitem">
             <img src="https://img.icons8.com/color/18/000000/monitor--v1.png"/>
             <a href="#menu">Screen resolution</a>
