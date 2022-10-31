@@ -68,12 +68,14 @@ ul {
       &[aria-haspopup="true"] {
         all: unset;
         position: relative;
-        display: block;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
         padding: 4px 10px 4px 32px;
         box-sizing: border-box;
         border: 1px solid transparent;
         border-radius: 3px;
+        white-space: nowrap;
 
         &:hover,
         &:focus {
@@ -112,6 +114,11 @@ ul {
       }
     }
 
+    &[aria-disabled] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
     &.has-divider {
       &::after {
         content: "";
@@ -131,6 +138,11 @@ ul {
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
+    }
+
+    i {
+      font-style: normal;
+      margin-left: 32px;
     }
   }
 
