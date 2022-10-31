@@ -68,4 +68,4 @@ You are so welcome to report issues, help out with contributions or whatever you
 
 ## 📜 Changelog
 
-Refer to [CHANGELOG](/CHANGELOG.md).
+Refer to [Releases](https://github.com/khang-nd/7.css/releases).
