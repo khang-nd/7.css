@@ -968,7 +968,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         <blockquote>
           A <i>spinner</i> or loader, also referred as 
           <a href="https://learn.microsoft.com/en-us/windows/apps/design/controls/progress-controls" target="_blank">ProgressRing</a>,
-          is a type of progress control that indicates an operation is underway
+          is a type of progress control to indicate that an operation is underway
           and its completion time is unknown.
         </blockquote>
 
@@ -978,14 +978,14 @@ import "7.css/dist/gui/tabs.css"</pre>
         </p>
 
         <p>
-          For accessibility, consider using the <code>alert="role"</code> and
-          <code>aria-busy="true"</code> (Source: <a href="https://stackoverflow.com/a/38708396/3916702">Stackoverflow</a>).
+          For accessibility, we use an <code>aria-label</code> attribute with a desired text
+          to inform assistive technologies about the presence of the spinner.
         </p>
 
         <%- example(`
-          <span class="spinner" role="alert" aria-busy="true">Loading</span>
-          <span class="loader" role="alert" aria-busy="true">Loading</span>
-          <span class="loader animate" role="alert" aria-busy="true">Loading</span>
+          <span class="spinner" aria-label="Spinning"></span>
+          <span class="loader" aria-label="Loading"></span>
+          <span class="loader animate" aria-label="Processing your request"></span>
         `) %>
       </div>
     </section>
