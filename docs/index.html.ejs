@@ -79,6 +79,7 @@
             <li><a href="#progressbar">ProgressBar</a></li>
             <li><a href="#scrollbar">Scrollbar</a></li>
             <li><a href="#slider">Slider</a></li>
+            <li><a href="#spinner">Spinner</a></li>
             <li><a href="#tabs">Tabs</a></li>
             <li><a href="#textbox">TextBox</a></li>
             <li><a href="#tree-view">TreeView</a></li>
@@ -188,7 +189,7 @@
 
     <p>Then in your code, wrap the component with <code>.win7</code>:</p>
 
-    <%- example(`
+    <div%- example(`
     <div class="win7">
       <button>A Win7-styled button</button>
     </div>`) %>
@@ -233,6 +234,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 
         <%- example(`
         `) %>
+      </div>
     </section> -->
 
     <section class="component">
@@ -452,6 +454,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         <p>
           For more options of the list box, see the <a href="#listbox">ListBox</a> section.
         </p>
+      </div>
     </section>
 
     <section class="component">
@@ -627,6 +630,7 @@ import "7.css/dist/gui/tabs.css"</pre>
             <li role="option">Google</li>
           </ul>
         `) %>
+      </div>
     </section>
 
     <section class="component">
@@ -878,7 +882,7 @@ import "7.css/dist/gui/tabs.css"</pre>
         </div>`) %>
 
         <p>
-          To create a marquee progress bar, add a <code>marquee</code> class
+          To create an indeterminate progress bar, add a <code>marquee</code> class
           and remove the nested <code>div</code>.
         </p>
 
@@ -909,36 +913,36 @@ import "7.css/dist/gui/tabs.css"</pre>
         </p>
 
         <%- example(`
-        <div class="field-row">
-          <input id="radio${getNewId()}" type="radio" name="first-example">
-          <label for="radio${getCurrentId()}">Yes</label>
-        </div>
-        <div class="field-row">
-          <input id="radio${getNewId()}" type="radio" name="first-example">
-          <label for="radio${getCurrentId()}">No</label>
-        </div>
-      `) %>
-
-      <p>
-        Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
-        HTML attributes.
-      </p>
-
-      <%- example(`
-        <div class="field-row">
-          <input id="radio${getNewId()}" type="radio" name="second-example">
-          <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
-        </div>
-        <div class="field-row">
-          <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
-          <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
-        </div>
-        <div class="field-row">
-          <input disabled id="radio${getNewId()}" type="radio" name="second-example">
-          <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
-        </div>
+          <div class="field-row">
+            <input id="radio${getNewId()}" type="radio" name="first-example">
+            <label for="radio${getCurrentId()}">Yes</label>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="first-example">
+              <label for="radio${getCurrentId()}">No</label>
+            </div>
+          </div>
         `) %>
-        </div>
+
+        <p>
+          Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
+          HTML attributes.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <input id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+          </div>
+          <div class="field-row">
+            <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
+          </div>
+          <div class="field-row">
+            <input disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
+          </div>
+        `) %>
+      </div>
     </section>
 
     <section class="component">
@@ -955,6 +959,34 @@ import "7.css/dist/gui/tabs.css"</pre>
           Upon importing this CSS, the browser's system scrollbar is overridden
           by the Windows 7 custom scrollbar (WebKit-based browsers only).
         </p>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="spinner">Spinner</h3>
+      <div>
+        <blockquote>
+          A <i>spinner</i> or loader, also referred as 
+          <a href="https://learn.microsoft.com/en-us/windows/apps/design/controls/progress-controls" target="_blank">ProgressRing</a>,
+          is a type of progress control that indicates an operation is underway
+          and its completion time is unknown.
+        </blockquote>
+
+        <p>
+          To render a spinner element, use either a <code>spinner</code> or a <code>loader</code>
+          class. To animate the spinner, add an <code>animate</code> class.
+        </p>
+
+        <p>
+          For accessibility, consider using the <code>alert="role"</code> and
+          <code>aria-busy="true"</code> (Source: <a href="https://stackoverflow.com/a/38708396/3916702">Stackoverflow</a>).
+        </p>
+
+        <%- example(`
+          <span class="spinner" role="alert" aria-busy="true">Loading</span>
+          <span class="loader" role="alert" aria-busy="true">Loading</span>
+          <span class="loader animate" role="alert" aria-busy="true">Loading</span>
+        `) %>
       </div>
     </section>
 
@@ -982,25 +1014,25 @@ import "7.css/dist/gui/tabs.css"</pre>
           <label>High</label>
         </div>`) %>
 
-      <p>
-        You can make use of the <code>has-box-indicator</code> class replace the
-        default indicator with a box indicator, furthermore the slider can be wrapped
-        with a <code>div</code> using <code>is-vertical</code> to display the input vertically.
-      </p>
+        <p>
+          You can make use of the <code>has-box-indicator</code> class replace the
+          default indicator with a box indicator, furthermore the slider can be wrapped
+          with a <code>div</code> using <code>is-vertical</code> to display the input vertically.
+        </p>
 
-      <p>
-        Note: To change the length of a vertical slider, the <code>input</code> width
-        and <code>div</code> height.
-      </p>
+        <p>
+          Note: To change the length of a vertical slider, the <code>input</code> width
+          and <code>div</code> height.
+        </p>
 
-      <%- example(`
-      <div class="field-row">
-        <label>Cowbell</label>
-        <div class="is-vertical">
-          <input class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
-        </div>
-      </div>`) %>
-        </div>
+        <%- example(`
+        <div class="field-row">
+          <label>Cowbell</label>
+          <div class="is-vertical">
+            <input class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+          </div>
+        </div>`) %>
+      </div>
     </section>
 
     <section class="component">
