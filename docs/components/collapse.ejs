@@ -1,0 +1,38 @@
+<section class="component">
+  <h3 id="collapse">Collapse</h3>
+  <div>
+    <blockquote>
+      Users can show or hide additional information including data, options, or commands.
+
+      <footer>
+        &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-progressive-disclosure-controls">
+          Microsoft Windows User Experience - Progressive Disclosure</a>
+      </footer>
+    </blockquote>
+
+    <p>
+      A collapsible section can be created using the elements <code>details</code> and
+      <code>summary</code>.
+    </p>
+
+    <%- example(`
+      <details>
+        <summary>Expand me to see something interesting</summary>
+        <p>🎉 Tadah!</p>
+      </details>
+    `) %>
+
+    <p>Add an <code>open</code> attribute to expand the content by default.</p>
+
+    <%- example(`
+      <details open>
+        <summary>I open myself willingly</summary>
+        <ul>
+          <li>This is my family</li>
+          <li>This is my house</li>
+          <li>This is my car</li>
+        </ul>
+      </details>
+    `) %>
+  </div>
+</section>

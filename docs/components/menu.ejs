@@ -1,0 +1,96 @@
+<section class="component">
+  <h4 id="menu">Menu</h4>
+  <div>
+    <blockquote>
+      <em>Menus</em> are hierarchical lists of commands or options available to users in the current context.
+
+      <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/cmd-menus">
+          Microsoft Windows User Experience - Menus</a></footer>
+    </blockquote>
+
+    <p>
+      A menu can be rendered using a composition of a parent <code>ul</code> and child items
+      <code>li</code>, <code>role="menu"</code> and <code>role="menuitem"</code> attributes
+      must be specified on the <code>ul</code> and <code>li</code> respectively.
+    </p>
+
+    <p>
+      If a menu item has a submenu, add an <code>aria-haspopup="true"</code> attribute to it
+      to render a caret indicator.
+    </p>
+
+    <p>
+      To make the menu focusable, specify the <code>tabindex</code> attributes on the items.
+      Alternatively, you can use an <code>a</code> to achieve the same.
+    </p>
+
+    <%- example(`
+      <ul role="menu" style="width: 200px">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Sort by
+          <ul role="menu">
+            <li role="menuitem"><a href="#menu">Name</a></li>
+            <li role="menuitem"><a href="#menu">Size</a></li>
+            <li role="menuitem"><a href="#menu">Item type</a></li>
+            <li role="menuitem"><a href="#menu">Date modified</a></li>
+          </ul>
+        </li>
+        <li role="menuitem"><a href="#menu">Refresh</a></li>
+        <li role="menuitem"><a href="#menu">Paste</a></li>
+        <li role="menuitem"><a href="#menu">Paste shortcut</a></li>
+        <li role="menuitem"><a href="#menu">Screen resolution</a></li>
+        <li role="menuitem"><a href="#menu">Gadgets</a></li>
+        <li role="menuitem"><a href="#menu">Personalize</a></li>
+      </ul>
+    `) %>
+
+    <p>
+      By default, the submenu is only shown when the linked item is focused/clicked.
+      To add the hovering/mouse-over trigger, you can add a <code>can-hover</code>
+      class to the root container.
+    </p>
+
+    <p>
+      Use a <code>has-divider</code> class to make a horizontal line after the menu item.
+      Disable a menu item by placing an <code>aria-disabled</code> attribute on it.
+    </p>
+
+    <p>
+      You may associate a menu item with an icon by using the <code>img</code> element.
+      (Icons provided by <a href="https://icons8.com/" target="_blank">Icons8</a>)
+    </p>
+
+    <%- example(`
+      <ul role="menu" class="can-hover" style="width: 200px">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Sort by
+          <ul role="menu">
+            <li role="menuitem"><a href="#menu">Name</a></li>
+            <li role="menuitem"><a href="#menu">Size</a></li>
+            <li role="menuitem"><a href="#menu">Item type</a></li>
+            <li role="menuitem"><a href="#menu">Date modified</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
+        <li role="menuitem" aria-disabled="true"><a href="#menu">Paste</a></li>
+        <li role="menuitem" aria-disabled="true" class="has-divider">
+          <a href="#menu">Paste shortcut</a>
+        </li>
+        <li role="menuitem">
+          <img src="https://img.icons8.com/color/18/000000/monitor--v1.png"/>
+          <a href="#menu">Screen resolution</a>
+        </li>
+        <li role="menuitem">
+          <img src="https://img.icons8.com/color/18/000000/virtual-machine2.png"/>
+          <a href="#menu">Gadgets</a>
+        </li>
+        <li role="menuitem">
+          <img src="https://img.icons8.com/color/18/000000/remote-desktop.png"/>
+          <a href="#menu">Personalize</a>
+        </li>
+      </ul>
+    `) %>
+  </div>
+</section>

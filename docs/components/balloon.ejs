@@ -1,0 +1,25 @@
+<section class="component">
+  <h3 id="balloon">Balloon</h3>
+  <div>
+    <blockquote>
+      A <em>balloon</em> is a small pop-up window that informs users
+      of a non-critical problem or special condition in a control.
+
+      <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-balloons">Microsoft Windows
+          User Experience - Balloons</a></footer>
+    </blockquote>
+
+    <p>
+      A balloon or tooltip can be created using the <code>role="tooltip"</code> attribute.
+    </p>
+
+    <%- example(`<div role="tooltip">A balloon is better known as tooltip in web development.</div>`) %>
+
+    <p>
+      A control may bind to a balloon with the <code>aria-describedby</code> attribute.
+      You will need to set up an event for the control to trigger the balloon.
+    </p>
+
+    <%- example(`<input type="text" placeholder="Press Enter" aria-describedby="balloon-password" /><div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div>`) %>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<section class="component">
+  <h3 id="combobox">Combobox</h3>
+  <div>
+    <blockquote>
+      A <i>combo box</i> is a combination of a standard list box or a drop-down list
+      and an editable text box, thus allowing users to enter a value that isn't in the list.
+
+      <footer>
+        &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-drop">
+          Microsoft Windows User Experience - Combo Boxes</a>
+      </footer>
+    </blockquote>
+
+    <p>
+      To render a combo box, use a text <code>input</code>, a <code>button</code>,
+      a parent <code>ul</code>, and children <code>li</code> together,
+      wrapped inside a container element with the <code>combobox</code> class.
+      For accessibility, follow the minimum requirements as below:
+    </p>
+
+    <ul>
+      <li>Add a <code>role="combobox"</code> attribute to the text <code>input</code></li>
+      <li>Add a <code>role="listbox"</code> attribute to the <code>ul</code></li>
+      <li>Add a <code>role="option"</code> attribute to each <code>li</code></li>
+      <li>
+        Specify the relationship between the list box and the text box by combining
+        the <code>id</code> of the <code>listbox</code> with the <code>aria-owns</code> attribute
+        on the text <code>input</code>
+      </li>
+    </ul>
+
+    <%- example(`
+      <div class="combobox">
+        <input type="text" role="combobox" aria-owns="company" />
+        <button></button>
+        <ul role="listbox" id="company">
+          <li role="option">Facebook</li>
+          <li role="option">Amazon</li>
+          <li role="option">Apple</li>
+          <li role="option">Netflix</li>
+          <li role="option">Google</li>
+        </ul>
+      </div>
+    `) %>
+
+    <p>
+      For more options of the list box, see the <a href="#listbox">ListBox</a> section.
+    </p>
+  </div>
+</section>

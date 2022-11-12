@@ -1,0 +1,64 @@
+<section class="component">
+  <h3 id="listbox">ListBox</h3>
+  <div>
+    <blockquote>
+      With a <i>list box</i>, users can select from a set of values presented in a list that is always visible.
+
+      <footer>
+        &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-list-boxes">
+          Microsoft Windows User Experience - List Boxes</a>
+      </footer>
+    </blockquote>
+
+    <p>
+      There are 2 ways you can render a list box. The simple one is using the <code>select</code>
+      element with a <code>multiple</code> attribute specified.
+    </p>
+
+    <%- example(`
+      <select multiple>
+        <option>5 - Incredible!</option>
+        <option selected>4 - Great!</option>
+        <option>3 - Pretty good</option>
+        <option>2 - Not so great</option>
+        <option>1 - Unfortunate</option>
+      </select>
+    `) %>
+
+    <p>
+      The complex one is using a combination of the <code>ul</code>/<code>li</code> elements
+      with the <code>role</code> attributes.
+    </p>
+
+    <%- example(`
+      <ul role="listbox">
+        <li role="option">Facebook</li>
+        <li role="option" aria-selected="true">Amazon</li>
+        <li role="option">Apple</li>
+        <li role="option">Netflix</li>
+        <li role="option">Google</li>
+      </ul>
+    `) %>
+
+    <p>
+      The latter offers more flexibility over using a mere <code>select</code> element.
+      Choose the one that is more appropriate depending on your context or use case.
+    </p>
+
+    <p>
+      To add a drop shadow to the list box, use the <code>has-shadow</code> class.
+      To add a hovering style on the list box items (using <code>role</code> attribute only),
+      use the <code>has-hover</code> class.
+    </p>
+
+    <%- example(`
+      <ul role="listbox" class="has-shadow has-hover">
+        <li role="option">Facebook</li>
+        <li role="option">Amazon</li>
+        <li role="option">Apple</li>
+        <li role="option">Netflix</li>
+        <li role="option">Google</li>
+      </ul>
+    `) %>
+  </div>
+</section>

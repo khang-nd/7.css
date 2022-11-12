@@ -1,0 +1,45 @@
+<section class="component">
+  <h3 id="button">Button</h3>
+  <div>
+    <blockquote>
+      A <em>command button</em>, also referred to as a push button, is a control
+      that causes the application to perform some action when the user clicks it.
+
+      <footer>&mdash; Microsoft Windows User Experience p. 160</footer>
+    </blockquote>
+
+    <p>
+      A standard button measures 75px wide and 23px tall with 12px of horizontal padding by default.
+      They are styled with 2 shades of gray as a vertical gradient.
+    </p>
+
+    <%- example(`<button>Click me</button>`) %>
+
+    <p>
+      When buttons are clicked, the gray gradient is shifted to corresponding sky blues.
+      The following button is simulated to be in the pressed (active) state.
+    </p>
+
+    <%- example(`<button[[ class="active" ]]>I am being pressed</button>`) %>
+
+    <p>
+      Disabled buttons have solid background and lighter border.
+    </p>
+
+    <%- example(`<button disabled>I cannot be clicked</button>`) %>
+
+    <p>
+      Button focus is communicated with a dotted border, set 4px within the contents of the button.
+      The following example is simulated to be focused.
+    </p>
+
+    <%- example(`<button[[ class="focused" ]]>I am focused</button>`) %>
+
+    <p>
+      A default button (in Windows, hitting the Enter key in a dialog context triggers the button)
+      has a greenish-blue border and a light blue gradient shade.
+    </p>
+
+    <%- example(`<button class="default">I am the one!</button>`) %>
+  </div>
+</section>

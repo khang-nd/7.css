@@ -1,0 +1,28 @@
+<section class="component">
+  <h3 id="spinner">Spinner</h3>
+  <div>
+    <blockquote>
+      A <i>spinner</i> or loader, also referred as
+      <a href="https://learn.microsoft.com/en-us/windows/apps/design/controls/progress-controls"
+        target="_blank">ProgressRing</a>,
+      is a type of progress control to indicate that an operation is underway
+      and its completion time is unknown.
+    </blockquote>
+
+    <p>
+      To render a spinner element, use either a <code>spinner</code> or a <code>loader</code>
+      class. To animate the spinner, add an <code>animate</code> class.
+    </p>
+
+    <p>
+      For accessibility, we use an <code>aria-label</code> attribute with a desired text
+      to inform assistive technologies about the presence of the spinner.
+    </p>
+
+    <%- example(`
+      <span class="spinner" aria-label="Spinning"></span>
+      <span class="loader" aria-label="Loading"></span>
+      <span class="loader animate" aria-label="Processing your request"></span>
+    `) %>
+  </div>
+</section>

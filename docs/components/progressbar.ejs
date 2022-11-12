@@ -1,0 +1,68 @@
+<section class="component">
+  <h3 id="progressbar">ProgressBar</h3>
+  <div>
+    <blockquote>
+      A common control that displays the progress of a particular operation as a graphical bar.
+
+      <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/glossary#p">
+          Microsoft Windows User Experience Glossary</a></footer>
+    </blockquote>
+
+    <p>
+      Progress bars can be created with a <code>div</code> using <code>role="progressbar"</code>,
+      and another nested <code>div</code> is required to make the inner bar.
+    </p>
+
+    <p>Specify the width of the inner bar to indicate the progress.</p>
+
+    <p>
+      For accessibility, you might want to specify the respective <code>aria-*</code> attributes.
+      Refer to <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_progressbar_role">MDN</a>
+      for more information.
+    </p>
+
+    <%- example(`
+      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+        <div style="width: 80%"></div>
+      </div>
+    `) %>
+
+    <p>
+      To indicate the progress bar in paused state, add a <code>paused</code> class.
+    </p>
+
+    <%- example(`
+      <div role="progressbar" class="paused">
+        <div style="width: 50%"></div>
+      </div>
+    `) %>
+
+    <p>
+      To indicate the progress bar in error state, add an <code>error</code> class.
+    </p>
+
+    <%- example(`
+      <div role="progressbar" class="error">
+        <div style="width: 30%"></div>
+      </div>
+    `) %>
+
+    <p>
+      To animate the progress bar, add an <code>animate</code> class.
+    </p>
+
+    <%- example(`
+      <div role="progressbar" class="animate">
+        <div style="width: 60%"></div>
+      </div>`)
+    %>
+
+    <p>
+      To create an indeterminate progress bar, add a <code>marquee</code> class
+      and remove the nested <code>div</code>.
+    </p>
+
+    <%- example(`<div role="progressbar" class="marquee"></div>`) %>
+  </div>
+</section>

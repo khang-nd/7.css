@@ -1,0 +1,52 @@
+<section class="component">
+  <h3 id="checkbox">CheckBox</h3>
+  <div>
+    <blockquote>
+      A <em>check box</em> represents an independent or non-exclusive choice.
+      <footer>&mdash; Microsoft Windows User Experience p. 167</footer>
+    </blockquote>
+
+    <p>
+      Checkboxes are represented with a sunken panel, populated with a "check" icon when
+      selected, next to a label indicating the choice.
+    </p>
+
+    <p>
+      Note: You <strong>must</strong> include a corresponding label <strong>after</strong>
+      your checkbox, using the <code>&lt;label&gt;</code> element with a <code>for</code> attribute
+      pointed at the <code>id</code> of your input. This ensures the checkbox is easy to use with
+      assistive technologies, on top of ensuring a good user experience for all (navigating with the tab key,
+      being able to click the entire label to select the box).
+    </p>
+
+    <%- example(`
+      <input type="checkbox" id="example${getNewId()}">
+      <label for="example${getCurrentId()}">This is a checkbox</label>
+    `) %>
+
+    <p>
+      Checkboxes can be selected and disabled with the standard <code>checked</code> and <code>disabled</code>
+      attributes.
+    </p>
+
+    <p>
+      When grouping inputs, wrap each input in a container with the <code>field-row</code> class. This ensures
+      a consistent spacing between inputs.
+    </p>
+
+    <%- example(`
+      <div class="field-row">
+        <input checked type="checkbox" id="example${getNewId()}">
+        <label for="example${getCurrentId()}">I am checked</label>
+      </div>
+      <div class="field-row">
+        <input disabled type="checkbox" id="example${getNewId()}">
+        <label for="example${getCurrentId()}">I am inactive</label>
+      </div>
+      <div class="field-row">
+        <input checked disabled type="checkbox" id="example${getNewId()}">
+        <label for="example${getCurrentId()}">I am inactive but still checked</label>
+      </div>
+    `) %>
+  </div>
+</section>

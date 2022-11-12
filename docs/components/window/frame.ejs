@@ -1,0 +1,81 @@
+<section class="component">
+  <h4 id="glass-frame-color">Glass frame & Color</h4>
+  <div>
+    <blockquote>
+      The glass window frames are a striking new aspect of the Microsoft Windows aesthetic,
+      aiming to be both attractive and lightweight. These translucent frames give windows
+      an open, less intrusive appearance, helping users focus on content and functionality
+      rather than the interface surrounding it.
+
+      <footer>
+        &mdash; <a
+          href="https://docs.microsoft.com/en-us/windows/win32/uxguide/win-window-frames#glass-window-frames">Microsoft
+          Windows User Experience - Glass window frames</a>
+      </footer>
+    </blockquote>
+
+    <p>
+      You can produce this "striking aspect" of the window with a <code>glass</code> class.
+      The window frame then becomes translucent, the background is blurred behind the window.
+    </p>
+
+    <%- example(`
+      <div class="background">
+        <div class="window glass active" style="max-width: 320px">
+          <div class="title-bar">
+            <div class="title-bar-text">A glass window frame</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <p>The background behind is blurred.</p>
+          </div>
+        </div>
+      </div>
+    `) %>
+
+    <p>
+      If you want to override the default color of the window, you can specify the
+      <code>background-color</code> attribute in the <code>before</code> pseudo element
+      and the <code>title-bar</code> under the same parent class as <code>window</code>.
+    </p>
+
+    <%- example(`
+      <style>
+        .violet::before,
+        .violet > .title-bar {
+          background-color: #805ba5;
+        }
+      </style>
+
+      <div class="window violet active" style="max-width: 320px">
+        <div class="title-bar">
+          <div class="title-bar-text">A violet window frame</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body has-space">
+          <p>You can change the window color just as simple.</p>
+        </div>
+      </div>
+
+      <div class="background">
+        <div class="window violet glass active" style="max-width: 320px">
+          <div class="title-bar">
+            <div class="title-bar-text">A glass violet window frame</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <p>And even the glass window frame as well.</p>
+          </div>
+        </div>
+      </div>
+    `) %>
+</section>

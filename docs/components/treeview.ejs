@@ -1,0 +1,121 @@
+<section class="component">
+  <h3 id="tree-view">TreeView</h3>
+  <div>
+    <blockquote>
+      A <em>tree view control</em> is a special list box control
+      that displays a set of objects as an indented outline based
+      on their logical hierarchical relationship.
+
+      <footer>
+        &mdash; Microsoft Windows User Experience p. 178
+      </footer>
+    </blockquote>
+
+    <p>
+      To render a tree view, use an <code>ul</code> element with the
+      <code>tree-view</code> class. The children of this list (<code>li</code>
+      elements), can contain whatever you'd like.
+    </p>
+
+    <%- example(`
+      <ul class="tree-view has-container">
+        <li>We can put</li>
+        <li><strong style="color: purple">✨ Whatever ✨</strong></li>
+        <li>We want in here</li>
+      </ul>
+    `) %>
+
+    <p>
+      To make this a tree, we can nest further <code>ul</code> elements
+      (no class needed on these). This will provide them with indentation
+      to illustrate the hierarchical relations of the tree.
+    </p>
+    <p>
+      To create collapsible sections, wrap child lists inside <code>details</code> elements.
+    </p>
+
+    <%- example(`
+      <ul class="tree-view has-container">
+        <li>Table of Contents</li>
+        <li>What is web development?</li>
+        <li>
+          CSS
+          <ul>
+            <li>Selectors</li>
+            <li>Specificity</li>
+            <li>Properties</li>
+          </ul>
+        </li>
+        <li>
+          <details open>
+            <summary>JavaScript</summary>
+            <ul>
+              <li>Avoid at all costs</li>
+              <li>
+                <details>
+                  <summary>Unless</summary>
+                  <ul>
+                    <li>Avoid</li>
+                    <li>
+                      <details>
+                        <summary>At</summary>
+                        <ul>
+                          <li>Avoid</li>
+                          <li>At</li>
+                          <li>All</li>
+                          <li>Cost</li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li>All</li>
+                    <li>Cost</li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>HTML</li>
+        <li>Special Thanks</li>
+      </ul>
+    `) %>
+
+    <p>
+      The <code>has-connector</code> class may be used to render a dotted border to illustrate
+      the structure more clearly, and the <code>has-collapse-button</code> class to change
+      the expand/collapse carets to buttons.
+    </p>
+
+    <%- example(`
+      <ul class="tree-view has-collapse-button has-connector has-container">
+        <details open>
+          <summary>JavaScript</summary>
+          <ul>
+            <li>Avoid at all costs</li>
+            <li>
+              <details>
+                <summary>Unless</summary>
+                <ul>
+                  <li>Avoid</li>
+                  <li>
+                    <details>
+                      <summary>At</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>At</li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>All</li>
+                  <li>Cost</li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </ul>
+    `) %>
+  </div>
+</section>
