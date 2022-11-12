@@ -1,0 +1,94 @@
+<section class="component">
+  <h4 id="menubar">MenuBar</h4>
+  <div>
+    <blockquote>
+      A <em>menu bar</em> is a list of labeled menu categories typically located near the top of a window.
+
+      <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/cmd-menus">
+          Microsoft Windows User Experience - Menus</a></footer>
+    </blockquote>
+
+    <p>
+      A menu bar can be created in a similar manner to the menu, however, use a
+      <code>role="menubar"</code> attribute in place of <code>role="menu"</code>.
+    </p>
+
+    <%- example(`
+      <ul role="menubar">
+        <li role="menuitem" tabindex="0">File</li>
+        <li role="menuitem" tabindex="0">Edit</li>
+        <li role="menuitem" tabindex="0">View</li>
+        <li role="menuitem" tabindex="0">Help</li>
+      </ul>
+    `) %>
+
+    <p>
+      Combining it with the Menu component, we will have a complete menu bar
+      with the associated menu dropdowns.
+    </p>
+
+    <p>
+      To accommodate an extra piece of info for a menu item (like a shortcut mnemonic)
+      on the right side, nest it with an <code>span</code> element.
+    </p>
+
+    <%- example(`
+      <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem">
+              <a href="#menu">
+                Open <span>Ctrl+O</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#menu">
+                Save <span>Ctrl+S</span>
+              </a>
+            </li>
+            <li role="menuitem" class="has-divider">
+              <a href="#menu">
+                Save As... <span>Ctrl+Shift+S</span>
+              </a>
+            </li>
+            <li role="menuitem"><a href="#menu">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menu">Undo</a></li>
+            <li role="menuitem"><a href="#menu">Copy</a></li>
+            <li role="menuitem"><a href="#menu">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menu">Paste</a></li>
+            <li role="menuitem"><a href="#menu">Delete</a></li>
+            <li role="menuitem"><a href="#menu">Find...</a></li>
+            <li role="menuitem"><a href="#menu">Replace...</a></li>
+            <li role="menuitem"><a href="#menu">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
+              </ul>
+            </li>
+            <li role="menuitem"><a href="#menu">Status Bar</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menu">View Help</a></li>
+            <li role="menuitem"><a href="#menu">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    `) %>
+  </div>
+</section>

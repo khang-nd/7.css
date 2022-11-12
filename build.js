@@ -119,18 +119,24 @@ function buildDocs() {
     </div>`;
   }
 
-  glob("docs/*", (err, files) => {
-    if (!err) {
-      files
-        .filter((srcFile) => !srcFile.endsWith(".ejs"))
-        .forEach((srcFile) =>
+  glob(
+    "docs/*",
+    { ignore: ["docs/components", "docs/sections", "docs/*.ejs"] },
+    (err, files) => {
+      if (!err) {
+        files.forEach((srcFile) =>
           fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
         );
-    } else throw "error globbing dist directory.";
-  });
+      } else throw "error globbing dist directory.";
+    }
+  );
   fs.writeFileSync(
     path.join(__dirname, "/dist/index.html"),
-    ejs.render(template, { getNewId, getCurrentId, meta, example })
+    ejs.render(
+      template,
+      { getNewId, getCurrentId, meta, example },
+      { views: [path.resolve(__dirname, "./docs")] }
+    )
   );
 }
 

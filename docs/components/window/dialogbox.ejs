@@ -1,0 +1,44 @@
+<section class="component">
+  <h4 id="dialog-box">Dialog Box</h4>
+  <div>
+    <blockquote>
+      A dialog box is a secondary window that allows users to perform a command,
+      asks users a question, or provides users with information or progress feedback.
+
+      <footer>
+        &mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/win-dialog-box">
+          Microsoft Windows User Experience - Dialog Boxes</a>
+      </footer>
+    </blockquote>
+
+    <p>
+      Without JavaScript, a dialog box can be triggered by utilizing the URL fragment of an <code>a</code> element
+      (denoted by the # sign), targeting a corresponding dialog box element with the matching <code>id</code>.
+    </p>
+
+    <p>
+      For accessibility, define the <code>role="dialog"</code> attribute on the element.
+      Additionally, label the dialog using the <code>aria-labelledby</code> attribute, with the value
+      pointing to the <code>id</code> of the title bar's text element.
+    </p>
+
+    <%- example(`
+      <a href="#dialog-demo">Open Dialog</a>
+
+      <div class="window active is-bright" id="dialog-demo" role="dialog" aria-labelledby="dialog-title">
+        <div class="title-bar">
+          <div class="title-bar-text" id="dialog-title">Problem Diagnostics</div>
+          <div class="title-bar-controls">
+            <button aria-label="Close" onclick="history.back()"></button>
+          </div>
+        </div>
+        <div class="window-body has-space">
+          <h2 class="instruction instruction-primary">Identifying your problem...</h2>
+          <div role="progressbar" class="marquee"></div>
+        </div>
+        <footer style="text-align: right">
+          <button onclick="history.back()">Cancel</button>
+        </footer>
+      </div>
+    `) %>
+</section>

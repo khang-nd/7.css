@@ -1,0 +1,63 @@
+<section class="component">
+  <h3 id="groupbox">GroupBox</h3>
+  <div>
+    <blockquote>
+      A <em>group box</em> is a special control you can use to organize a set of
+      controls. A group box is a rectangular frame with an optional label that surrounds
+      a set of controls.
+
+      <footer>&mdash; Microsoft Windows User Experience p. 189</footer>
+    </blockquote>
+
+    <p>
+      A group box can be used by wrapping your elements with the <code>fieldset</code> tag.
+      It contains a sunken outer border and a raised inner border, resembling an engraved box
+      around your controls.
+    </p>
+
+    <%- example(`
+      <fieldset>
+        <div class="field-row">Select one:</div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+          <label for="radio${getCurrentId()}">Diners</label>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+          <label for="radio${getCurrentId()}">Drive-Ins</label>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+          <label for="radio${getCurrentId()}">Dives</label>
+        </div>
+      </fieldset>
+    `) %>
+
+    <p>
+      You can provide your group with a label by placing a <code>legend</code> element
+      within the <code>fieldset</code>.
+    </p>
+
+    <%- example(`
+      <fieldset>
+        <legend>Today's mood</legend>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+          <label for="radio${getCurrentId()}">Claire Saffitz</label>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+          <label for="radio${getCurrentId()}">Brad Leone</label>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+          <label for="radio${getCurrentId()}">Chris Morocco</label>
+        </div>
+        <div class="field-row">
+          <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+          <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+        </div>
+      </fieldset>
+    `) %>
+  </div>
+</section>

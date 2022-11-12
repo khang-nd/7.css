@@ -1,0 +1,84 @@
+<section class="component">
+  <h3 id="tabs">Tabs</h3>
+  <div>
+    <blockquote>
+      <em>Tabs</em> provide a way to present related information on separate labeled pages.
+      <footer>&mdash; <a href="https://docs.microsoft.com/en-us/windows/win32/uxguide/ctrl-tabs">Microsoft Windows
+          User Experience - Tabs</a></footer>
+    </blockquote>
+
+    <%- example(`
+      <section class="tabs" style="max-width: 500px">
+        <menu role="tablist" aria-label="Sample Tabs">
+          <button role="tab" aria-controls="tab-A" aria-selected="true">Instruction</button>
+          <button role="tab" aria-controls="tab-B">Example</button>
+          <button role="tab" aria-controls="tab-C">More instruction</button>
+          <button role="tab" aria-controls="tab-D" disabled>Disabled Tab</button>
+        </menu>
+        <!-- the tab content -->
+        <article role="tabpanel" id="tab-A">
+          <h3>Creating tabs</h3>
+          <p>
+            To create a tab, use a <code>menu</code> element with <code>role="tablist"</code>.
+            Then for the tab titles, use a <code>button</code> with <code>role="tab"</code>, and set the <code>aria-controls</code> attribute to
+            the corresponding id of the element with <code>role="tabpanel"</code>.
+          </p>
+          <p>
+            Read more at <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role"
+              target="_blank">MDN Web docs - ARIA: tab role</a>
+          </p>
+        </article>
+        <article role="tabpanel" id="tab-B" hidden>
+          <h3>More...</h3>
+          <p>This tab contains a GroupBox</p>
+          <fieldset>
+            <legend>Today's mood</legend>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Claire Saffitz</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Brad Leone</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Chris Morocco</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+            </div>
+          </fieldset>
+        </article>
+        <article role="tabpanel" id="tab-C" hidden>
+          <h3>Disabling tabs</h3>
+          <p>Simply add a <code>disabled</code> attribute on the tab.</p>
+          <h3>Justified tabs</h3>
+          <p>Add the <code>justified</code> class to the <code>tablist</code> menu to make the tabs, well, justified.</p>
+        </article>
+        <article role="tabpanel" id="tab-D" hidden>
+          <h3>Disabled Tab</h3>
+          <p>This tab is disabled, so you should not be able to read this.</p>
+        </article>
+      </section>
+    `) %>
+
+    <p>A simplified template is as below:</p>
+
+    <%- example(`
+      <section class="tabs">
+        <menu role="tablist" aria-label="Tabs Template">
+          <button role="tab" aria-controls="tab-A" aria-selected="true">Tab A</button>
+          <button role="tab" aria-controls="tab-B">Tab B</button>
+          <button role="tab" aria-controls="tab-C">Tab C</button>
+          <button role="tab" aria-controls="tab-D" disabled>Tab D</button>
+        </menu>
+        <article role="tabpanel" id="tab-A">Tab A is active</article>
+        <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
+        <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
+        <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
+      </section>
+    `) %>
+  </div>
+</section>

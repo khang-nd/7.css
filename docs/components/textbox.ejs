@@ -1,0 +1,54 @@
+<section class="component">
+  <h3 id="textbox">TextBox</h3>
+  <div>
+    <blockquote>
+      A <em>text box</em> (also referred to as an edit control) is a
+      rectangular control where the user enters or edits text. It can
+      be defined to support a single line or multiple lines of text.
+
+      <footer>&mdash; Microsoft Windows User Experience p. 181</footer>
+    </blockquote>
+
+    <p>
+      Text boxes can rendered by specifying a <code>text</code> type on an
+      <code>input</code> element. As with checkboxes and radio buttons, you
+      should provide a corresponding label with a properly set <code>for</code>
+      attribute, and wrap both in a container with the <code>field-row</code> class.
+    </p>
+
+    <%- example(`
+      <div class="field-row">
+        <label for="text${getNewId()}">Occupation</label>
+        <input id="text${getCurrentId()}" type="text" />
+      </div>
+    `) %>
+
+    <p>
+      Additionally, you can make use of the <code>field-row-stacked</code> class
+      to position your label above the input instead of beside it.
+    </p>
+
+    <%- example(`
+      <div class="field-row-stacked" style="width: 200px">
+        <label for="text${getNewId()}">Address (Line 1)</label>
+        <input id="text${getCurrentId()}" type="text" />
+      </div>
+      <div class="field-row-stacked" style="width: 200px">
+        <label for="text${getNewId()}">Address (Line 2)</label>
+        <input id="text${getCurrentId()}" type="text" />
+      </div>
+    `) %>
+
+    <p>
+      To support multiple lines in the user's input, use the <code>textarea</code>
+      element instead.
+    </p>
+
+    <%- example(`
+      <div class="field-row-stacked" style="width: 200px">
+        <label for="text${getNewId()}">Additional notes</label>
+        <textarea id="text${getCurrentId()}" rows="8"></textarea>
+      </div>
+    `) %>
+  </div>
+</section>

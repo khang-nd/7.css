@@ -1,0 +1,54 @@
+<p>
+  The fastest way to use 7.css is to import it from unpkg.
+</p>
+<pre style="max-width: fit-content">&lt;link rel="stylesheet" href="https://unpkg.com/7.css"&gt;</pre>
+
+<p>
+  You can also install 7.css <a href="https://www.npmjs.com/package/7.css">from npm</a>.
+</p>
+<p><em>Installation</em></p>
+<pre style="max-width: fit-content">npm install 7.css</pre>
+
+<p><em>Usage</em></p>
+<pre style="max-width: fit-content">import "7.css/dist/7.css";</pre>
+
+<h3 id="scoping">Scoping</h3>
+
+<p>In case you need 7.css to coexist with another CSS/styling framework, you may use the <code>7.scoped.css</code>
+  stylesheet instead to scope the styling within a <code>win7</code> class.</p>
+
+<p>unpkg:</p>
+<pre>https://unpkg.com/7.css/dist/7.scoped.css</pre>
+
+<p>or npm:</p>
+<pre>import "7.css/dist/7.scoped.css"</pre>
+
+<p>Then in your code, wrap the component with <code>.win7</code>:</p>
+
+<%- example(`
+  <div class="win7">
+    <button>A Win7-styled button</button>
+</div>
+`) %>
+
+<p>Also note that using the scoped stylesheet will eliminate the scrollbar styling as well.</p>
+
+<h3 id="tree-shaking">Tree-shaking</h3>
+
+<p>In case you only need the styling of certain components rather than
+  the complete stylesheet as a whole, you may import them separately as below:</p>
+
+<p>unpkg:</p>
+<pre>
+https://unpkg.com/7.css/dist/gui/buttons.css
+https://unpkg.com/7.css/dist/gui/tabs.css</pre>
+
+<p>or npm:</p>
+<pre>
+import "7.css/dist/gui/buttons.css"
+import "7.css/dist/gui/tabs.css"</pre>
+
+<p>
+  For more components, see <a target="_blank" href="https://unpkg.com/browse/7.css/dist/gui/">the published gui
+    folder</a>.
+</p>

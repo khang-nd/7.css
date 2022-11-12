@@ -1,0 +1,110 @@
+<section class="component">
+  <h4 id="title-bar">Title Bar</h4>
+  <div>
+    <blockquote>
+      At the top edge of the window, inside its border, is the title bar
+      (also reffered to as the caption or caption bar), which extends across
+      the width of the window. The title bar identifies the contents of the
+      window.
+
+      <footer>
+        &mdash; Microsoft Windows User Experience p. 118
+      </footer>
+    </blockquote>
+
+    <blockquote>
+      Include command buttons associated with the common commands of the
+      primary window in the title bar. These buttons act as shortcuts to specific
+      window commands.
+
+      <footer>
+        &mdash; Microsoft Windows User Experience p. 122
+      </footer>
+    </blockquote>
+
+    <p>
+      You can build a complete title bar by making use of three classes,
+      <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
+    </p>
+
+    <%- example(`
+      <div class="title-bar">
+        <div class="title-bar-text">A Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+    `) %>
+
+    <p>
+      We make use of <code>aria-label</code> to render the Close button, to let
+      assistive technologies know the intent of this button. You may also use
+      "Minimize" and "Maximize" like so:
+    </p>
+
+    <%- example(`
+      <div class="title-bar">
+        <div class="title-bar-text">A Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="title-bar">
+        <div class="title-bar-text">A maximized Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Restore"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+    `) %>
+
+    <p>
+      Alternatively, you can use the <code>is-close</code>, <code>is-minimize</code>,
+      <code>is-maximize</code>, <code>is-restore</code> classes to target the respective
+      controls for your styling preference.
+    </p>
+
+    <p>
+      To give our title bar a home, we wrap it in a <code>window</code> container.
+      This provides a drop shadow to it. We can freely resize the window by specifying
+      a width in the container style.
+    </p>
+
+    <%- example(`
+      <div class="window" style="max-width: 300px">
+        <div class="title-bar">
+          <div class="title-bar-text">A complete window</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    `) %>
+
+    <p>
+      Place an <code>active</code> class either on the <code>window</code> container or
+      the title bar itself to enable the active styles for the controls.
+    </p>
+
+    <%- example(`
+      <div class="window active" style="max-width: 300px">
+        <div class="title-bar">
+          <div class="title-bar-text">A complete window</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize" disabled></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    `) %>
+  </div>
+</section>
