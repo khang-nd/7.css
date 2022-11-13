@@ -3,7 +3,6 @@
   --checkbox-label-spacing: 6px;
   --checkbox-total-width-precalc: 0;
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
-  --checkmark-width: 7px;
   --checkmark-top: 0;
   --checkmark-left: 2px;
 }
@@ -60,8 +59,6 @@ input[type="checkbox"] {
         content: "\2714";
         font-weight: bold;
         display: block;
-        width: var(--checkmark-width);
-        height: var(--checkmark-width);
         position: absolute;
         top: var(--checkmark-top);
         left: var(--checkmark-left);
