@@ -92,5 +92,35 @@
         </li>
       </ul>
     `) %>
+
+    <p>
+      To render menu items that are options with bullets and checkmarks, use the corresponding
+      input type (<code>radio</code> or <code>checkbox</code>).
+    </p>
+
+    <%- example(`
+      <ul role="menu" style="width: 200px">
+        <li role="menuitem">
+          <input type="radio" name="icon-size" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">Large icons</label>
+        </li>
+        <li role="menuitem">
+          <input type="radio" name="icon-size" id="example${getNewId()}" checked>
+          <label for="example${getCurrentId()}">Medium icons</label>
+        </li>
+        <li role="menuitem" class="has-divider">
+          <input type="radio" name="icon-size" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">Small icons</label>
+        </li>
+        <li role="menuitem">
+          <input type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">Auto arrange icons</label>
+        </li>
+        <li role="menuitem">
+          <input type="checkbox" id="example${getNewId()}" checked>
+          <label for="example${getCurrentId()}">Align icons to grid</label>
+        </li>
+      </ul>
+    `) -%>
   </div>
 </section>
