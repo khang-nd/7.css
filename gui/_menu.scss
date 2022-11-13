@@ -1,6 +1,5 @@
 :root {
-  --menu-padding: 3px;
-  --radio-dot-width: 8px;
+  --menu-padding: 2px;
   --item-offset-left: 30px;
   --item-hover-background: linear-gradient(
     to bottom,
@@ -75,16 +74,6 @@ ul {
     }
 
     > [role="menuitem"] {
-      margin: 3px 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
       > a,
       > button,
       > label,
@@ -140,8 +129,8 @@ ul {
           position: absolute;
           top: 0;
           left: 0;
-          width: calc(var(--item-offset-left) - var(--menu-padding) * 2.5);
-          height: 100%;
+          width: 22px;
+          height: 22px;
         }
       }
 
@@ -153,10 +142,7 @@ ul {
 
       &[type="radio"]:checked + label {
         &::after {
-          left: calc(
-            (var(--item-offset-left) - var(--radio-dot-width)) / 2 -
-              var(--menu-padding)
-          );
+          left: 8px;
           top: 50%;
           transform: translateY(-50%);
           background: radial-gradient(circle at 75% 25%, #d5d4ea, #333583);
