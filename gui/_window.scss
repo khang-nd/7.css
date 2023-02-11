@@ -20,9 +20,9 @@
     var(--window-background-color);
   --control-border-color: rgba(0, 0, 0, 0.3);
   --control-border-radius: 5px;
-  --control-inset-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
+  --control-inset-shadow: inset 0 0 0 1px #eee8;
   --control-background: linear-gradient(
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.3) 45%,
     rgba(0, 0, 0, 0.1) 50%,
     rgba(0, 0, 0, 0.1) 75%,
@@ -274,21 +274,22 @@
       button {
         background: var(--control-background);
         border-color: var(--window-border-color);
+        box-shadow: var(--control-inset-shadow);
 
         &:hover {
+          box-shadow: 0 0 15px #2aceda, var(--control-inset-shadow);
           background: radial-gradient(
-              circle at 50% 100%,
+              circle at bottom,
               #2aceda,
               transparent 60%
             ),
             linear-gradient(#a9d2e8 50%, #196c9b 50%);
-          box-shadow: 0 0 15px #2aceda;
         }
 
         &:active {
-          box-shadow: inset 0 0 0 0.5px #eee, 0 0 15px #2aceda;
+          box-shadow: 0 0 15px #2aceda, var(--control-inset-shadow);
           background: radial-gradient(
-              circle at 50% 100%,
+              circle at bottom,
               #0bfdfa,
               transparent 60%
             ),
@@ -297,17 +298,20 @@
 
         &[aria-label="Close"],
         &.is-close {
-          background-color: #d04a37;
+          background-color: #d04834;
+          box-shadow: var(--control-inset-shadow);
 
           &:hover {
-            filter: contrast(1.3);
-            background-image: var(--control-background);
-            box-shadow: 0 0 15px #d04a37, inset 0 -1px 5px orange;
+            background: var(--control-background),
+                        radial-gradient(circle at 50% 170%, orange 10% 20%, #0000 60%),
+                        linear-gradient(#ee6d56 50%, #d42809 50%);
+            box-shadow: 0 0 15px #e68e75, var(--control-inset-shadow);
           }
 
           &:active {
-            filter: contrast(1.3) brightness(0.7);
-            background-image: var(--control-background);
+            background: var(--control-background),
+                        radial-gradient(circle at 50% 170%, yellow 10% 20%, #0000 60%),
+                        linear-gradient(#b67562 50%, #780c01 50%);
           }
         }
 
