@@ -11,12 +11,7 @@ button,
   min-height: 23px;
   padding: 0 12px;
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    var(--button-face) 45%,
-    var(--button-shade-light) 45%,
-    var(--button-shade-dark)
-  );
+  background: var(--button-gradient);
 
   &:disabled {
     background: var(--button-face-disabled);
@@ -27,22 +22,14 @@ button,
   &:not(:disabled) {
     &:hover {
       border-color: var(--button-border-color-hovered);
-      background: linear-gradient(
-        to bottom,
-        var(--button-face-hover) 45%,
-        var(--button-shade-light-hovered) 45%
-      );
+      background: var(--button-gradient-hovered);
     }
 
     &:active,
     &.active {
       box-shadow: none;
       border-color: var(--button-border-color-active);
-      background: linear-gradient(
-        to bottom,
-        var(--button-face-active) 45%,
-        var(--button-shade-light-active) 45%
-      );
+      background: var(--button-gradient-active);
     }
   }
 
