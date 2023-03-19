@@ -20,6 +20,25 @@
       You will need to set up an event for the control to trigger the balloon.
     </p>
 
-    <%- example(`<input type="text" placeholder="Press Enter" aria-describedby="balloon-password" /><div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div>`) %>
+    <%- example(`
+    <input type="text" placeholder="Press Enter" aria-describedby="balloon-password" />
+    <div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div>
+    `) %>
+
+    <p>
+      To change the position of the balloon, which subsequently change the placement of its tail, combine
+      the respective vertical and horizontal classes:
+    <ul>
+      <li>Vertical: <code>.is-top</code> / <code>.is-bottom</code></li>
+      <li>Horizontal: <code>.is-left</code> / <code>.is-right</code></li>
+    </ul>
+
+    <%- example(`
+    <div role="tooltip">This balloon is positioned bottom right of the source control (default behavior).</div>
+    <div role="tooltip" class="is-bottom is-left">This balloon is positioned bottom left of the source control.</div>
+    <div role="tooltip" class="is-top is-left">This balloon is positioned top left of the source control.</div>
+    <div role="tooltip" class="is-top is-right">This balloon is positioned top right of the source control.</div>
+    `) %>
+    </p>
   </div>
 </section>
