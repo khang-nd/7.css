@@ -85,6 +85,7 @@
           <li><a href="#radio">OptionButton</a></li>
           <li><a href="#progressbar">ProgressBar</a></li>
           <li><a href="#scrollbar">Scrollbar</a></li>
+          <li><a href="#searchbox">SearchBox</a></li>
           <li><a href="#slider">Slider</a></li>
           <li><a href="#spinner">Spinner</a></li>
           <li><a href="#tabs">Tabs</a></li>
@@ -261,13 +262,39 @@ import "7.css/dist/gui/tabs.css"</pre>
     </p>
 
     <div class="example">
-      <div class="raw"><input type="text" placeholder="Press Enter" aria-describedby="balloon-password" /><div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div></div>
+      <div class="raw"><input type="text" placeholder="Press Enter" aria-describedby="balloon-password" />
+<div role="tooltip" id="balloon-password" hidden>Press Backspace to dismiss</div></div>
       <details class="code">
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Press Enter&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Press Backspace to dismiss<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Press Enter&quot;</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;balloon-password&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>Press Backspace to dismiss<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         <button class="copy">Copy Code</button>
       </details>
     </div>
+
+    <p>
+      To change the position of the balloon, which subsequently change the placement of its tail, combine
+      the respective vertical and horizontal classes:
+    <ul>
+      <li>Vertical: <code>.is-top</code> / <code>.is-bottom</code></li>
+      <li>Horizontal: <code>.is-left</code> / <code>.is-right</code></li>
+    </ul>
+
+    <div class="example">
+      <div class="raw"><div role="tooltip">This balloon is positioned bottom right of the source control (default behavior).</div>
+<div role="tooltip" class="is-bottom is-left">This balloon is positioned bottom left of the source control.</div>
+<div role="tooltip" class="is-top is-left">This balloon is positioned top left of the source control.</div>
+<div role="tooltip" class="is-top is-right">This balloon is positioned top right of the source control.</div></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span>&gt;</span>This balloon is positioned bottom right of the source control (default behavior).<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;is-bottom is-left&quot;</span>&gt;</span>This balloon is positioned bottom left of the source control.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;is-top is-left&quot;</span>&gt;</span>This balloon is positioned top left of the source control.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tooltip&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;is-top is-right&quot;</span>&gt;</span>This balloon is positioned top right of the source control.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+    </p>
   </div>
 </section>    <section class="component">
   <h3 id="button">Button</h3>
@@ -1379,6 +1406,55 @@ import "7.css/dist/gui/tabs.css"</pre>
       Upon importing this CSS, the browser's system scrollbar is overridden
       by the Windows 7 custom scrollbar (WebKit-based browsers only).
     </p>
+  </div>
+</section>    <section class="component">
+  <h3 id="searchbox">SearchBox</h3>
+  <div>
+    <blockquote>
+      With a <em>Search box</em>, users can quickly locate specific objects or text within a large set of data by
+      filtering or highlighting matches.
+
+      <footer>&mdash; <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/ctrl-search-boxes">Microsoft
+          Windows User Experience - Search Boxes</a></footer>
+    </blockquote>
+
+    <p>
+      There are 2 variants of the search box available.
+    </p>
+
+    <p>
+      An <strong>instant search</strong>, where the results are displayed immediately as the user types, can be rendered
+      just by specifying a <code>type="search"</code> attribute on an <code>input</code> element:
+    </p>
+
+    <div class="example">
+      <div class="raw"><input type="search" placeholder="Search" /></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;search&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> /&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+    <p>
+      A <strong>regular search</strong>, where a search is performed when the user clicks the search button, requires
+      a search input and a button wrapped inside a container a container element with the class <code>searchbox</code>.
+    </p>
+
+    <div class="example">
+      <div class="raw"><div class="searchbox">
+  <input type="search" placeholder="Search" />
+  <button aria-label="search"></button>
+</div></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;searchbox&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;search&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
   </div>
 </section>    <section class="component">
   <h3 id="slider">Slider</h3>
