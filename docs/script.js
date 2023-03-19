@@ -40,6 +40,7 @@ document
       if (e.key === "Enter") {
         tooltip.removeAttribute("hidden");
         tooltip.style.top = input.offsetTop + input.offsetHeight + 15 + "px";
+        tooltip.style.zIndex = 1;
       }
       if (e.key === "Backspace") {
         tooltip.setAttribute("hidden", true);

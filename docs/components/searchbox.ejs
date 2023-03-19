@@ -1,0 +1,34 @@
+<section class="component">
+  <h3 id="searchbox">SearchBox</h3>
+  <div>
+    <blockquote>
+      With a <em>Search box</em>, users can quickly locate specific objects or text within a large set of data by
+      filtering or highlighting matches.
+
+      <footer>&mdash; <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/ctrl-search-boxes">Microsoft
+          Windows User Experience - Search Boxes</a></footer>
+    </blockquote>
+
+    <p>
+      There are 2 variants of the search box available.
+    </p>
+
+    <p>
+      An <strong>instant search</strong>, where the results are displayed immediately as the user types, can be rendered
+      just by specifying a <code>type="search"</code> attribute on an <code>input</code> element:
+    </p>
+
+    <%- example(`<input type="search" placeholder="Search" />`) %>
+
+    <p>
+      A <strong>regular search</strong>, where a search is performed when the user clicks the search button, requires
+      a search input and a button wrapped inside a container a container element with the class <code>searchbox</code>.
+    </p>
+
+    <%- example(`
+    <div class="searchbox">
+      <input type="search" placeholder="Search" />
+      <button aria-label="search"></button>
+    </div>`) %>
+  </div>
+</section>

@@ -142,6 +142,10 @@ blockquote footer {
   width: 450px;
 }
 
+[role="tooltip"]:not([id]) {
+  margin: 2em 0;
+}
+
 @media (max-width: 480px) {
   aside {
     display: none;
