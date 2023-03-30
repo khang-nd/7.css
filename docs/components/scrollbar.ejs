@@ -9,8 +9,27 @@
     </blockquote>
 
     <p>
-      Upon importing this CSS, the browser's system scrollbar is overridden
-      by the Windows 7 custom scrollbar (WebKit-based browsers only).
+      To override the browser scrollbar's system styling for a particular section, add a <code>has-scrollbar</code>
+      class to the container element.
     </p>
+
+    <p>
+      Note that this only works with WebKit-based browsers.
+    </p>
+
+    <%- example(`
+    <div class="has-scrollbar" style="width: 300px; height: 150px; overflow: auto">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+      scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+      Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+      Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+      Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+      scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+      Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+      Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+      Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+    </div>
+  `) %>
   </div>
 </section>
