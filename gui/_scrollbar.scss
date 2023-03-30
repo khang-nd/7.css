@@ -102,18 +102,18 @@
     }
   }
 
-  &-button:horizontal:start:decrement,
-  &-button:horizontal:end:increment,
-  &-button:vertical:start:decrement,
-  &-button:vertical:end:increment {
-    display: block;
+  &-button:horizontal:start:increment,
+  &-button:horizontal:end:decrement,
+  &-button:vertical:start:increment,
+  &-button:vertical:end:decrement {
+    /* https://stackoverflow.com/a/67476494/3916702 */
+    display: none;
   }
 
   &-button {
     /* Add an invisible border to prevent shifting
        when hovering the scrollbar buttons */
-    border: var(--button-border);
-    border-color: #0000;
+    border: var(--button-border) transparent;
 
     &:vertical {
       height: 17px;
@@ -140,7 +140,6 @@
     }
 
     &:hover {
-      border: var(--button-border);
       border-color: var(--button-border-color);
       border-radius: var(--border-radius);
       box-shadow: var(--button-shadow);
@@ -196,7 +195,6 @@
     }
 
     &:active {
-      border: var(--button-border);
       border-color: var(--button-border-color);
       border-radius: var(--border-radius);
       box-shadow: var(--button-shadow);
