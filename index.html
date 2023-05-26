@@ -34,7 +34,7 @@
   </script>
 </head>
 
-<body class="surface custom-scrollbar" ontouchstart>
+<body class="surface has-scrollbar" ontouchstart>
   <section id="social">
   <a role="button" target="_blank" href="https://twitter.com/share?url=https://khang-nd.github.io/7.css">
     <img src="https://abs.twimg.com/favicons/twitter.ico">
@@ -53,7 +53,7 @@
     Fork
   </a>
 </section>  <aside>
-  <ul class="tree-view has-connector has-collapse-button has-container">
+  <ul class="tree-view has-connector has-collapse-button has-container has-scrollbar">
     <li><a href="#intro">Intro</a></li>
     <li>
       <a href="#install">Installation</a>
@@ -1403,9 +1403,44 @@ import "7.css/dist/gui/tabs.css"</pre>
     </blockquote>
 
     <p>
-      Upon importing this CSS, the browser's system scrollbar is overridden
-      by the Windows 7 custom scrollbar (WebKit-based browsers only).
+      To override the browser scrollbar's system styling for a particular section, add a <code>has-scrollbar</code>
+      class to the container element.
     </p>
+
+    <p>
+      Note that this only works with WebKit-based browsers.
+    </p>
+
+    <div class="example">
+      <div class="raw"><div class="has-scrollbar" style="width: 300px; height: 150px; overflow: auto">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+  scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+  Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+  Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+  Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+  scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+  Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+  Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+  Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+</div></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-scrollbar&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 300px; height: 150px; overflow: auto&quot;</span>&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+  scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+  Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+  Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+  Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+  scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+  Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+  Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+  Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
   </div>
 </section>    <section class="component">
   <h3 id="searchbox">SearchBox</h3>
