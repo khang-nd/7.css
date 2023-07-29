@@ -37,6 +37,11 @@ ul {
         background: #3399ff;
         color: #fff;
         outline: none;
+        ~[role="menuitem"]:focus,
+        ~[role="menuitem"]:focus-within {
+          background: transparent;
+          color: inherit;
+        }
         &:has(~[role="menuitem"]:hover) {
           background: transparent;
           color: inherit;
