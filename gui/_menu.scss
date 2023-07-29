@@ -37,7 +37,11 @@ ul {
         background: #3399ff;
         color: #fff;
         outline: none;
-      }
+        &:has(~[role="menuitem"]:hover) {
+          background: transparent;
+          color: inherit;
+        }
+      }      
     }
   }
 
@@ -167,6 +171,11 @@ ul {
       > [role="menu"] {
         display: block;
       }
+      &:has(~[role="menuitem"]:hover) {
+        > [role="menu"] {
+          display: none;
+        }
+      }
     }
 
     &[aria-disabled] {
@@ -203,6 +212,14 @@ ul {
   &.can-hover [role="menuitem"]:hover {
     > [role="menu"] {
       display: block;
+    }
+    ~[role="menuitem"]:focus,
+    ~[role="menuitem"]:focus-within {
+      background: transparent;
+      color: inherit;
+      > [role="menu"] {
+        display: none;
+      }
     }
   }
 }
