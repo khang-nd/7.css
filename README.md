@@ -66,6 +66,13 @@ You can run a build manually with `npm run build`. This will write to the `dist/
 
 You are so welcome to report issues, help out with contributions or whatever you could think of to improve this lovely UI framework.
 
+## ⚙ Integrations
+
+**7.css** has been seen adopted in the following JS framework projects by the community:
+
+- Vue - [win7-ui](https://github.com/Visnalize/win7-ui)
+- Svelte - [svelte-7.css](https://github.com/JericoFX/svelte-7.css) (work in progress)
+
 ## 📜 Changelog
 
 Refer to [Releases](https://github.com/khang-nd/7.css/releases).
