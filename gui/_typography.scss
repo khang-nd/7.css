@@ -36,7 +36,7 @@ a {
   font-weight: normal;
 
   &-document {
-    font-family: "Calibri";
+    font-family: "Calibri", "Noto Sans", sans-serif;
     font-size: 17pt;
     color: var(--secondary-color);  
   }
