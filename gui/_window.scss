@@ -28,6 +28,31 @@
     rgba(0, 0, 0, 0.1) 75%,
     rgba(255, 255, 255, 0.5)
   );
+
+  /* Colors for minimize, maximize, and restore buttons when hovered */
+  --control-background-hovered: radial-gradient(circle at bottom, #2aceda, transparent 65%),
+                                linear-gradient(#b6d9ee 50%, #1a6ca1 50%);
+
+  /* Colors for minimize, maximize, and restore buttons when clicked */
+  --control-background-active:  radial-gradient(circle at bottom, #0bfdfa, transparent 65%),
+                                linear-gradient(#86a7bc 50%, #092747 50%);
+
+  /* Colors for the close button at normal state */
+  --control-background-close: radial-gradient(circle at -60% 50%, #0007 5% 10%, #0000 50%),
+                              radial-gradient(circle at 160% 50%, #0007 5% 10%, #0000 50%),
+                              linear-gradient(#e0a197e5, #cf796a 25% 50%, #d54f36 50%);
+
+  /* Colors for the close button when hovered */
+  --control-background-close-hovered: radial-gradient(circle at 50% 170%, #f4e676 10% 20%, #0000 60%),
+                                      radial-gradient(circle at -60% 50%, #000a 5% 10%, #0000 50%),
+                                      radial-gradient(circle at 160% 50%, #000a 5% 10%, #0000 50%),
+                                      linear-gradient(#fb9d8b, #ee6d56 25% 50%, #d42809 50%);
+
+  /* Colors for the close button when clicked */
+  --control-background-close-active:  radial-gradient(circle at 50% 170%, #dcc03f 10% 20%, #0000 60%),
+                                      radial-gradient(circle at -60% 50%, #000 5% 10%, #0000 50%),
+                                      radial-gradient(circle at 160% 50%, #000 5% 10%, #0000 50%),
+                                      linear-gradient(#d1a894, #b67562 25% 50%, #7d0d01 50%);
 }
 
 .window {
@@ -274,55 +299,124 @@
       border-color: var(--window-border-color);
 
       button {
-        background: var(--control-background);
         border-color: var(--window-border-color);
         box-shadow: var(--control-inset-shadow);
 
-        &:hover {
-          box-shadow: 0 0 15px #2aceda, var(--control-inset-shadow);
-          background: radial-gradient(
-              circle at bottom,
-              #2aceda,
-              transparent 60%
-            ),
-            linear-gradient(#a9d2e8 50%, #196c9b 50%);
+        &[aria-label="Minimize"],
+        &.is-minimize {
+          background: url("./icon/minimize.png") no-repeat center 10px,
+                      var(--control-background);
+          &::before {
+            content: "";
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
+            background: url("./icon/minimize.png") no-repeat center 10px,
+                        var(--control-background-hovered);
+            border-bottom-left-radius: var(--control-border-radius);
+            opacity: 0;
+            transition: opacity .3s linear;
+          }
+
+          &:hover::before {
+            opacity: 1;
+            transition: opacity .1s linear;
+          }
+
+          &:active::before {
+            background: url("./icon/minimize.png") no-repeat center 10px,
+                        var(--control-background-active);
+          }
         }
 
-        &:active {
-          box-shadow: 0 0 15px #2aceda, var(--control-inset-shadow);
-          background: radial-gradient(
-              circle at bottom,
-              #0bfdfa,
-              transparent 60%
-            ),
-            linear-gradient(#86a7bc 50%, #092747 50%);
+        &[aria-label="Maximize"],
+        &.is-maximize {
+          background: url("./icon/maximize.png") no-repeat center,
+                      var(--control-background);
+          &::before {
+            content: "";
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
+            background: url("./icon/maximize.png") no-repeat center,
+                        var(--control-background-hovered);
+            opacity: 0;
+            transition: opacity .3s linear;
+          }
+
+          &:hover::before {
+            opacity: 1;
+            transition: opacity .1s linear;
+          }
+
+          &:active::before {
+            background: url("./icon/maximize.png") no-repeat center,
+                        var(--control-background-active);
+          }
+        }
+
+        &[aria-label="Restore"],
+        &.is-restore {
+          background: url("./icon/restore.png") no-repeat center,
+                      var(--control-background);
+          &::before {
+            content: "";
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
+            background: url("./icon/restore.png") no-repeat center,
+                        var(--control-background-hovered);
+            opacity: 0;
+            transition: opacity .3s linear;
+          }
+
+          &:hover::before {
+            opacity: 1;
+            transition: opacity .1s linear;
+          }
+
+          &:active::before {
+            background: url("./icon/restore.png") no-repeat center,
+                        var(--control-background-active);
+          }
         }
 
         &[aria-label="Close"],
         &.is-close {
-          background-color: #d04834;
+          background: url("./icon/close.png") no-repeat center,
+                      var(--control-background),
+                      var(--control-background-close);
           box-shadow: var(--control-inset-shadow);
 
-          &:hover {
-            background: var(--control-background),
-                        radial-gradient(circle at 50% 170%, orange 10% 20%, #0000 60%),
-                        linear-gradient(#ee6d56 50%, #d42809 50%);
-            box-shadow: 0 0 15px #e68e75, var(--control-inset-shadow);
+          &::before {
+            content: "";
+            background: url("./icon/close.png") no-repeat center,
+                        var(--control-background),
+                        var(--control-background-close-hovered);
+            box-shadow: 0 0 7px 3px #e68e75, var(--control-inset-shadow);
+            border-bottom-right-radius: var(--control-border-radius);
+            opacity: 0;
+            transition: opacity .3s linear;
           }
 
-          &:active {
-            background: var(--control-background),
-                        radial-gradient(circle at 50% 170%, yellow 10% 20%, #0000 60%),
-                        linear-gradient(#b67562 50%, #780c01 50%);
+          &:hover::before {
+            opacity: 1;
+            transition: opacity .1s linear;
+          }
+
+          &:active::before {
+            background: url("./icon/close.png") no-repeat center,
+                        var(--control-background),
+                        var(--control-background-close-active);
           }
         }
 
         &:disabled {
-          &:hover,
-          &:active {
+          &[aria-label="Maximize"],
+          &.is-maximize {
             background: var(--control-background);
-            box-shadow: var(--control-inset-shadow);
+
+            &::before{
+              content: "";
+              background: url("./icon/maximize.png") no-repeat center;
+              opacity: .4;
+            }
           }
+          /* TODO: Add rules to style disabled close button */
         }
       }
     }
