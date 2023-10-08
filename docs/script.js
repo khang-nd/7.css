@@ -1,7 +1,26 @@
 // Tabs
 const tabButtons = document.querySelectorAll("[role=tab]");
 tabButtons.forEach((tabButton) => {
-  tabButton.addEventListener("click", (e) => {
+  tabButton.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    const tabContainer = e.target.parentElement.parentElement;
+    const targetId = e.target.getAttribute("aria-controls");
+    tabButtons.forEach((_tabButton) =>
+      _tabButton.setAttribute("aria-selected", false)
+    );
+    tabButton.setAttribute("aria-selected", true);
+    tabButton.focus();
+    tabContainer
+      .querySelectorAll("[role=tabpanel]")
+      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
+    tabContainer
+      .querySelector(`[role=tabpanel]#${targetId}`)
+      .removeAttribute("hidden");
+  });
+});
+
+tabButtons.forEach((tabButton) => {
+  tabButton.addEventListener("focus", (e) => {
     e.preventDefault();
     const tabContainer = e.target.parentElement.parentElement;
     const targetId = e.target.getAttribute("aria-controls");
