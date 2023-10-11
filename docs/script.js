@@ -1,6 +1,6 @@
 // Tabs
 // Tabs > Sample Tabs
-const tabList = document.querySelector("[aria-label='Sample Tabs'");
+const tabList = document.querySelector("[aria-label='Sample Tabs']");
 const tabButtons = tabList.querySelectorAll("[role=tab]");
 tabButtons.forEach((tabButton) => {
   tabButton.addEventListener("mousedown", (e) => {
@@ -39,7 +39,7 @@ tabButtons.forEach((tabButton) => {
 });
 
 // Tabs > Tabs Template
-const tabList_TabsTemp = document.querySelector("[aria-label='Tabs Template'");
+const tabList_TabsTemp = document.querySelector("[aria-label='Tabs Template']");
 const tabButtons_TabsTemp = tabList_TabsTemp.querySelectorAll("[role=tab]");
 tabButtons_TabsTemp.forEach((tabButton) => {
   tabButton.addEventListener("mousedown", (e) => {
@@ -78,7 +78,7 @@ tabButtons_TabsTemp.forEach((tabButton) => {
 });
 
 // Window Body > Window with Tabs
-const tabList_WinWTabs = document.querySelector("[aria-label='Window with Tabs'");
+const tabList_WinWTabs = document.querySelector("[aria-label='Window with Tabs']");
 const tabButtons_WinWTabs = tabList_WinWTabs.querySelectorAll("[role=tab]");
 tabButtons_WinWTabs.forEach((tabButton) => {
   tabButton.addEventListener("mousedown", (e) => {
