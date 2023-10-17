@@ -4,7 +4,22 @@
   --window-border-radius: 6px;
   --window-border-color: rgba(0, 0, 0, 0.7);
   --window-background-color: #4580c4;
-  --window-background: linear-gradient(
+  --window-background-glass-stripes: radial-gradient(circle at 100% 300px, transparent 70%, #ccc6 80%),
+    radial-gradient(circle at 0 200px, transparent 70%, #ccc6 80%),
+    linear-gradient(54deg,
+      #0002  0   4%, #6661  6%  6%, #0002  8% 10%,   /* 1st stripe */
+      #0002 15% 16%, #aaa1 17% 18%, #0002 23% 24%,   /* 2nd stripe */
+      #bbb2 25% 26%, #0002 31% 33%,                    /* 3rd stripe */
+      #0002 34% 35%, #bbb2 36% 40%,                    /* 4th stripe */
+      #0002 41% 42%, #bbb2 44% 45%,                    /* 5th stripe */
+      #bbb2 46% 47%, #0002 48% 49%, #0002 50% 51%,   /* 6th stripe */
+      #0002 56% 57%, #bbb2 58% 63%, #0002 67% 69%,   /* 7th stripe */
+      #bbb2 70% 70%, #0002 73% 74%,                    /* 8th stripe */
+      #bbb2 75% 79%, #0002 80% 84%,                    /* 9th stripe */
+      #aaa2 85% 86%, #0002 87%, #bbb1 90%            /* 10th stripe */
+      ) no-repeat fixed;
+  --window-background: var(--window-background-glass-stripes),
+    /* linear-gradient(
       to right,
       rgba(255, 255, 255, 0.4),
       rgba(0, 0, 0, 0.1),
@@ -16,7 +31,7 @@
       rgba(0, 0, 0, 0.1) 20%,
       rgba(0, 0, 0, 0.1) 50%,
       transparent 53%
-    ),
+    ), */
     var(--window-background-color);
   --control-border-color: rgba(0, 0, 0, 0.3);
   --control-border-radius: 5px;
@@ -57,7 +72,7 @@
 
 .window {
   font: var(--font);
-  box-shadow: 2px 2px 10px 1px var(--window-border-color);
+  box-shadow: 2px 2px 10px 1px var(--window-border-color), inset 0 0 0 1px #fffa;
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius);
   position: relative;
@@ -78,6 +93,7 @@
         transparent 41%
       ),
       var(--window-background);
+    box-shadow: inset 0 0 0 1px #fffd;
   }
 
   &-body {
@@ -85,7 +101,7 @@
     margin-top: 0;
     border: var(--window-border) var(--window-border-color);
     background: var(--surface);
-    box-shadow: 0 0 1px 0.5px #fff;
+    box-shadow: 0 0 0 1px #fff9;
 
     &.has-space {
       padding: var(--window-spacing);
@@ -126,7 +142,7 @@
     .window-footer,
     footer {
       background: #eee;
-      box-shadow: inset 0 1px 3px #ddd;
+      box-shadow: inset 0 1px 3px #ddd, 0 1px 0 #fff9, 1px 1px 0 #fff9, -1px 1px 0 #fff9;
 
       &::before {
         content: none;
@@ -135,15 +151,17 @@
   }
 
   &.glass {
-    backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(4px);
+    background: var(--window-background-glass-stripes);
 
     &::before {
       opacity: 0.5;
-      filter: brightness(1.4);
+      /* filter: brightness(1.2); */
     }
 
     > .title-bar {
-      background: linear-gradient(
+      background: var(--window-background-glass-stripes);
+      /* linear-gradient(
         55deg,
         transparent 8%,
         rgba(255, 255, 255, 0.1) 10%,
@@ -153,13 +171,13 @@
         transparent 57%,
         rgba(255, 255, 255, 0.3) 70%,
         transparent 72%
-      );
+      ); */
     }
   }
 
   > .title-bar {
     border: 0;
-    box-shadow: inset 0 0.5px #fff;
+    box-shadow: inset 0 1px 0 #fffd, inset 1px 0 0 #fffd, inset -1px 0 0 #fffd;
   }
 
   fieldset {
@@ -186,7 +204,7 @@
 
 .title-bar {
   font: var(--font);
-  box-shadow: inset 0 0 0.5px 0.5px #fff;
+  box-shadow: inset 0 0 0 1px #fff9;
   border: var(--window-border) var(--window-border-color);
   border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
   padding: var(--window-spacing);
@@ -210,7 +228,7 @@
     border-top: 0;
     border-radius: 0 0 var(--control-border-radius) var(--control-border-radius);
     margin-top: -var(--window-spacing);
-    box-shadow: 0 0 2px #fff;
+    box-shadow: 0 1px 0 #fff9, 1px 0 0 #fff9, -1px 0 0 #fff9;
 
     button {
       position: relative;
@@ -429,7 +447,7 @@
   background: var(--surface);
   border: var(--window-border) var(--window-border-color);
   border-top: 0;
-  box-shadow: 0 0.5px 1px 0.5px #fff;
+  box-shadow: 0 1px 0 #fff9, 1px 0 0 #fff9, -1px 0 0 #fff9;
   display: flex;
 
   &-field {
