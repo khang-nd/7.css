@@ -4,8 +4,8 @@
   --window-border-radius: 6px;
   --window-border-color: rgba(0, 0, 0, 0.7);
   --window-background-color: #4580c4;
-  --window-background-glass-stripes: radial-gradient(circle at 100% 300px, transparent 70%, #ccc6 80%),
-    radial-gradient(circle at 0 200px, transparent 70%, #ccc6 80%),
+  --window-background-glass-stripes: radial-gradient(circle at 100% 500px, transparent 85%, #ccc6 90%),
+    radial-gradient(circle at 0 500px, transparent 85%, #ccc6 90%),
     linear-gradient(54deg,
       #0002  0   4%, #6661  6%  6%, #0002  8% 10%,   /* 1st stripe */
       #0002 15% 16%, #aaa1 17% 18%, #0002 23% 24%,   /* 2nd stripe */
@@ -17,20 +17,13 @@
       #bbb2 70% 70%, #0002 73% 74%,                    /* 8th stripe */
       #bbb2 75% 79%, #0002 80% 84%,                    /* 9th stripe */
       #aaa2 85% 86%, #0002 87%, #bbb1 90%            /* 10th stripe */
-      ) no-repeat fixed;
+      ) left center/100vw 100vh no-repeat fixed;
   --window-background: var(--window-background-glass-stripes),
     /* linear-gradient(
       to right,
       rgba(255, 255, 255, 0.4),
       rgba(0, 0, 0, 0.1),
       rgba(255, 255, 255, 0.2)
-    ),
-    linear-gradient(
-      55deg,
-      transparent,
-      rgba(0, 0, 0, 0.1) 20%,
-      rgba(0, 0, 0, 0.1) 50%,
-      transparent 53%
     ), */
     var(--window-background-color);
   --control-border-color: rgba(0, 0, 0, 0.3);
@@ -161,17 +154,6 @@
 
     > .title-bar {
       background: var(--window-background-glass-stripes);
-      /* linear-gradient(
-        55deg,
-        transparent 8%,
-        rgba(255, 255, 255, 0.1) 10%,
-        rgba(255, 255, 255, 0.3) 30%,
-        rgba(0, 0, 0, 0.1) 32%,
-        rgba(0, 0, 0, 0.3) 55%,
-        transparent 57%,
-        rgba(255, 255, 255, 0.3) 70%,
-        transparent 72%
-      ); */
     }
   }
 
