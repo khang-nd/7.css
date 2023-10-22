@@ -4,18 +4,18 @@
   --window-border-radius: 6px;
   --window-border-color: rgba(0, 0, 0, 0.7);
   --window-background-color: #4580c4;
-  --window-background-glass-stripes: radial-gradient(circle at 100% 500px, transparent 85%, #ccc6 90%),
-    radial-gradient(circle at 0 500px, transparent 85%, #ccc6 90%),
+  --window-background-glass-stripes: linear-gradient(135deg,#fff5 70px, transparent 100px),
+    linear-gradient(225deg, #fff5 70px, transparent 100px),
     linear-gradient(54deg,
       #0002  0   4%, #6661  6%  6%, #0002  8% 10%,   /* 1st stripe */
       #0002 15% 16%, #aaa1 17% 18%, #0002 23% 24%,   /* 2nd stripe */
-      #bbb2 25% 26%, #0002 31% 33%,                    /* 3rd stripe */
-      #0002 34% 35%, #bbb2 36% 40%,                    /* 4th stripe */
-      #0002 41% 42%, #bbb2 44% 45%,                    /* 5th stripe */
-      #bbb2 46% 47%, #0002 48% 49%, #0002 50% 51%,   /* 6th stripe */
-      #0002 56% 57%, #bbb2 58% 63%, #0002 67% 69%,   /* 7th stripe */
-      #bbb2 70% 70%, #0002 73% 74%,                    /* 8th stripe */
-      #bbb2 75% 79%, #0002 80% 84%,                    /* 9th stripe */
+      #bbb2 25% 26%, #0002 31% 33%,                  /* 3rd stripe */
+      #0002 34% 34.5%, #bbb2 36% 40%,                /* 4th stripe */
+      #0002 41% 41.5%, #bbb2 44% 45%,                /* 5th stripe */
+      #bbb2 46% 47%, #0002 48% 49%, #0002 50% 50.5%, /* 6th stripe */
+      #0002 56% 56.5%, #bbb2 57% 63%, #0002 67% 69%, /* 7th stripe */
+      #bbb2 69.5% 70%, #0002 73.5% 74%,              /* 8th stripe */
+      #bbb2 74.5% 79%, #0002 80% 84%,                /* 9th stripe */
       #aaa2 85% 86%, #0002 87%, #bbb1 90%            /* 10th stripe */
       ) left center/100vw 100vh no-repeat fixed;
   --window-background: var(--window-background-glass-stripes),
@@ -81,11 +81,10 @@
     height: 100%;
     border-radius: var(--window-border-radius);
     background: linear-gradient(
-        transparent 20%,
-        rgba(255, 255, 255, 0.7) 40%,
-        transparent 41%
-      ),
-      var(--window-background);
+      transparent 20%,
+      rgba(255, 255, 255, 0.7) 40%,
+      transparent 41%
+    ), var(--window-background);
     box-shadow: inset 0 0 0 1px #fffd;
   }
 
@@ -144,12 +143,23 @@
   }
 
   &.glass {
-    backdrop-filter: blur(4px);
-    background: var(--window-background-glass-stripes);
 
     &::before {
-      opacity: 0.5;
+      opacity: 0.6;
       /* filter: brightness(1.2); */
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--window-border-radius);
+      border: none;
+      backdrop-filter: blur(4px);
     }
 
     > .title-bar {
