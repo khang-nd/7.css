@@ -24,9 +24,9 @@
     linear-gradient(
       to bottom,
       #f3f3f3af,
-      #fcfcfcaf 20%,
-      #dbdbdbaf 46%,
-      #cacacaaf 46%,
+      #fcfcfcaf 3px,
+      #dbdbdbaf 6px,
+      #cacacaaf 6px,
       #d5d5d5af
     ),
     #ddd;
@@ -39,9 +39,9 @@
     background-image: linear-gradient(
         to bottom,
         #f3f3f3af,
-        #fcfcfcaf 20%,
-        #dbdbdbaf 46%,
-        transparent 46%
+        #fcfcfcaf 3px,
+        #dbdbdbaf 6px,
+        transparent 6px
       ),
       radial-gradient(
         circle at 0 50%,
@@ -60,8 +60,8 @@
       ),
       linear-gradient(
         to bottom,
-        transparent 46%,
-        #cacaca33 46%,
+        transparent 6px,
+        #cacaca33 6px,
         #d5d5d533
       );
   }
@@ -93,8 +93,7 @@
     background: linear-gradient(
       to right,
       transparent,
-      /* var(--progress-color-normal), */
-      #a1f7a2,
+      var(--progress-color-normal),
       transparent 35%
     );
   }
