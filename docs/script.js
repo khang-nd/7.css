@@ -1,120 +1,56 @@
 // Tabs
+function tabHandler(e, tabButtons) {
+  e.preventDefault();
+  const tabContainer = e.target.parentElement.parentElement;
+  const targetId = e.target.getAttribute("aria-controls");
+  tabButtons.forEach((_tabButton) =>
+    _tabButton.setAttribute("aria-selected", false)
+  );
+  e.target.setAttribute("aria-selected", true);
+  e.target.focus();
+  tabContainer
+    .querySelectorAll("[role=tabpanel]")
+    .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
+  tabContainer
+    .querySelector(`[role=tabpanel]#${targetId}`)
+    .removeAttribute("hidden");
+}
+
 // Tabs > Sample Tabs
 const tabList = document.querySelector("[aria-label='Sample Tabs']");
 const tabButtons = tabList.querySelectorAll("[role=tab]");
-tabButtons.forEach((tabButton) => {
-  tabButton.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabButton.focus();
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
-tabButtons.forEach((tabButton) => {
-  tabButton.addEventListener("focus", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
+tabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, tabButtons)
+  }));
+tabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, tabButtons)
+  }));
 
 // Tabs > Tabs Template
-const tabList_TabsTemp = document.querySelector("[aria-label='Tabs Template']");
-const tabButtons_TabsTemp = tabList_TabsTemp.querySelectorAll("[role=tab]");
-tabButtons_TabsTemp.forEach((tabButton) => {
-  tabButton.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons_TabsTemp.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabButton.focus();
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
-tabButtons_TabsTemp.forEach((tabButton) => {
-  tabButton.addEventListener("focus", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons_TabsTemp.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
+const templateTabList = document.querySelector("[aria-label='Tabs Template']");
+const templateTabButtons = templateTabList.querySelectorAll("[role=tab]");
+templateTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, templateTabButtons)
+  }));
+templateTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, templateTabButtons)
+  }));
 
 // Window Body > Window with Tabs
-const tabList_WinWTabs = document.querySelector("[aria-label='Window with Tabs']");
-const tabButtons_WinWTabs = tabList_WinWTabs.querySelectorAll("[role=tab]");
-tabButtons_WinWTabs.forEach((tabButton) => {
-  tabButton.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons_WinWTabs.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabButton.focus();
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
-tabButtons_WinWTabs.forEach((tabButton) => {
-  tabButton.addEventListener("focus", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons_WinWTabs.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
+const windowTabList = document.querySelector("[aria-label='Window with Tabs']");
+const windowTabButtons = windowTabList.querySelectorAll("[role=tab]");
+windowTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, windowTabButtons)
+  }));
+windowTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, windowTabButtons)
+  }));
 
 
 // Copy code
