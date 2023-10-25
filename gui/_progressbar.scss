@@ -8,43 +8,61 @@
   height: 15px;
   border: 1px solid var(--button-border-color);
   border-radius: var(--border-radius);
-  box-shadow: inset 0 0 2px #fff, 0 0 2px #aaa;
+  box-shadow: inset 0 0 0 1px #f3f3f388, 0 0 0 1px #eaeaea88;
   margin: 2px 0;
   overflow: hidden;
-  background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.1),
-      transparent 20%,
-      transparent 80%,
-      rgba(0, 0, 0, 0.1)
+  background: radial-gradient(
+      circle at 0 50%,
+      #0000001f 10px,
+      transparent 30px
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      #0000001f 10px,
+      transparent 30px
     ),
     linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.6) 25%,
-      rgba(0, 0, 0, 0.05) 35%,
-      rgba(0, 0, 0, 0.05) 90%,
-      rgba(255, 255, 255, 0.2) 95%
+      #f3f3f3af,
+      #fcfcfcaf 3px,
+      #dbdbdbaf 6px,
+      #cacacaaf 6px,
+      #d5d5d5af
     ),
     #ddd;
 
   > div {
     overflow: hidden;
     height: 100%;
-    box-shadow: inset 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px #ffffff1f;
     background-color: var(--progress-color-normal);
     background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.2),
-        transparent 20%,
-        transparent 80%,
-        rgba(0, 0, 0, 0.2)
+        to bottom,
+        #f3f3f3af,
+        #fcfcfcaf 3px,
+        #dbdbdbaf 6px,
+        transparent 6px
+      ),
+      radial-gradient(
+        circle at 0 50%,
+        #0000002f 10px,
+        transparent 30px
+      ),
+      radial-gradient(
+        circle at 100% 50%,
+        #0000002f 10px,
+        transparent 30px
       ),
       linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.6) 30%,
-        rgba(0, 0, 0, 0.05) 30%,
-        rgba(0, 0, 0, 0.05) 90%,
-        rgba(255, 255, 255, 0.2) 95%
+        transparent 65%,
+        #ffffff55
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 6px,
+        #cacaca33 6px,
+        #d5d5d533
       );
   }
 
@@ -65,7 +83,7 @@
     background: linear-gradient(
       to right,
       transparent,
-      rgba(255, 255, 255, 0.5),
+      #ffffff80,
       transparent 40%
     );
   }

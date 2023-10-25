@@ -1,22 +1,57 @@
 // Tabs
-const tabButtons = document.querySelectorAll("[role=tab]");
-tabButtons.forEach((tabButton) => {
-  tabButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const tabContainer = e.target.parentElement.parentElement;
-    const targetId = e.target.getAttribute("aria-controls");
-    tabButtons.forEach((_tabButton) =>
-      _tabButton.setAttribute("aria-selected", false)
-    );
-    tabButton.setAttribute("aria-selected", true);
-    tabContainer
-      .querySelectorAll("[role=tabpanel]")
-      .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-    tabContainer
-      .querySelector(`[role=tabpanel]#${targetId}`)
-      .removeAttribute("hidden");
-  });
-});
+function tabHandler(e, tabButtons) {
+  e.preventDefault();
+  const tabContainer = e.target.parentElement.parentElement;
+  const targetId = e.target.getAttribute("aria-controls");
+  tabButtons.forEach((_tabButton) =>
+    _tabButton.setAttribute("aria-selected", false)
+  );
+  e.target.setAttribute("aria-selected", true);
+  e.target.focus();
+  tabContainer
+    .querySelectorAll("[role=tabpanel]")
+    .forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
+  tabContainer
+    .querySelector(`[role=tabpanel]#${targetId}`)
+    .removeAttribute("hidden");
+}
+
+// Tabs > Sample Tabs
+const tabList = document.querySelector("[aria-label='Sample Tabs']");
+const tabButtons = tabList.querySelectorAll("[role=tab]");
+tabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, tabButtons)
+  }));
+tabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, tabButtons)
+  }));
+
+// Tabs > Tabs Template
+const templateTabList = document.querySelector("[aria-label='Tabs Template']");
+const templateTabButtons = templateTabList.querySelectorAll("[role=tab]");
+templateTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, templateTabButtons)
+  }));
+templateTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, templateTabButtons)
+  }));
+
+// Window Body > Window with Tabs
+const windowTabList = document.querySelector("[aria-label='Window with Tabs']");
+const windowTabButtons = windowTabList.querySelectorAll("[role=tab]");
+windowTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("mousedown", (evt) => {
+    tabHandler(evt, windowTabButtons)
+  }));
+windowTabButtons.forEach((tabButton) =>
+  tabButton.addEventListener("focus", (evt) => {
+    tabHandler(evt, windowTabButtons)
+  }));
+
 
 // Copy code
 document.querySelectorAll(".copy").forEach((button) => {
@@ -29,6 +64,7 @@ document.querySelectorAll(".copy").forEach((button) => {
     });
   });
 });
+
 
 // Balloon
 document

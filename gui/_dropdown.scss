@@ -22,11 +22,16 @@ select:not([multiple]) {
       var(--button-gradient-hovered);
   }
 
-  &:focus {
+  &:active {
     outline: none;
     border-color: var(--button-border-color-active);
-    box-shadow: unset;
+    box-shadow: var(--button-shadow-active);
     background-image: url("./icon/button-down.svg"),
       var(--button-gradient-active);
+  }
+
+  &:focus {
+    outline: none;
+    /* box-shadow: inset 0 0 0 2px var(--button-shade-light-active); */
   }
 }

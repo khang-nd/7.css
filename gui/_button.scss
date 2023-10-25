@@ -27,7 +27,7 @@ button,
 
     &:active,
     &.active {
-      box-shadow: none;
+      box-shadow: var(--button-shadow-active);
       border-color: var(--button-border-color-active);
       background: var(--button-gradient-active);
     }
