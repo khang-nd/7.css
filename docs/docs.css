@@ -135,7 +135,10 @@ blockquote footer {
 .background {
   padding: 1.5em;
   margin: 1.5em 0;
-  background: url("./flower-aaronburden-unsplash.jpg") no-repeat 0 center;
+  background-image: url("./flower-aaronburden-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 [role="dialog"] {
