@@ -9,11 +9,11 @@ a {
   color: var(--link-color);
   text-decoration: none;
 
-  &:focus {
+  &:focus-visible {
     outline: 1px dotted var(--link-color);
   }
 
-  &:hover {
+  &:hover, &:focus {
     color: var(--link-color-hovered);
     text-decoration: underline;
   }

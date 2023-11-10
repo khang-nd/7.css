@@ -3,9 +3,9 @@
   --item-offset-left: 30px;
   --item-hover-background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.6),
-    rgba(230, 236, 245, 0.8) 90%,
-    rgba(255, 255, 255, 0.8)
+    #fff9,
+    #e6ecf5cc 90%,
+    #fffc
   );
 }
 
@@ -99,9 +99,16 @@ ul {
         white-space: nowrap;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
           background: var(--item-hover-background);
           border-color: #b8d6fb;
+        }
+      }
+
+      > button {
+        &:hover::before,
+        &::after {
+          content: none;
         }
       }
 
@@ -196,7 +203,7 @@ ul {
         margin: 3px 0 2px;
         height: 2px;
         margin-left: var(--item-offset-left);
-        box-shadow: inset 0 1px rgba(0, 0, 0, 0.15), inset 0 -1px #fff;
+        box-shadow: inset 0 1px #00000026, inset 0 -1px #fff;
       }
     }
 
