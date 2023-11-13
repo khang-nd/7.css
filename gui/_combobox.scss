@@ -18,15 +18,21 @@
     min-width: 16px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    background: url("icon/button-down.svg") center no-repeat,
+                var(--button-gradient);
 
     &::before {
-      content: "";
-      position: absolute;
-      top: calc(50% - var(--combobox-chevron-size) / 4);
-      left: calc(50% - var(--combobox-chevron-size));
-      border: var(--combobox-chevron-size) solid transparent;
-      border-top-color: #000;
-      border-radius: 2px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background: url("icon/button-down.svg") center no-repeat,
+                  var(--button-gradient-hovered);
+    }
+
+    &::after {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background: url("icon/button-down.svg") center no-repeat,
+                  var(--button-gradient-active);
     }
 
     &:focus {

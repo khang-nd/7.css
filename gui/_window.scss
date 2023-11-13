@@ -23,7 +23,7 @@
 
   --control-border-color: rgba(0, 0, 0, 0.3);
   --control-border-radius: 5px;
-  --control-inset-shadow: inset 0 0 0 1px #eee8;
+  --control-inset-shadow: inset 0 0 0 1px #fffa;
   --control-background: linear-gradient(
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.3) 45%,
@@ -210,12 +210,12 @@
 
   &-controls {
     display: flex;
-    background: rgba(255, 255, 255, 0.2);
+    background: #fff3;
     border: var(--window-border) var(--control-border-color);
     border-top: 0;
     border-radius: 0 0 var(--control-border-radius) var(--control-border-radius);
     margin-top: -var(--window-spacing);
-    box-shadow: 0 1px 0 #fff9, 1px 0 0 #fff9, -1px 0 0 #fff9;
+    box-shadow: 0 1px 0 #fffa, 1px 0 0 #fffa, -1px 0 0 #fffa;
 
     button {
       position: relative;
@@ -225,16 +225,18 @@
       border: 0;
       border-right: var(--window-border) var(--control-border-color);
       border-radius: 0;
-      box-shadow: var(--control-inset-shadow);
+      box-shadow: none;
       box-sizing: border-box;
       background: none;
+
+      &::after {
+        content: none;
+      }
 
       &:hover,
       &:active {
         /* resolve the conflict with button styles */
         background: none;
-        border-color: var(--control-border-color);
-        box-shadow: var(--control-inset-shadow);
       }
 
       &:disabled {
@@ -250,6 +252,14 @@
         bottom: 0;
         left: 0;
         right: 0;
+        border-radius: 0;
+        box-shadow: inset 0 0 0 1px #fff5;
+        opacity: 1;
+      }
+
+      &:not(:hover)::before {
+        transition: none;
+        opacity: 1;
       }
 
       &[aria-label="Minimize"],
@@ -282,17 +292,18 @@
         }
       }
 
-      &:first-child {
+      &:first-child, &:first-child::before {
         border-bottom-left-radius: var(--control-border-radius);
       }
 
-      &:last-child {
+      &:last-child, &:last-child::before {
         border: 0;
         border-bottom-right-radius: var(--control-border-radius);
       }
 
       &:focus {
         outline: none;
+        animation: none;
       }
     }
   }
@@ -306,6 +317,10 @@
       button {
         border-color: var(--window-border-color);
         box-shadow: var(--control-inset-shadow);
+
+        &::after {
+          content: none;
+        }
 
         &[aria-label="Minimize"],
         &.is-minimize {
@@ -321,7 +336,8 @@
             transition: opacity .3s linear;
           }
 
-          &:hover::before {
+          &:hover::before,
+          &:focus-visible::before {
             opacity: 1;
             transition: opacity .1s linear;
           }
@@ -345,7 +361,8 @@
             transition: opacity .3s linear;
           }
 
-          &:hover::before {
+          &:hover::before,
+          &:focus-visible::before {
             opacity: 1;
             transition: opacity .1s linear;
           }
@@ -369,7 +386,8 @@
             transition: opacity .3s linear;
           }
 
-          &:hover::before {
+          &:hover::before,
+          &:focus-visible::before {
             opacity: 1;
             transition: opacity .1s linear;
           }
@@ -398,7 +416,8 @@
             transition: opacity .3s linear;
           }
 
-          &:hover::before {
+          &:hover::before,
+          &:focus-visible::before {
             opacity: 1;
             transition: opacity .1s linear;
           }
