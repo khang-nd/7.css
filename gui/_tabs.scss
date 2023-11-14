@@ -44,7 +44,9 @@ menu[role="tablist"] {
         border-color: var(--tab-border-color);
       }
 
-      &:focus, &:active, &.active {
+      &:focus,
+      &:active,
+      &.active {
         border-color: var(--tab-border-color);
         animation: none;
       }

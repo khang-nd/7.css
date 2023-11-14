@@ -19,20 +19,20 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     background: url("icon/button-down.svg") center no-repeat,
-                var(--button-gradient);
+      var(--button-gradient);
 
     &::before {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       background: url("icon/button-down.svg") center no-repeat,
-                  var(--button-gradient-hovered);
+        var(--button-gradient-hovered);
     }
 
     &::after {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       background: url("icon/button-down.svg") center no-repeat,
-                  var(--button-gradient-active);
+        var(--button-gradient-active);
     }
 
     &:focus {

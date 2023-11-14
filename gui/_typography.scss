@@ -13,7 +13,8 @@ a {
     outline: 1px dotted var(--link-color);
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: var(--link-color-hovered);
     text-decoration: underline;
   }
@@ -38,7 +39,7 @@ a {
   &-document {
     font-family: "Calibri", "Noto Sans", sans-serif;
     font-size: 17pt;
-    color: var(--secondary-color);  
+    color: var(--secondary-color);
   }
 
   &-group {

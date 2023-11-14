@@ -17,7 +17,7 @@ button,
 
   /* Button style on hovered */
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -29,13 +29,13 @@ button,
     box-shadow: var(--button-shadow);
     background: var(--button-gradient-hovered);
     opacity: 0;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     z-index: -1;
   }
 
   /* Button style on clicked */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -47,7 +47,7 @@ button,
     border-radius: 2px;
     background: var(--button-gradient-active);
     opacity: 0;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     z-index: -1;
   }
 
@@ -61,11 +61,11 @@ button,
     /* Animation when hovered */
     &:hover {
       border-color: var(--button-border-color-hovered);
-      transition: border-color .3s;
-      
+      transition: border-color 0.3s;
+
       &::before {
         opacity: 1;
-        transition: opacity .3s;
+        transition: opacity 0.3s;
       }
     }
 
@@ -83,11 +83,11 @@ button,
     &:active,
     &.active {
       border-color: var(--button-border-color-active);
-      transition: border-color .3s;
+      transition: border-color 0.3s;
 
       &::after {
         opacity: 1;
-        transition: opacity .3s;
+        transition: opacity 0.3s;
       }
     }
   }
@@ -99,7 +99,9 @@ button,
     outline-offset: -4px;
   }
 
-  &.default, &:focus, &.focused {
+  &.default,
+  &:focus,
+  &.focused {
     border-color: var(--button-border-color-default);
     background-image: var(--button-gradient-hovered);
     animation: 1s ease infinite alternate pulse-anim;
