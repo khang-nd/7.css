@@ -2274,7 +2274,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     </div>
   </div>
   <div class="window-body has-space">
-    <menu role="tablist">
+    <menu role="tablist" aria-label="Window with Tabs">
       <button role="tab" aria-controls="music" aria-selected="true">Music</button>
       <button role="tab" aria-controls="dogs">Dogs</button>
       <button role="tab" aria-controls="food">Food</button>
@@ -2337,7 +2337,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body has-space&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tablist&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tablist&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Window with Tabs&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;music&quot;</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Music<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;dogs&quot;</span>&gt;</span>Dogs<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;tab&quot;</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">&quot;food&quot;</span>&gt;</span>Food<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -2476,7 +2476,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 
     <div class="example">
       <div class="raw"><div class="background">
-  <div class="window glass active" style="max-width: 320px">
+  <div class="window glass active" style="max-width: 100%">
     <div class="title-bar">
       <div class="title-bar-text">A glass window frame</div>
       <div class="title-bar-controls">
@@ -2492,7 +2492,7 @@ import "7.css/dist/gui/tabs.css"</pre>
       <details class="code">
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;background&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A glass window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
@@ -2523,7 +2523,7 @@ import "7.css/dist/gui/tabs.css"</pre>
   }
 </style>
 
-<div class="window violet active" style="max-width: 320px">
+<div class="window violet active" style="max-width: 100%; margin: 0 1.5em;">
   <div class="title-bar">
     <div class="title-bar-text">A violet window frame</div>
     <div class="title-bar-controls">
@@ -2537,7 +2537,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 </div>
 
 <div class="background">
-  <div class="window violet glass active" style="max-width: 320px">
+  <div class="window violet glass active" style="max-width: 100%">
     <div class="title-bar">
       <div class="title-bar-text">A glass violet window frame</div>
       <div class="title-bar-controls">
@@ -2559,7 +2559,7 @@ import "7.css/dist/gui/tabs.css"</pre>
   }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%; margin: 0 1.5em;&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
@@ -2573,7 +2573,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;background&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 320px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A glass violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
