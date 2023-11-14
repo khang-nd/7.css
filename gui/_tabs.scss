@@ -1,5 +1,6 @@
 :root {
   --tab-border: 1px solid #888;
+  --tab-border-color: #888;
   --tab-bg: #fff;
 }
 
@@ -33,11 +34,33 @@ menu[role="tablist"] {
       border-bottom: 0;
       position: relative;
       z-index: 8;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        border-color: var(--tab-border-color);
+      }
+
+      &:focus, &:active, &.active {
+        border-color: var(--tab-border-color);
+        animation: none;
+      }
+
+      &:focus-visible {
+        outline: 1px dotted #222;
+        outline-offset: -4px;
+      }
     }
 
-    &:focus {
-      outline: 1px dotted #222;
-      outline-offset: -4px;
+    &::before {
+      border-radius: 0;
+    }
+
+    &::after {
+      content: none;
     }
 
     &:disabled {

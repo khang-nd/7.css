@@ -43,15 +43,21 @@
       background: var(--search-button), var(--button-gradient);
       background-size: 14px;
 
-      &:hover {
+      &::before {
         background: var(--search-button), var(--button-gradient-hovered);
         background-size: 14px;
+        border-radius: 0;
       }
 
-      &:active {
+      &::after {
         background: var(--search-button), var(--button-gradient-active);
         background-size: 14px;
-        box-shadow: inset 1px 1px 2px #37698f;
+        border-radius: 0;
+      }
+
+      &:focus-visible {
+        outline: 1px dotted #000;
+        outline-offset: -4px;
       }
     }
   }

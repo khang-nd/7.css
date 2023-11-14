@@ -13,9 +13,10 @@ input[type="range"] {
   appearance: none;
   width: 100%;
   background: transparent;
+  padding: 10px 1px;
 
-  &:focus {
-    outline: none;
+  &:focus-visible {
+    outline: 1px dotted #000;
   }
 
   &::-webkit-slider-thumb {

@@ -75,7 +75,7 @@ input[type="radio"] {
     }
   }
 
-  &:focus {
+  &:focus-visible {
     + label {
       outline: 1px dotted #000000;
     }

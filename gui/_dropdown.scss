@@ -19,7 +19,7 @@ select:not([multiple]) {
   &:hover {
     border-color: var(--button-border-color-hovered);
     background-image: url("./icon/button-down.svg"),
-      var(--button-gradient-hovered);
+                      var(--button-gradient-hovered);
   }
 
   &:active {
@@ -27,11 +27,17 @@ select:not([multiple]) {
     border-color: var(--button-border-color-active);
     box-shadow: var(--button-shadow-active);
     background-image: url("./icon/button-down.svg"),
-      var(--button-gradient-active);
+                      var(--button-gradient-active);
   }
 
   &:focus {
     outline: none;
-    /* box-shadow: inset 0 0 0 2px var(--button-shade-light-active); */
   }
+
+  /* focus-visible seems to not work with <select> */
+  /* &:focus-visible {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+    box-shadow: inset 0 0 0 2px var(--button-shade-light-active);
+  } */
 }

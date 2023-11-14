@@ -45,7 +45,7 @@ pre {
 }
 
 summary {
-  &:focus {
-    outline: 1px dotted #000000;
+  &:focus-visible {
+    outline: 1px dotted #000;
   }
 }
