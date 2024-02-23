@@ -37,20 +37,12 @@
     `) %>
 
     <p>
-      If you want to override the default color of the window, you can specify the
-      <code>background-color</code> attribute in the <code>before</code> pseudo element
-      and the <code>title-bar</code> under the same parent class as <code>window</code>.
+      If you want to override the default color of the window, you can redefine the 
+      <code>--window-background-color</code> variable as an inline value of the <code>style</code> attribute.
     </p>
 
     <%- example(`
-      <style>
-        .violet::before,
-        .violet > .title-bar {
-          background-color: #805ba5;
-        }
-      </style>
-
-      <div class="window violet active" style="max-width: 100%; margin: 0 1.5em;">
+      <div class="window active" style="max-width: 100%; margin: 0 1.5em; --window-background-color: #805ba5;">
         <div class="title-bar">
           <div class="title-bar-text">A violet window frame</div>
           <div class="title-bar-controls">
@@ -64,7 +56,7 @@
       </div>
 
       <div class="background">
-        <div class="window violet glass active" style="max-width: 100%">
+        <div class="window glass active" style="max-width: 100%; --window-background-color: #805ba5;">
           <div class="title-bar">
             <div class="title-bar-text">A glass violet window frame</div>
             <div class="title-bar-controls">

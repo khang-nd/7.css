@@ -12,7 +12,9 @@ const plugins = [
   require("autoprefixer"),
   require("postcss-import"),
   require("postcss-nested"),
-  require("postcss-css-variables"),
+  require("postcss-css-variables")({
+    preserve: true
+  }),
   require("postcss-calc"),
   require("postcss-base64")({
     root: process.cwd() + "/gui",
