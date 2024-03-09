@@ -44,7 +44,6 @@
     "postcss": "^8.3.5",
     "postcss-base64": "^0.7.1",
     "postcss-calc": "^7.0.2",
-    "postcss-css-variables": "^0.14.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
     "postcss-prefix-selector": "^1.15.0"

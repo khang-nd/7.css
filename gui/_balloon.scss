@@ -20,7 +20,7 @@
     background: var(--balloon-tail-top);
     width: var(--balloon-tail-size);
     height: var(--balloon-tail-size);
-    top: -var(--balloon-tail-size);
+    top: calc(var(--balloon-tail-size) * -1);
     left: var(--balloon-tail-offset);
   }
 
@@ -31,7 +31,7 @@
   &.is-top {
     &::before {
       background: var(--balloon-tail-bottom);
-      bottom: -var(--balloon-tail-size);
+      bottom: calc(var(--balloon-tail-size) * -1);
       top: unset;
       transform: scale(-1);
     }
