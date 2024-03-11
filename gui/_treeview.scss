@@ -34,7 +34,7 @@ ul.tree-view {
     > summary::before {
       content: "\002b";
       top: calc(50% - var(--treeview-square-size) / 2);
-      left: calc(-var(--treeview-square-size) * 2);
+      left: calc(var(--treeview-square-size) * 2 * -1);
       right: unset;
       width: var(--treeview-square-size);
       height: var(--treeview-square-size);
