@@ -332,6 +332,13 @@
         }
       }
 
+      &[aria-label="Help"],
+      &.is-help {
+        &::before {
+          background: url("./icon/help.png") no-repeat center;
+        }
+      }
+
       &[aria-label="Restore"],
       &.is-restore {
         &::before {
@@ -427,6 +434,31 @@
 
           &:active::before {
             background: url("./icon/maximize.png") no-repeat center,
+              var(--control-background-active);
+          }
+        }
+
+        &[aria-label="Help"],
+        &.is-help {
+          background: url("./icon/help.png") no-repeat center,
+            var(--control-background);
+          &::before {
+            content: "";
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
+            background: url("./icon/help.png") no-repeat center,
+              var(--control-background-hovered);
+            opacity: 0;
+            transition: opacity 0.3s linear;
+          }
+
+          &:hover::before,
+          &:focus-visible::before {
+            opacity: 1;
+            transition: opacity 0.1s linear;
+          }
+
+          &:active::before {
+            background: url("./icon/help.png") no-repeat center,
               var(--control-background-active);
           }
         }
