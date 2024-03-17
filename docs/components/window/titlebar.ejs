@@ -39,7 +39,7 @@
     <p>
       We make use of <code>aria-label</code> to render the Close button, to let
       assistive technologies know the intent of this button. You may also use
-      "Minimize" and "Maximize" like so:
+      "Minimize", "Maximize", "Restore" and "Help" like so:
     </p>
 
     <%- example(`
@@ -62,11 +62,21 @@
           <button aria-label="Close"></button>
         </div>
       </div>
+
+      <br>
+
+      <div class="title-bar">
+        <div class="title-bar-text">A help Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Help"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
     `) %>
 
     <p>
       Alternatively, you can use the <code>is-close</code>, <code>is-minimize</code>,
-      <code>is-maximize</code>, <code>is-restore</code> classes to target the respective
+      <code>is-maximize</code>, <code>is-restore</code>, <code>is-help</code> classes to target the respective
       controls for your styling preference.
     </p>
 
