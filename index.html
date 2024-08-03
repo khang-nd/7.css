@@ -2094,7 +2094,7 @@ import "7.css/dist/gui/tabs.css"</pre>
     <p>
       We make use of <code>aria-label</code> to render the Close button, to let
       assistive technologies know the intent of this button. You may also use
-      "Minimize" and "Maximize" like so:
+      "Minimize", "Maximize", "Restore" and "Help" like so:
     </p>
 
     <div class="example">
@@ -2114,6 +2114,16 @@ import "7.css/dist/gui/tabs.css"</pre>
   <div class="title-bar-controls">
     <button aria-label="Minimize"></button>
     <button aria-label="Restore"></button>
+    <button aria-label="Close"></button>
+  </div>
+</div>
+
+<br>
+
+<div class="title-bar">
+  <div class="title-bar-text">A help Title Bar</div>
+  <div class="title-bar-controls">
+    <button aria-label="Help"></button>
     <button aria-label="Close"></button>
   </div>
 </div></div>
@@ -2137,6 +2147,16 @@ import "7.css/dist/gui/tabs.css"</pre>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Restore&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A help Title Bar<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Help&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         <button class="copy">Copy Code</button>
       </details>
@@ -2144,7 +2164,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 
     <p>
       Alternatively, you can use the <code>is-close</code>, <code>is-minimize</code>,
-      <code>is-maximize</code>, <code>is-restore</code> classes to target the respective
+      <code>is-maximize</code>, <code>is-restore</code>, <code>is-help</code> classes to target the respective
       controls for your styling preference.
     </p>
 
@@ -2510,20 +2530,12 @@ import "7.css/dist/gui/tabs.css"</pre>
     </div>
 
     <p>
-      If you want to override the default color of the window, you can specify the
-      <code>background-color</code> attribute in the <code>before</code> pseudo element
-      and the <code>title-bar</code> under the same parent class as <code>window</code>.
+      If you want to override the default color of the window, you can redefine the 
+      <code>--window-background-color</code> variable as an inline value of the <code>style</code> attribute.
     </p>
 
     <div class="example">
-      <div class="raw"><style>
-  .violet::before,
-  .violet > .title-bar {
-    background-color: #805ba5;
-  }
-</style>
-
-<div class="window violet active" style="max-width: 100%; margin: 0 1.5em;">
+      <div class="raw"><div class="window active" style="max-width: 100%; margin: 0 1.5em; --window-background-color: #805ba5;">
   <div class="title-bar">
     <div class="title-bar-text">A violet window frame</div>
     <div class="title-bar-controls">
@@ -2537,7 +2549,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 </div>
 
 <div class="background">
-  <div class="window violet glass active" style="max-width: 100%">
+  <div class="window glass active" style="max-width: 100%; --window-background-color: #805ba5;">
     <div class="title-bar">
       <div class="title-bar-text">A glass violet window frame</div>
       <div class="title-bar-controls">
@@ -2552,14 +2564,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 </div></div>
       <details class="code">
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
-  <span class="hljs-selector-class">.violet</span><span class="hljs-selector-pseudo">::before</span>,
-  <span class="hljs-selector-class">.violet</span> &gt; <span class="hljs-selector-class">.title-bar</span> {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#805ba5</span>;
-  }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%; margin: 0 1.5em;&quot;</span>&gt;</span>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%; margin: 0 1.5em; --window-background-color: #805ba5;&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
@@ -2573,7 +2578,7 @@ import "7.css/dist/gui/tabs.css"</pre>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;background&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window violet glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window glass active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100%; --window-background-color: #805ba5;&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A glass violet window frame<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
