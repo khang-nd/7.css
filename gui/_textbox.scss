@@ -1,4 +1,5 @@
 input {
+  &[type="url"],
   &[type="text"],
   &[type="email"],
   &[type="number"],
@@ -7,6 +8,7 @@ input {
   }
 }
 
+input[type="url"],
 input[type="text"],
 input[type="email"],
 input[type="number"],
