@@ -1,4 +1,5 @@
 :root {
+  --listview-chevron-size: 5px;
   --listview-background: rgb(255,255,255);
   --listview-border: 1px solid;
   --listview-border-color: rgb(238,238,238);
@@ -29,6 +30,15 @@
                   var(--listview-header-background-top-highlight) 45%,
                   var(--listview-header-background-middle-highlight) 45%,
                   var(--listview-header-background-bottom-highlight)
+  );
+  --listview-header-chevron-color-left: rgb(102,127,145);
+  --listview-header-chevron-color-middle: rgb(144,193,226);
+  --listview-header-chevron-color-right: rgb(204,227,242);
+  --listview-header-chevron-background: linear-gradient(
+                  to bottom right,
+                  var(--listview-header-chevron-color-left) 45%,
+                  var(--listview-header-chevron-color-middle) 65%,
+                  var(--listview-header-chevron-color-right)
   );
 }
 
@@ -75,17 +85,17 @@ table {
 
       &.indicator {
         &::before {
-          border: var(--chevron-size) solid transparent;
-          border-left-color: rgb(160,202,231);
-          border-radius: 3px;
           content: "";
           position: absolute;
           right: 50%;
           top: 0;
-          transform: rotateZ(90deg);
+          width: calc(var(--listview-chevron-size) * 1.2);
+          height: var(--listview-chevron-size);
+          background: var(--listview-header-chevron-background);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
         }
         &.up::before {
-          transform: rotateZ(-90deg) translateX(var(--chevron-size));
+          clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
         }
       }
     }
