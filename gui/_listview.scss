@@ -1,0 +1,116 @@
+:root {
+  --listview-background: rgb(255,255,255);
+  --listview-border: 1px solid;
+  --listview-border-color: rgb(238,238,238);
+  --listview-border-color-header: rgb(215,215,215);
+  --listview-background-bottom: rgb(240,240,240);
+  --listview-background-middle: rgb(250,250,250);
+  --listview-background-top: rgb(255,255,255);
+  --listview-gradient: linear-gradient(
+                  to bottom,
+                  var(--listview-background-top) 45%,
+                  var(--listview-background-middle) 45%,
+                  var(--listview-background-bottom)
+  );
+  --listview-border-color-highlight: rgb(170,221,250);
+  --listview-background-bottom-highlight: rgb(218,238,250);
+  --listview-background-top-highlight: rgb(246,251,253);
+  --listview-gradient-highlight: linear-gradient(
+                  to bottom,
+                  var(--listview-header-background-top-highlight) 45%,
+                  var(--listview-header-background-bottom-highlight)
+  );
+  --listview-header-border-color-highlight: rgb(167,216,245);
+  --listview-header-background-bottom-highlight: rgb(217,234,245);
+  --listview-header-background-middle-highlight: rgb(228,240,248);
+  --listview-header-background-top-highlight: rgb(243,249,252);
+  --listview-header-gradient-highlight: linear-gradient(
+                  to bottom,
+                  var(--listview-header-background-top-highlight) 45%,
+                  var(--listview-header-background-middle-highlight) 45%,
+                  var(--listview-header-background-bottom-highlight)
+  );
+}
+
+table {
+  font: var(--font);
+  background-color: var(--listview-background);
+  border: 1px solid #c0c1cd;
+
+  border-collapse: collapse;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  table-layout: fixed;
+
+  td, th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.has-shadow {
+    box-shadow: 4px 4px 3px -2px #999;
+  }
+
+  > thead > tr > * {
+    background: var(--listview-gradient);
+    border: var(--listview-border) var(--listview-border-color-header);
+    box-sizing: border-box;
+    font-weight: 400;
+    height: 22px;
+    padding: 0 var(--grouped-element-spacing);
+    position: sticky;
+    top: 0;
+    cursor: default;
+
+    &.highlighted {
+      border: var(--listview-border) var(--listview-header-border-color-highlight);
+      background: var(--listview-header-gradient-highlight);
+      border-radius: var(--border-radius);
+
+      &:not(:last-child) {
+        border-right-color: var(--listview-header-border-color-highlight);
+      }
+
+      &.indicator {
+        &::before {
+          border: var(--chevron-size) solid transparent;
+          border-left-color: rgb(160,202,231);
+          border-radius: 3px;
+          content: "";
+          position: absolute;
+          right: 50%;
+          top: 0;
+          transform: rotateZ(90deg);
+        }
+        &.up::before {
+          transform: rotateZ(-90deg) translateX(var(--chevron-size));
+        }
+      }
+    }
+  }
+
+  > tbody > tr {
+    cursor: default;
+
+    &.highlighted {
+      border: var(--listview-border) var(--listview-border-color-highlight);
+      background: var(--listview-gradient-highlight);
+      border-radius: var(--border-radius);
+
+      > *:not(:last-child) {
+        border-right: none;
+      }
+    }
+
+    > * {
+      height: 14px;
+      padding: 2px var(--element-spacing);
+    }
+
+    > *:not(:last-child) {
+      border-right: var(--listview-border) var(--listview-border-color);
+    }
+  }
+}
