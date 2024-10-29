@@ -1,0 +1,49 @@
+<section class="component">
+    <h3 id="list-view">ListView</h3>
+    <div>
+        <blockquote>
+            With a list view, users can view and interact with a collection of data objects, using either single
+            selection or multiple selection.
+            <footer>&mdash; <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/ctrl-list-views">Microsoft
+                    Windows
+                    User Experience - List View</a></footer>
+        </blockquote>
+
+        <%- example(`
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Taken</th>
+                <th class="highlighted">Tags</th>
+                <th>Size</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Toco Toucan</td>
+                <td>6/24/2005 12:22 PM</td>
+                <td>Sample; Wildlife</td>
+                <td>113 KB</td>
+                <td>* * * * *</td>
+            </tr>
+            <tr>
+                <td>Dock</td>
+                <td>6/22/2005 8:17 PM</td>
+                <td>Sample; Ocean</td>
+                <td>310 KB</td>
+                <td>* * * * *</td>
+            </tr>
+            <tr>
+                <td>Autumn Leaves</td>
+                <td>11/4/2005 6:12 PM</td>
+                <td>Sample; Landscape</td>
+                <td>270 KB</td>
+                <td>* * * * *</td>
+            </tr>
+            </tbody>
+        </table>
+        `) %>
+    </div>
+</section>
