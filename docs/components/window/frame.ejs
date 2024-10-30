@@ -70,4 +70,24 @@
         </div>
       </div>
     `) %>
+
+    <p>
+      In case you need the fixed background behavior, add the <code>fixed-background</code> class to the window (otherwise it uses <code>background-attachment: scroll;</code>).
+    </p>
+    <%- example(`
+      <div class="background">
+        <div class="window glass active fixed-background" style="max-width: 100%">
+          <div class="title-bar">
+            <div class="title-bar-text">A glass window frame</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <p>The background behind is blurred.</p>
+          </div>
+        </div>
+      </div>
+    `) %>
 </section>
