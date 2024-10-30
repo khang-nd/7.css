@@ -54,7 +54,7 @@ ul.tree-view {
         color: #4b63a7;
         font-size: 8pt;
         font-weight: bold;
-        line-height: 0.5;
+        line-height: calc(var(--treeview-square-size) - calc(50% - var(--treeview-square-size) / 2));
         text-align: center;
         margin: 0;
       }
