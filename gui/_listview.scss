@@ -92,10 +92,10 @@ table {
           width: calc(var(--listview-chevron-size) * 1.2);
           height: var(--listview-chevron-size);
           background: var(--listview-header-chevron-background);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
         }
         &.up::before {
-          clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
         }
       }
     }
