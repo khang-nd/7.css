@@ -213,12 +213,12 @@
 
     > .title-bar {
       background: var(--window-background-glass-stripes);
-      background-attachment: fixed;
+      background-attachment: scroll;
     }
 
-    &:not(.fixed-background) {
+    &.fixed-background {
       > .title-bar {
-        background-attachment: scroll;
+        background-attachment: fixed;
       }
     }
   }
