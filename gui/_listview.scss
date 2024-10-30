@@ -1,39 +1,39 @@
 :root {
   --listview-chevron-size: 5px;
-  --listview-background: rgb(255,255,255);
+  --listview-background: #ffffff;
   --listview-border: 1px solid;
-  --listview-border-color: rgb(238,238,238);
-  --listview-border-color-header: rgb(215,215,215);
-  --listview-background-bottom: rgb(240,240,240);
-  --listview-background-middle: rgb(250,250,250);
-  --listview-background-top: rgb(255,255,255);
+  --listview-border-color: #eeeeee;
+  --listview-border-color-header: #d7d7d7;
+  --listview-background-bottom: #f0f0f0;
+  --listview-background-middle: #fafafa;
+  --listview-background-top: #ffffff;
   --listview-gradient: linear-gradient(
                   to bottom,
                   var(--listview-background-top) 45%,
                   var(--listview-background-middle) 45%,
                   var(--listview-background-bottom)
   );
-  --listview-border-color-highlight: rgb(170,221,250);
-  --listview-background-bottom-highlight: rgb(218,238,250);
-  --listview-background-top-highlight: rgb(246,251,253);
+  --listview-border-color-highlight: #aaddfa;
+  --listview-background-bottom-highlight: #daeefa;
+  --listview-background-top-highlight: #f6fbfd;
   --listview-gradient-highlight: linear-gradient(
                   to bottom,
                   var(--listview-header-background-top-highlight) 45%,
                   var(--listview-header-background-bottom-highlight)
   );
-  --listview-header-border-color-highlight: rgb(167,216,245);
-  --listview-header-background-bottom-highlight: rgb(217,234,245);
-  --listview-header-background-middle-highlight: rgb(228,240,248);
-  --listview-header-background-top-highlight: rgb(243,249,252);
+  --listview-header-border-color-highlight: #a7d8f5;
+  --listview-header-background-bottom-highlight: #d9eaf5;
+  --listview-header-background-middle-highlight: #e4f0f8;
+  --listview-header-background-top-highlight: #f3f9fc;
   --listview-header-gradient-highlight: linear-gradient(
                   to bottom,
                   var(--listview-header-background-top-highlight) 45%,
                   var(--listview-header-background-middle-highlight) 45%,
                   var(--listview-header-background-bottom-highlight)
   );
-  --listview-header-chevron-color-left: rgb(102,127,145);
-  --listview-header-chevron-color-middle: rgb(144,193,226);
-  --listview-header-chevron-color-right: rgb(204,227,242);
+  --listview-header-chevron-color-left: #667f91;
+  --listview-header-chevron-color-middle: #90c1e2;
+  --listview-header-chevron-color-right: #cce3f2;
   --listview-header-chevron-background: linear-gradient(
                   to bottom right,
                   var(--listview-header-chevron-color-left) 45%,
