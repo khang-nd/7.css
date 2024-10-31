@@ -1,12 +1,6 @@
 :root {
   --menu-padding: 2px;
   --item-offset-left: 30px;
-  --item-hover-background: linear-gradient(
-    to bottom,
-    #fff9,
-    #e6ecf5cc 90%,
-    #fffc
-  );
 }
 
 ul {
@@ -100,8 +94,8 @@ ul {
 
         &:hover,
         &:focus-visible {
-          background: var(--item-hover-background);
-          border-color: #b8d6fb;
+          background: var(--item-highlighted-background);
+          border-color: var(--item-highlighted-border);
         }
       }
 
@@ -138,7 +132,7 @@ ul {
 
         &::before {
           all: unset; /* unset the standalone checkbox/radio styles */
-          background: var(--item-hover-background);
+          background: var(--item-highlighted-background);
           box-shadow: 0 0 0 1px #b3d3f9;
           border-radius: inherit;
           box-sizing: border-box;
