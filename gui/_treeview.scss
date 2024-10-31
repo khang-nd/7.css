@@ -31,26 +31,33 @@ ul.tree-view {
   }
 
   &.has-collapse-button details {
-    > summary::before {
-      content: "\002b";
-      top: calc(50% - var(--treeview-square-size) / 2);
-      left: calc(var(--treeview-square-size) * 2 * -1);
-      right: unset;
-      width: var(--treeview-square-size);
-      height: var(--treeview-square-size);
-      background: linear-gradient(
-        to bottom,
-        var(--button-face) 45%,
-        var(--button-shade-light)
-      );
-      border: 1px solid #919191;
-      border-radius: 1px;
-      color: #4b63a7;
-      font-size: 8pt;
-      font-weight: bold;
-      line-height: 0.5;
-      text-align: center;
-      margin: 0;
+    > summary {
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+      }
+
+      &::before {
+        content: "\002b";
+        top: calc(50% - var(--treeview-square-size) / 2);
+        left: calc(var(--treeview-square-size) * 2 * -1);
+        right: unset;
+        width: var(--treeview-square-size);
+        height: var(--treeview-square-size);
+        background: linear-gradient(
+                        to bottom,
+                        var(--button-face) 45%,
+                        var(--button-shade-light)
+        );
+        border: 1px solid #919191;
+        border-radius: 1px;
+        color: #4b63a7;
+        font-size: 8pt;
+        font-weight: bold;
+        line-height: calc(var(--treeview-square-size) - calc(50% - var(--treeview-square-size) / 2));
+        text-align: center;
+        margin: 0;
+      }
     }
 
     &[open] > summary::before {

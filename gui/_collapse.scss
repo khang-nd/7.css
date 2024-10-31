@@ -20,6 +20,11 @@ details {
       border-left-color: #000;
       border-radius: 3px;
     }
+
+    &::-webkit-details-marker,
+    &::marker {
+      display: none;
+    }
   }
 
   &[open] {
