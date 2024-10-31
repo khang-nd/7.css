@@ -72,12 +72,12 @@
     `) %>
 
     <p>
-      In case you need the fixed background attachment, add the <code>fixed-background</code>, and for scrolling attachment <code>scroll-background</code> class to the window (otherwise it uses <code>background-attachment: local;</code>).
+      To make the aero effect move when scrolling, or changing the viewport size, change the <code>background-attachment</code> property of the <code>.title-bar</code> to <code>fixed</code> or <code>scroll</code>, depending on your requirements.
     </p>
     <%- example(`
       <div class="background">
-        <div class="window glass active fixed-background" style="max-width: 100%">
-          <div class="title-bar">
+        <div class="window glass active" style="max-width: 100%">
+          <div class="title-bar" style="background-attachment: fixed;">
             <div class="title-bar-text">A glass window frame with fixed background-attachment</div>
             <div class="title-bar-controls">
               <button aria-label="Minimize"></button>
@@ -85,7 +85,7 @@
             </div>
           </div>
           <div class="window-body has-space">
-            <p>The title bar background is now changing with the scroll state.</p>
+            <p>The aero effect is now changing with the scroll position.</p>
           </div>
         </div>
       </div>
