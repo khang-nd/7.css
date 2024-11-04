@@ -1,12 +1,6 @@
 :root {
   --menu-padding: 2px;
   --item-offset-left: 30px;
-  --item-hover-background: linear-gradient(
-    to bottom,
-    #fff9,
-    #e6ecf5cc 90%,
-    #fffc
-  );
 }
 
 ul {
@@ -56,8 +50,8 @@ ul {
     padding: var(--menu-padding);
     background: var(--surface);
     color: initial;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 3px -2px rgba(0, 0, 0, 0.5);
+    border: 1px solid #0006;
+    box-shadow: 4px 4px 3px -2px #00000080;
 
     &::before {
       content: "";
@@ -66,7 +60,7 @@ ul {
       left: var(--item-offset-left);
       width: 2px;
       height: calc(100% - 4px);
-      box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #fff;
+      box-shadow: inset 1px 0 #00000026, inset -1px 0 #fff;
     }
 
     [role="menuitem"] & {
@@ -100,8 +94,8 @@ ul {
 
         &:hover,
         &:focus-visible {
-          background: var(--item-hover-background);
-          border-color: #b8d6fb;
+          background: var(--item-highlighted-background);
+          border-color: var(--item-highlighted-border);
         }
       }
 
@@ -138,7 +132,7 @@ ul {
 
         &::before {
           all: unset; /* unset the standalone checkbox/radio styles */
-          background: var(--item-hover-background);
+          background: var(--item-highlighted-background);
           box-shadow: 0 0 0 1px #b3d3f9;
           border-radius: inherit;
           box-sizing: border-box;
@@ -169,7 +163,7 @@ ul {
 
       &[type="checkbox"]:checked + label {
         &::after {
-          color: rgb(12, 18, 161);
+          color: #0c12a1;
           font-size: 10pt;
           left: 6px;
           top: 50%;
