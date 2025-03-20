@@ -74,6 +74,7 @@
           <li><a href="#dropdown">Dropdown</a></li>
           <li><a href="#groupbox">GroupBox</a></li>
           <li><a href="#listbox">ListBox</a></li>
+          <li><a href="#listview">ListView (table)</a></li>
           <li>
             <details open>
               <summary><a href="#nav">Navigation</a></summary>
@@ -836,7 +837,235 @@ import "7.css/dist/gui/tabs.css"</pre>
       </details>
     </div>
   </div>
+</section>    <section class="component">
+  <h3 id="listview">ListView (table)</h3>
+  <div>
+    <blockquote>
+      With a list view, users can view and interact with a collection of data
+      objects, using either single selection or multiple selection.
+      <footer>
+        &mdash;
+        <a
+          href="https://learn.microsoft.com/en-us/windows/win32/uxguide/ctrl-list-views"
+          >Microsoft Windows User Experience - List View</a
+        >
+      </footer>
+    </blockquote>
+
+    <p>
+      Currently, the ListView is only implemented as the Details view, which
+      styles tables.
+    </p>
+
+    <div class="example">
+      <div class="raw"><table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date Taken</th>
+      <th class="highlighted indicator">Tags</th>
+      <th>Size</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Toco Toucan</td>
+      <td>6/24/2005 12:22 PM</td>
+      <td>Sample; Wildlife</td>
+      <td>113 KB</td>
+      <td>* * * * *</td>
+    </tr>
+    <tr class="highlighted">
+      <td>Dock</td>
+      <td>6/22/2005 8:17 PM</td>
+      <td>Sample; Ocean</td>
+      <td>310 KB</td>
+      <td>* * * * *</td>
+    </tr>
+    <tr>
+      <td>Autumn Leaves</td>
+      <td>11/4/2005 6:12 PM</td>
+      <td>Sample; Landscape</td>
+      <td>270 KB</td>
+      <td>* * * * *</td>
+    </tr>
+  </tbody>
+</table></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Date Taken<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;highlighted indicator&quot;</span>&gt;</span>Tags<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Size<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Rating<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Toco Toucan<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>6/24/2005 12:22 PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sample; Wildlife<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>113 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>* * * * *<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;highlighted&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Dock<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>6/22/2005 8:17 PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sample; Ocean<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>310 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>* * * * *<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Autumn Leaves<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>11/4/2005 6:12 PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sample; Landscape<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>270 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>* * * * *<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+
+    <p>Here's another example showcasing advanced usage, for example:</p>
+    <ul>
+      <li>
+        The handling of long text (using the <code>width</code> property of the
+        table to limit the width)
+      </li>
+      <li>
+        Using the <code>has-shadow</code> class to add a shadow to the table
+      </li>
+      <li>
+        Flipping the column header sort indicator by adding the
+        <code>up</code> class
+      </li>
+      <li>
+        Changing text alignment using the <code>text-align</code> property
+      </li>
+      <li>
+        The <code>highlighted</code> column header style without sort indicator
+        (I didn't want to add another table just for that)
+      </li>
+    </ul>
+    <div class="example">
+      <div class="raw"><table class="has-shadow" style="width: 460px">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Original Location</th>
+      <th class="highlighted">Date deleted</th>
+      <th>Size</th>
+      <th class="highlighted indicator up">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contents_files</td>
+      <td>D:\Users\user\Documents\contents_files</td>
+      <td>3/29/2007 12:00 AM</td>
+      <td style="text-align: right">4 KB</td>
+      <td>File Folder</td>
+    </tr>
+    <tr>
+      <td>Windows Vista User Experience Guidelines</td>
+      <td>
+        D:\Users\user\Documents\Windows Vista User Experience Guidelines
+      </td>
+      <td>3/29/2007 12:00 AM</td>
+      <td style="text-align: right">0 KB</td>
+      <td>File Folder</td>
+    </tr>
+    <tr>
+      <td>AutoRecovery save of Document.asd</td>
+      <td>D:\Users\user\Documents\AutoRecovery save of Document.asd</td>
+      <td>3/23/2007 12:00 AM</td>
+      <td style="text-align: right">27 KB</td>
+      <td>ASD File</td>
+    </tr>
+    <tr>
+      <td>AutoRecovery save of Tree Views.asd</td>
+      <td>
+        D:\Users\user\Documents\AutoRecovery save of Tree Views.asd
+      </td>
+      <td>3/13/2007 12:00 AM</td>
+      <td style="text-align: right">693 KB</td>
+      <td>ASD File</td>
+    </tr>
+    <tr>
+      <td>contents</td>
+      <td>D:\Users\user\Documents\contents</td>
+      <td>3/29/2007 12:00 AM</td>
+      <td style="text-align: right">2 KB</td>
+      <td>HTML Document</td>
+    </tr>
+  </tbody>
+</table></div>
+      <details class="code">
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-shadow&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 460px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Original Location<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;highlighted&quot;</span>&gt;</span>Date deleted<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Size<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;highlighted indicator up&quot;</span>&gt;</span>Type<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>contents_files<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>D:\Users\user\Documents\contents_files<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3/29/2007 12:00 AM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>4 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Windows Vista User Experience Guidelines<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+        D:\Users\user\Documents\Windows Vista User Experience Guidelines
+      <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3/29/2007 12:00 AM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>0 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>AutoRecovery save of Document.asd<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>D:\Users\user\Documents\AutoRecovery save of Document.asd<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3/23/2007 12:00 AM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>27 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>ASD File<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>AutoRecovery save of Tree Views.asd<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+        D:\Users\user\Documents\AutoRecovery save of Tree Views.asd
+      <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3/13/2007 12:00 AM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>693 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>ASD File<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>contents<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>D:\Users\user\Documents\contents<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3/29/2007 12:00 AM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right&quot;</span>&gt;</span>2 KB<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HTML Document<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+        <button class="copy">Copy Code</button>
+      </details>
+    </div>
+  </div>
 </section>
+
     <h3 id="nav">Navigation</h3>
     <p>
       The following components compose a complete navigation menu, also known as Navbar.
