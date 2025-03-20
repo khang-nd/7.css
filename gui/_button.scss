@@ -1,5 +1,6 @@
 button,
-[role="button"] {
+[role="button"],
+input[type="file"]::file-selector-button {
   font: var(--font);
   box-sizing: border-box;
   border: var(--button-border);
