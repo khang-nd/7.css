@@ -1,0 +1,36 @@
+<section class="component">
+    <h4 id="toolbar">Toolbar</h4>
+    <div>
+        <blockquote>
+            Toolbars are a way to group commands for efficient access.    
+          <footer>
+            &mdash; <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/cmd-toolbars">
+              Microsoft Windows User Experience - Windows 7 Toolbars
+            </a>
+          </footer>
+        </blockquote>
+        <%- example(`
+        <div class="window active" style="max-width: 300px">
+          <div class="title-bar">
+            <div class="title-bar-text">A window with contents</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <div class="window-toolbar">
+              <a href="#" class="window-toolbar-button">
+                Button 1
+                <span class="button-arrow-down"></span>                
+              </a>
+              <a href="#" class="window-toolbar-button">Button 2</a>
+              <a href="#" class="window-toolbar-button">Button 3</a>
+            </div>
+            <p>There's so much room for activities!</p>
+          </div>
+        </div>
+      `) %>        
+    </div>    
+</section>
