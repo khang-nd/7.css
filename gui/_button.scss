@@ -1,20 +1,37 @@
+:root {
+  --button-border-transition-hovered: border-color 0.3s;
+  --button-border-transition-not-hovered: border-color 1s linear;
+  --button-border-transition-active: border-color 0.3s;
+  --button-box-shadow-focus-visible: inset 0 0 0 2px var(--button-shade-light-active);
+  --button-outline-focus-visible: 1px dotted #000;
+  --button-outline-offset-focus-visible: -4px;
+  --button-animation-focus: 1s ease infinite alternate pulse-anim;
+  --button-box-sizing: border-box;
+  --button-min-width: 75px;
+  --button-min-height: 23px;
+  --button-padding: 0 12px;
+  --button-text-align: center;
+  --button-position: relative;
+  --button-z-index: 0;
+  --button-font-color: #222;
+}
+
 button,
-[role="button"],
-input[type="file"]::file-selector-button {
+[role="button"] {
   font: var(--font);
-  box-sizing: border-box;
+  box-sizing: var(--button-box-sizing);
   border: var(--button-border);
   border-color: var(--button-border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--button-shadow);
-  color: #222;
-  min-width: 75px;
-  min-height: 23px;
-  padding: 0 12px;
-  text-align: center;
+  color: var(--button-font-color);
+  min-width: var(--button-min-width);
+  min-height: var(--button-min-eight);
+  padding: var(--button-padding);
+  text-align: var(--button-text-align);
   background: var(--button-gradient);
-  position: relative;
-  z-index: 0;
+  position: var(--button-position);
+  z-index: var(--button-z-index);
 
   /* Button style on hovered */
   &::before {
@@ -62,7 +79,7 @@ input[type="file"]::file-selector-button {
     /* Animation when hovered */
     &:hover {
       border-color: var(--button-border-color-hovered);
-      transition: border-color 0.3s;
+      transition: var(--button-border-transition-hovered);
 
       &::before {
         opacity: 1;
@@ -73,7 +90,7 @@ input[type="file"]::file-selector-button {
     /* Animation when unhovered */
     &:not(:hover) {
       border-color: var(--button-border-color);
-      transition: border-color 1s linear;
+      transition: var(--button-border-transition-not-hovered);
 
       &::before {
         opacity: 0;
@@ -84,7 +101,7 @@ input[type="file"]::file-selector-button {
     &:active,
     &.active {
       border-color: var(--button-border-color-active);
-      transition: border-color 0.3s;
+      transition: var(--button-border-transition-active);
 
       &::after {
         opacity: 1;
@@ -95,9 +112,9 @@ input[type="file"]::file-selector-button {
 
   &:focus-visible,
   &.focused {
-    box-shadow: inset 0 0 0 2px var(--button-shade-light-active);
-    outline: 1px dotted #000;
-    outline-offset: -4px;
+    box-shadow: var(--button-box-shadow-focus-visible);
+    outline: var(--button-outline-focus-visible);
+    outline-offset: var(--button-outline-offset-focus-visible);
   }
 
   &.default,
@@ -105,7 +122,47 @@ input[type="file"]::file-selector-button {
   &.focused {
     border-color: var(--button-border-color-default);
     background-image: var(--button-gradient-hovered);
-    animation: 1s ease infinite alternate pulse-anim;
+    animation: var(--button-animation-focus);
+  }
+}
+
+input[type="file"] {
+  &::file-selector-button {
+    font: var(--font);
+    box-sizing: var(--button-box-sizing);
+    border: var(--button-border);
+    border-color: var(--button-border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow);
+    color: var(--button-font-color);
+    min-width: var(--button-min-width);
+    min-height: var(--button-min-eight);
+    padding: var(--button-padding);
+    text-align: var(--button-text-align);
+    background: var(--button-gradient);
+    position: var(--button-position);
+    z-index: var(--button-z-index);
+  }
+
+  &:active::file-selector-button,
+  &.active::file-selector-button {
+    border-color: var(--button-border-color-active);
+    transition: var(--button-border-transition-active);
+  }
+
+  &:focus-visible::file-selector-button,
+  &.focused::file-selector-button {
+    box-shadow: var(--button-box-shadow-focus-visible);
+    outline: var(--button-outline-focus-visible);
+    outline-offset: var(--button-outline-offset-focus-visible);
+  }
+
+  &.default::file-selector-button,
+  &:focus::file-selector-button,
+  &.focused::file-selector-button {
+    border-color: var(--button-border-color-default);
+    background-image: var(--button-gradient-hovered);
+    animation: var(--button-animation-focus);
   }
 }
 
