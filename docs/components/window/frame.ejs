@@ -70,4 +70,24 @@
         </div>
       </div>
     `) %>
+
+    <p>
+      To make the aero effect stick to the window when scrolling, or changing the viewport size, change the <code>background-attachment</code> property of the <code>.title-bar</code> to <code>local</code> or <code>scroll</code> (default is <code>fixed</code>), depending on your requirements.
+    </p>
+    <%- example(`
+      <div class="background">
+        <div class="window glass active" style="max-width: 100%">
+          <div class="title-bar" style="background-attachment: local;">
+            <div class="title-bar-text">A glass window frame with local background-attachment</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <p>The aero effect is now staying in place with the scroll position.</p>
+          </div>
+        </div>
+      </div>
+    `) %>
 </section>
