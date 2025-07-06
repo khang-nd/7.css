@@ -41,5 +41,24 @@
     </p>
 
     <%- example(`<button class="default">I am the one!</button>`) %>
+
+    <p>
+      The button styles are also applied to the file input element. Due to the complex setup, the
+      styles of the standard button's states (hover, active, focus etc.) cannot be applied to the file input button.
+    </p>
+
+    <%- example(`<input type="file" />`) %>
+
+    <p>
+      You can use the below workaround to apply the complete button styles to a file input element. In this
+      setup, the file input is hidden and a label with the <code>role="button"</code> attribute is used
+      to trigger the file selection dialog. The <code>tabindex="0"</code> attribute ensures the button is keyboard accessible.
+      Some JavaScript is required if you want the label to trigger when it is focused and activated with the keyboard.
+    </p>
+
+    <%- example(`
+    <label role="button" tabindex="0"><input type="file" /> Choose file</label>
+    <label role="button" tabindex="0" class="default"><input type="file" /> Browse...</label>
+    `) %>
   </div>
 </section>
