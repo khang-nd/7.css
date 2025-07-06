@@ -19,22 +19,19 @@
   --button-border-color-default: #5586a3;
   --button-border-color-hovered: #3c7fb1;
   --button-border-color-active: #6d91ab;
-  --button-border-color-disabled: #aeb2b5;
+  --button-border-color-disabled: #adb2b5;
   --button-text-color-disabled: #838383;
   --button-gradient: linear-gradient(
-    to bottom,
     var(--button-face) 45%,
     var(--button-shade-light) 45%,
     var(--button-shade-dark)
   );
   --button-gradient-hovered: linear-gradient(
-    to bottom,
     var(--button-face-hover) 45%,
     var(--button-shade-light-hovered) 45%,
     #a7d9f5
   );
   --button-gradient-active: linear-gradient(
-    to bottom,
     #e5f4fc,
     var(--button-face-active) 30% 50%,
     var(--button-shade-light-active) 50%,
@@ -43,7 +40,6 @@
 
   --item-highlighted-border: #aaddfa;
   --item-highlighted-background: linear-gradient(
-    to bottom,
     #fff9,
     #e6ecf5cc 90%,
     #fffc
