@@ -526,9 +526,22 @@
               content: "";
               background: url("./icon/maximize.png") no-repeat center;
               opacity: 0.4;
+              box-shadow: none;
             }
           }
-          /* TODO: Add rules to style disabled close button */
+
+          &[aria-label="Close"],
+          &.is-close {
+            background: var(--control-background), var(--control-background-close);
+            filter: contrast(0.7) brightness(1.1);
+
+            &::before {
+              content: "";
+              background: url("./icon/close.png") no-repeat center;
+              opacity: 0.4;
+              box-shadow: none;
+            }
+          }
         }
       }
     }
