@@ -3,8 +3,12 @@
   --thumb-h: 18px;
   --thumb-icon: url("./icon/slider-indicator.png");
   --thumb-icon-box: url("./icon/slider-indicator-box.png");
+  --thumb-icon-hover: url("./icon/slider-indicator-hover.png");
+  --thumb-icon-box-hover: url("./icon/slider-indicator-box-hover.png");
   --thumb-icon-active: url("./icon/slider-indicator-active.png");
   --thumb-icon-box-active: url("./icon/slider-indicator-box-active.png");
+  --thumb-icon-disabled: url("./icon/slider-indicator-disabled.png");
+  --thumb-icon-box-disabled: url("./icon/slider-indicator-box-disabled.png");
 }
 
 input[type="range"] {
@@ -25,6 +29,11 @@ input[type="range"] {
     width: var(--thumb-w);
     background: var(--thumb-icon);
     transform: translateY(-7px);
+    filter: drop-shadow(1px 1px 0 #0002);
+
+    &:hover {
+      background: var(--thumb-icon-hover);
+    }
 
     &:active {
       background: var(--thumb-icon-active);
@@ -37,6 +46,11 @@ input[type="range"] {
     background: var(--thumb-icon);
     border: 0;
     border-radius: 0;
+    filter: drop-shadow(1px 1px 0 #0002);
+
+    &:hover {
+      background: var(--thumb-icon-hover);
+    }
 
     &:active {
       background: var(--thumb-icon-active);
@@ -64,6 +78,10 @@ input[type="range"].has-box-indicator {
   &::-webkit-slider-thumb {
     background: var(--thumb-icon-box);
 
+    &:hover {
+      background: var(--thumb-icon-box-hover);
+    }
+
     &:active {
       background: var(--thumb-icon-box-active);
     }
@@ -72,9 +90,33 @@ input[type="range"].has-box-indicator {
   &::-moz-range-thumb {
     background: var(--thumb-icon-box);
 
+    &:hover {
+      background: var(--thumb-icon-box-hover);
+    }
+
     &:active {
       background: var(--thumb-icon-box-active);
     }
+  }
+}
+
+input[type="range"]:disabled {
+  &::-webkit-slider-thumb {
+    background: var(--thumb-icon-disabled);
+  }
+
+  &::-moz-range-thumb {
+    background: var(--thumb-icon-disabled);
+  }
+
+  &.has-box-indicator {
+    &::-webkit-slider-thumb {
+    background: var(--thumb-icon-box-disabled);
+  }
+
+  &::-moz-range-thumb {
+    background: var(--thumb-icon-box-disabled);
+  }
   }
 }
 
@@ -103,11 +145,11 @@ input[type="range"].has-box-indicator {
 
   > input[type="range"].has-box-indicator {
     &::-webkit-slider-thumb {
-      transform: translateY(-9px) scaleX(-1);
+      transform: translateY(-9px) scaleX(-1) rotate(180deg);
     }
 
     &::-moz-range-thumb {
-      transform: translateY(0px) scaleX(-1);
+      transform: translateY(0px) scaleX(-1) rotate(180deg);
     }
   }
 }
