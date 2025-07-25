@@ -48,6 +48,12 @@ input[type="radio"] {
       box-sizing: border-box;
       transition: 0.4s;
     }
+
+    &:hover::before {
+      border-color: var(--button-border-color-hovered);
+      box-shadow: inset 0 0 0 1.5px #def9fa, inset 1px 1px 0 1.5px #79c6f9,
+        inset -1px -1px 0 1.5px #c6e9fc, inset 3px 3px 6px #b1dffd;
+    }
   }
 
   &:checked {
@@ -73,16 +79,6 @@ input[type="radio"] {
   &:focus-visible {
     + label {
       outline: 1px dotted #000000;
-    }
-  }
-
-  &:not(:disabled) {
-    + label {
-      &:hover::before {
-      border-color: var(--button-border-color-hovered);
-      box-shadow: inset 0 0 0 1.5px #def9fa, inset 1px 1px 0 1.5px #79c6f9,
-        inset -1px -1px 0 1.5px #c6e9fc, inset 3px 3px 6px #b1dffd;
-    }
     }
   }
 

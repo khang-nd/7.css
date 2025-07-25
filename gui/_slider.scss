@@ -77,6 +77,8 @@ input[type="range"] {
 input[type="range"].has-box-indicator {
   &::-webkit-slider-thumb {
     background: var(--thumb-icon-box);
+    filter: drop-shadow(-1px -1px 0 #0002);
+    transform: rotate(180deg) translateY(7px);
 
     &:hover {
       background: var(--thumb-icon-box-hover);
@@ -89,6 +91,8 @@ input[type="range"].has-box-indicator {
 
   &::-moz-range-thumb {
     background: var(--thumb-icon-box);
+    filter: drop-shadow(1px 1px 0 #0002);
+    transform: rotate(180deg);
 
     &:hover {
       background: var(--thumb-icon-box-hover);
