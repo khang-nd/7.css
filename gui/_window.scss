@@ -518,6 +518,18 @@
         }
 
         &:disabled {
+          &[aria-label="Minimize"],
+          &.is-minimize {
+            background: var(--control-background);
+
+            &::before {
+              content: "";
+              background: url("./icon/minimize.png") no-repeat center 10px;
+              opacity: 0.4;
+              box-shadow: none;
+            }
+          }
+
           &[aria-label="Maximize"],
           &.is-maximize {
             background: var(--control-background);
