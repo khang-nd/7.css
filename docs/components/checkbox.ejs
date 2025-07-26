@@ -29,23 +29,20 @@
       attributes.
     </p>
 
-    <p>
-      When grouping inputs, wrap each input in a container with the <code>field-row</code> class. This ensures
-      a consistent spacing between inputs.
-    </p>
-
     <%- example(`
-      <div class="field-row">
-        <input checked type="checkbox" id="example${getNewId()}">
-        <label for="example${getCurrentId()}">I am checked</label>
-      </div>
-      <div class="field-row">
-        <input disabled type="checkbox" id="example${getNewId()}">
-        <label for="example${getCurrentId()}">I am inactive</label>
-      </div>
-      <div class="field-row">
-        <input checked disabled type="checkbox" id="example${getNewId()}">
-        <label for="example${getCurrentId()}">I am inactive but still checked</label>
+      <div class="group">
+        <div>
+          <input checked type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am checked</label>
+        </div>
+        <div>
+          <input disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive</label>
+        </div>
+        <div>
+          <input checked disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive but still checked</label>
+        </div>
       </div>
     `) %>
   </div>

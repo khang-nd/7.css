@@ -59,5 +59,28 @@
         </div>
       </fieldset>
     `) %>
+
+    <p>
+      There is a handy <code>group</code> utility class provided out of the box which can be used
+      to group elements without the need for a <code>fieldset</code>, and ensure a consistent
+      spacing between them.
+    </p>
+
+    <%- example(`
+      <div class="group">
+        <div>
+          <input checked type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am checked</label>
+        </div>
+        <div>
+          <input disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive</label>
+        </div>
+        <div>
+          <input checked disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive but still checked</label>
+        </div>
+      </div>
+    `) %>
   </div>
 </section>

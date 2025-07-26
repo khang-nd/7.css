@@ -10,30 +10,28 @@
     </blockquote>
 
     <p>
-      Text boxes can rendered by specifying a <code>text</code> type on an
+      Text boxes can be rendered by specifying a <code>text</code> type on an
       <code>input</code> element. As with checkboxes and radio buttons, you
       should provide a corresponding label with a properly set <code>for</code>
-      attribute, and wrap both in a container with the <code>field-row</code> class.
+      attribute.
     </p>
 
     <%- example(`
-      <div class="field-row">
-        <label for="text${getNewId()}">Occupation</label>
-        <input id="text${getCurrentId()}" type="text" />
-      </div>
+      <label for="text${getNewId()}">Occupation</label>
+      <input id="text${getCurrentId()}" type="text" />
     `) %>
 
     <p>
-      Additionally, you can make use of the <code>field-row-stacked</code> class
+      Additionally, you can make use of the <a href="#groupbox"><code>group</code></a> class
       to position your label above the input instead of beside it.
     </p>
 
     <%- example(`
-      <div class="field-row-stacked" style="width: 200px">
+      <div class="group" style="width: 200px">
         <label for="text${getNewId()}">Address (Line 1)</label>
         <input id="text${getCurrentId()}" type="text" />
       </div>
-      <div class="field-row-stacked" style="width: 200px">
+      <div class="group" style="width: 200px">
         <label for="text${getNewId()}">Address (Line 2)</label>
         <input id="text${getCurrentId()}" type="text" />
       </div>
@@ -45,7 +43,7 @@
     </p>
 
     <%- example(`
-      <div class="field-row-stacked" style="width: 200px">
+      <div class="group" style="width: 200px">
         <label for="text${getNewId()}">Additional notes</label>
         <textarea id="text${getCurrentId()}" rows="8"></textarea>
       </div>
