@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/7.css)](http://npm.im/7.css)
 [![gzip size](https://img.shields.io/bundlephobia/minzip/7.css)](https://unpkg.com/7.css)
 
-<video src="https://github.com/user-attachments/assets/0da40ca4-f9b1-4082-8c1d-78c031f0530d" width="400" height="225" controls></video>
+<video src="https://github.com/user-attachments/assets/0da40ca4-f9b1-4082-8c1d-78c031f0530d" width="524" height="294" controls></video>
 
 **7.css** is a CSS framework that takes semantic HTML and styles them to the Windows 7 design.
 It is built on top of [XP.css](https://github.com/botoxparty/XP.css), which is an extension of [98.CSS](https://github.com/jdan/98.css).
