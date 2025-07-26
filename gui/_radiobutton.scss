@@ -1,16 +1,9 @@
 :root {
-  --radio-width: 14px;
-  --radio-label-spacing: 6px;
-  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
-  --radio-total-width: calc(var(--radio-total-width-precalc));
-  --radio-dot-width: 8px;
-  --radio-dot-offset: calc(var(--radio-width) / 2);
-  --radio-dot-top: calc(var(--radio-dot-offset) - var(--radio-dot-width) / 2);
-  --radio-dot-left: calc(
-    -1 * (var(--radio-total-width)) + var(--radio-width) / 2 - var(
-        --radio-dot-width
-      ) / 2
-  );
+  --w7-rd-size: 14px;
+  --w7-rdl-space: 6px; /* rdl = radio label */
+  --w7-rd-left: calc(var(--w7-rd-size) + var(--w7-rdl-space));
+  --w7-rdd-size: 8px; /* rdd = radio dot */
+  --w7-rdd-center: (var(--w7-rd-size) - var(--w7-rdd-size)) / 2;
 }
 
 input[type="radio"] {
@@ -24,35 +17,33 @@ input[type="radio"] {
   border: none;
 
   + label {
-    font: var(--font);
+    font: var(--w7-font);
     display: inline-flex;
     align-items: center;
     position: relative;
-    margin-left: var(--radio-total-width);
+    margin-left: var(--w7-rd-left);
 
     &::before {
       content: "";
       position: absolute;
       top: 0;
-      left: calc(var(--radio-total-width) * -1);
+      left: calc(var(--w7-rd-left) * -1);
       display: inline-block;
-      width: var(--radio-width);
-      height: var(--radio-width);
-      margin-right: var(--radio-label-spacing);
+      width: var(--w7-rd-size);
+      height: var(--w7-rd-size);
+      margin-right: var(--w7-rdl-space);
       background: #f6f6f6;
       border-radius: 50%;
       border: 1px solid;
-      border-color: var(--button-border-color);
-      box-shadow: inset 0 0 0 1.5px #f4f4f4, inset 1px 1px 0 1.5px #aeaeae,
-        inset -1px 0 0 1.5px #ddd, inset 3px 3px 6px #ccc;
+      border-color: var(--w7-el-bd);
+      box-shadow: inset 0 0 0 1.5px var(--w7-el-bg-d), inset 1px 1px 0 1.5px #aeaeae, inset -1px 0 0 1.5px #ddd, inset 3px 3px 6px #ccc;
       box-sizing: border-box;
       transition: 0.4s;
     }
 
     &:hover::before {
-      border-color: var(--button-border-color-hovered);
-      box-shadow: inset 0 0 0 1.5px #def9fa, inset 1px 1px 0 1.5px #79c6f9,
-        inset -1px -1px 0 1.5px #c6e9fc, inset 3px 3px 6px #b1dffd;
+      border-color: var(--w7-el-bd-h);
+      box-shadow: inset 0 0 0 1.5px #def9fa, inset 1px 1px 0 1.5px #79c6f9, inset -1px -1px 0 1.5px #c6e9fc, inset 3px 3px 6px #b1dffd;
     }
   }
 
@@ -61,16 +52,15 @@ input[type="radio"] {
       &::after {
         content: "";
         display: block;
-        width: var(--radio-dot-width);
-        height: var(--radio-dot-width);
-        top: var(--radio-dot-top);
-        left: var(--radio-dot-left);
+        width: var(--w7-rdd-size);
+        height: var(--w7-rdd-size);
+        top: calc(var(--w7-rdd-center));
+        left: calc(-1 * var(--w7-rd-left) + var(--w7-rdd-center));
         position: absolute;
         background: #7cd3eb;
         border-radius: 50%;
         border: 1.5px solid #27506d;
-        box-shadow: inset -1px -1px 0 0.5px #16638f,
-          inset -1px -1px 0 1px #1985c0;
+        box-shadow: inset -1px -1px 0 0.5px #16638f, inset -1px -1px 0 1px #1985c0;
         box-sizing: border-box;
       }
     }

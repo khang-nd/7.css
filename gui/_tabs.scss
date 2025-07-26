@@ -1,7 +1,5 @@
 :root {
-  --tab-border: 1px solid #888;
-  --tab-border-color: #888;
-  --tab-bg: #fff;
+  --w7-tab-bg: #fff;
 }
 
 [role="tabpanel"] {
@@ -29,7 +27,7 @@ menu[role="tablist"] {
     &[aria-selected="true"] {
       padding-bottom: 4px;
       margin: -2px 0px 1px -3px;
-      background: var(--tab-bg);
+      background: var(--w7-tab-bg);
       box-shadow: none;
       border-bottom: 0;
       position: relative;
@@ -41,13 +39,13 @@ menu[role="tablist"] {
       }
 
       &:hover {
-        border-color: var(--tab-border-color);
+        border-color: var(--w7-el-bd);
       }
 
       &:focus,
       &:active,
       &.active {
-        border-color: var(--tab-border-color);
+        border-color: var(--w7-el-bd);
         animation: none;
       }
 
@@ -81,8 +79,8 @@ menu[role="tablist"] {
 [role="tabpanel"] {
   padding: 14px;
   clear: both;
-  background: var(--tab-bg);
-  border: var(--tab-border);
+  background: var(--w7-tab-bg);
+  border: 1px solid var(--w7-el-bd);
   position: relative;
   z-index: 2;
   margin-bottom: 9px;
