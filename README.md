@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/7.css)](http://npm.im/7.css)
 [![gzip size](https://img.shields.io/bundlephobia/minzip/7.css)](https://unpkg.com/7.css)
 
-![A screenshot of a window with the title 'My First Program' and two buttons OK and Cancel, styled like a Windows 7 dialog](/docs/window.png)
+<video src="./docs/demo.mp4" width="400" height="225" controls></video>
 
 **7.css** is a CSS framework that takes semantic HTML and styles them to the Windows 7 design.
 It is built on top of [XP.css](https://github.com/botoxparty/XP.css), which is an extension of [98.CSS](https://github.com/jdan/98.css).
