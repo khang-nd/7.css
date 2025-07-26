@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  color: #222;
+  background: var(--w7-surface);
+  font: var(--w7-font);
 }
 
 #social {
@@ -44,27 +47,25 @@ aside {
 
 aside .tree-view {
   width: 100%;
-  /* TODO: Move scrollbar into the recessed region? */
   overflow-y: scroll;
 }
 
 h1 {
+  font-size: 5rem;
   margin: 12px 0;
 }
 
-hr {
-  margin: 0;
-  border: 1px solid #ccc;
-  max-width: 400px;
-  box-shadow: 0 1px #fff;
-}
-
 h2 {
+  font-size: 2.5rem;
   margin-bottom: 12px;
 }
 
 h3 {
   font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 h3,
@@ -77,6 +78,13 @@ h4 {
   flex: 0 0 200px;
 }
 
+hr {
+  margin: 0;
+  border: 1px solid #ccc;
+  max-width: 400px;
+  box-shadow: 0 1px #fff;
+}
+
 p {
   max-width: 50rem;
   line-height: 1.5;
@@ -86,6 +94,14 @@ p code,
 ul code {
   background: #e0e0e0;
   padding: 2px 3px;
+}
+
+pre {
+  display: block;
+  margin: 0;
+  padding: 12px 8px;
+  background: #fff;
+  border: 1px solid #8e8f8f;
 }
 
 .component {
@@ -121,6 +137,10 @@ blockquote footer {
 
 .code summary {
   text-decoration: underline;
+}
+
+.code summary:focus-visible {
+  outline: 1px dotted #000;
 }
 
 .code > .copy {
