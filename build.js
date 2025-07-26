@@ -28,7 +28,7 @@ const parserWithPrefix = postcss([
   require("postcss-prefix-selector")({
     prefix: ".win7",
     transform: (prefix, selector, prefixed) => {
-      if (["body", ".surface"].includes(selector)) return selector + prefix;
+      if ("body" === selector) return selector + prefix;
       if (":root" === selector) return prefix;
       return prefixed;
     },
