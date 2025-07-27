@@ -1,33 +1,10 @@
 :root {
-  --listview-chevron-size: 5px;
-  --listview-background: #ffffff;
-  --listview-border: 1px solid;
-  --listview-border-color: #eeeeee;
-  --listview-border-color-header: #d7d7d7;
-  --listview-gradient: linear-gradient(
-    to bottom,
-    #ffffff 45%,
-    #fafafa 45%,
-    #f0f0f0
-  );
-  --listview-header-border-color-highlight: #a7d8f5;
-  --listview-header-gradient-highlight: linear-gradient(
-    to bottom,
-    #f3f9fc 45%,
-    #e4f0f8 45%,
-    #d9eaf5
-  );
-  --listview-header-chevron-background: linear-gradient(
-    to bottom right,
-    #667f91 45%,
-    #90c1e2 65%,
-    #cce3f2
-  );
+  --w7-lvc-size: 5px;
 }
 
 table {
-  font: var(--font);
-  background-color: var(--listview-background);
+  font: var(--w7-font);
+  background-color: #fff;
   border: 1px solid #c0c1cd;
 
   border-collapse: collapse;
@@ -48,24 +25,23 @@ table {
   }
 
   > thead > tr > * {
-    background: var(--listview-gradient);
-    border: var(--listview-border) var(--listview-border-color-header);
+    background: linear-gradient(to bottom, #fff 45%, #fafafa 45%, #f0f0f0);
+    border: 1px solid #d7d7d7;
     box-sizing: border-box;
     font-weight: 400;
     height: 22px;
-    padding: 0 var(--grouped-element-spacing);
+    padding: 0 8px;
     position: sticky;
     top: 0;
     cursor: default;
 
     &.highlighted {
-      border: var(--listview-border)
-        var(--listview-header-border-color-highlight);
-      background: var(--listview-header-gradient-highlight);
-      border-radius: var(--border-radius);
+      border: 1px solid #a7d8f5;
+      background: linear-gradient(to bottom, #f3f9fc 45%, #e4f0f8 45%, #d9eaf5);
+      border-radius: var(--w7-el-bdr);
 
       &:not(:last-child) {
-        border-right-color: var(--listview-header-border-color-highlight);
+        border-right-color: #a7d8f5;
       }
 
       &.indicator {
@@ -74,9 +50,9 @@ table {
           position: absolute;
           right: 50%;
           top: 0;
-          width: calc(var(--listview-chevron-size) * 1.2);
-          height: var(--listview-chevron-size);
-          background: var(--listview-header-chevron-background);
+          width: calc(var(--w7-lvc-size) * 1.2);
+          height: var(--w7-lvc-size);
+          background: linear-gradient(to bottom right, #667f91 45%, #90c1e2 65%, #cce3f2);
           clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
         }
         &.up::before {
@@ -90,9 +66,9 @@ table {
     cursor: default;
 
     &.highlighted {
-      border: var(--listview-border) var(--item-highlighted-border);
-      background: var(--item-highlighted-background);
-      border-radius: var(--border-radius);
+      border: 1px solid var(--w7-li-bd-hl);
+      background: var(--w7-li-bg-hl);
+      border-radius: var(--w7-el-bdr);
 
       > *:not(:last-child) {
         border-right: none;
@@ -101,11 +77,11 @@ table {
 
     > * {
       height: 14px;
-      padding: 2px var(--element-spacing);
+      padding: 2px 8px;
     }
 
     > *:not(:last-child) {
-      border-right: var(--listview-border) var(--listview-border-color);
+      border-right: 1px solid #eee;
     }
   }
 }

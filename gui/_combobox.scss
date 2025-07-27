@@ -1,7 +1,3 @@
-:root {
-  --combobox-chevron-size: 4px;
-}
-
 .combobox {
   position: relative;
   display: inline-block;
@@ -18,21 +14,18 @@
     min-width: 16px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    background: url("icon/button-down.svg") center no-repeat,
-      var(--button-gradient);
+    background: url("icon/button-down.svg") center no-repeat, var(--w7-el-grad);
 
     &::before {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      background: url("icon/button-down.svg") center no-repeat,
-        var(--button-gradient-hovered);
+      background: url("icon/button-down.svg") center no-repeat, var(--w7-el-grad-h);
     }
 
     &::after {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      background: url("icon/button-down.svg") center no-repeat,
-        var(--button-gradient-active);
+      background: url("icon/button-down.svg") center no-repeat, var(--w7-el-grad-a);
     }
 
     &:focus {

@@ -1,124 +1,55 @@
 :root {
-  --window-spacing: 6px;
-  --window-border: 1px solid;
-  --window-border-radius: 6px;
-  --window-border-color: #000000b3;
-  --window-background-color: #4580c4;
-  --window-background-glass-stripes: linear-gradient(
-      135deg,
-      #fff5 70px,
-      transparent 100px
-    ),
-    linear-gradient(225deg, #fff5 70px, transparent 100px),
+  /* w = window, wct = window control */
+  --w7-w-space: 6px;
+  --w7-w-bd: #000000b3;
+  --w7-w-bdr: 6px;
+  --w7-w-bg: #4580c4;
+  --w7-w-glass: linear-gradient(135deg, #fff5 70px, transparent 100px), linear-gradient(225deg, #fff5 70px, transparent 100px),
     linear-gradient(
         54deg,
-        /* ------------------------------- 1st stripe ------------------------------- */
-          #0002 0 4%,
+        /* ------------------------------- 1st stripe ------------------------------- */ #0002 0 4%,
         #6661 6% 6%,
         #0002 8% 10%,
-        /* ------------------------------- 2nd stripe ------------------------------- */
-          #0002 15% 16%,
+        /* ------------------------------- 2nd stripe ------------------------------- */ #0002 15% 16%,
         #aaa1 17% 18%,
         #0002 23% 24%,
-        /* ------------------------------- 3rd stripe ------------------------------- */
-          #bbb2 25% 26%,
+        /* ------------------------------- 3rd stripe ------------------------------- */ #bbb2 25% 26%,
         #0002 31% 33%,
-        /* ------------------------------- 4th stripe ------------------------------- */
-          #0002 34% 34.5%,
+        /* ------------------------------- 4th stripe ------------------------------- */ #0002 34% 34.5%,
         #bbb2 36% 40%,
-        /* ------------------------------- 5th stripe ------------------------------- */
-          #0002 41% 41.5%,
+        /* ------------------------------- 5th stripe ------------------------------- */ #0002 41% 41.5%,
         #bbb2 44% 45%,
-        /* ------------------------------- 6th stripe ------------------------------- */
-          #bbb2 46% 47%,
+        /* ------------------------------- 6th stripe ------------------------------- */ #bbb2 46% 47%,
         #0002 48% 49%,
         #0002 50% 50.5%,
-        /* ------------------------------- 7th stripe ------------------------------- */
-          #0002 56% 56.5%,
+        /* ------------------------------- 7th stripe ------------------------------- */ #0002 56% 56.5%,
         #bbb2 57% 63%,
         #0002 67% 69%,
-        /* ------------------------------- 8th stripe ------------------------------- */
-          #bbb2 69.5% 70%,
+        /* ------------------------------- 8th stripe ------------------------------- */ #bbb2 69.5% 70%,
         #0002 73.5% 74%,
-        /* ------------------------------- 9th stripe ------------------------------- */
-          #bbb2 74.5% 79%,
+        /* ------------------------------- 9th stripe ------------------------------- */ #bbb2 74.5% 79%,
         #0002 80% 84%,
-        /* ------------------------------- 10th stripe ------------------------------- */
-          #aaa2 85% 86%,
+        /* ------------------------------- 10th stripe ------------------------------- */ #aaa2 85% 86%,
         #0002 87%,
         #bbb1 90%
       )
       left center/100vw 100vh no-repeat fixed;
-  --window-background: linear-gradient(
-      to right,
-      #ffffff66,
-      #0000001a,
-      #ffffff33
-    ),
-    var(--window-background-color);
-
-  --control-border-color: #0000004d;
-  --control-border-radius: 5px;
-  --control-inset-shadow: inset 0 0 0 1px #fffa;
-  --control-background: linear-gradient(
-    #ffffff80,
-    #ffffff4d 45%,
-    #0000001a 50%,
-    #0000001a 75%,
-    #ffffff80
-  );
-
-  /* Colors for minimize, maximize, and restore buttons when hovered */
-  --control-background-hovered: radial-gradient(
-      circle at bottom,
-      #2aceda,
-      transparent 65%
-    ),
-    linear-gradient(#b6d9ee 50%, #1a6ca1 50%);
-
-  /* Colors for minimize, maximize, and restore buttons when clicked */
-  --control-background-active: radial-gradient(
-      circle at bottom,
-      #0bfdfa,
-      transparent 65%
-    ),
-    linear-gradient(#86a7bc 50%, #092747 50%);
-
-  /* Colors for the close button at normal state */
-  --control-background-close: radial-gradient(
-      circle at -60% 50%,
-      #0007 5% 10%,
-      #0000 50%
-    ),
-    radial-gradient(circle at 160% 50%, #0007 5% 10%, #0000 50%),
+  --w7-w-grad: linear-gradient(to right, #ffffff66, #0000001a, #ffffff33), var(--w7-w-bg);
+  --w7-wct-bd: #0000004d;
+  --w7-wct-bdr: 5px;
+  --w7-wct-sd: inset 0 0 0 1px #fffa;
+  --w7-wct-bg: linear-gradient(#ffffff80, #ffffff4d 45%, #0000001a 50%, #0000001a 75%, #ffffff80);
+  --w7-wct-bg-h: radial-gradient(circle at bottom, #2aceda, transparent 65%), linear-gradient(#b6d9ee 50%, #1a6ca1 50%);
+  --w7-wct-bg-a: radial-gradient(circle at bottom, #0bfdfa, transparent 65%), linear-gradient(#86a7bc 50%, #092747 50%);
+  --w7-wct_close-bg: radial-gradient(circle at -60% 50%, #0007 5% 10%, #0000 50%), radial-gradient(circle at 160% 50%, #0007 5% 10%, #0000 50%),
     linear-gradient(#e0a197e5, #cf796a 25% 50%, #d54f36 50%);
-
-  /* Colors for the close button when hovered */
-  --control-background-close-hovered: radial-gradient(
-      circle at 50% 170%,
-      #f4e676 10% 20%,
-      #0000 60%
-    ),
-    radial-gradient(circle at -60% 50%, #000a 5% 10%, #0000 50%),
-    radial-gradient(circle at 160% 50%, #000a 5% 10%, #0000 50%),
-    linear-gradient(#fb9d8b, #ee6d56 25% 50%, #d42809 50%);
-
-  /* Colors for the close button when clicked */
-  --control-background-close-active: radial-gradient(
-      circle at 50% 170%,
-      #dcc03f 10% 20%,
-      #0000 60%
-    ),
-    radial-gradient(circle at -60% 50%, #000 5% 10%, #0000 50%),
-    radial-gradient(circle at 160% 50%, #000 5% 10%, #0000 50%),
-    linear-gradient(#d1a894, #b67562 25% 50%, #7d0d01 50%);
 }
 
 .window {
-  font: var(--font);
-  box-shadow: 2px 2px 10px 1px var(--window-border-color), inset 0 0 0 1px #fffa;
-  border: var(--window-border) var(--window-border-color);
-  border-radius: var(--window-border-radius);
+  font: var(--w7-font);
+  box-shadow: 2px 2px 10px 1px var(--w7-w-bd), inset 0 0 0 1px #fffa;
+  border: 1px solid var(--w7-w-bd);
+  border-radius: var(--w7-w-bdr);
   position: relative;
   z-index: 0;
 
@@ -130,35 +61,34 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: var(--window-border-radius);
-    background: linear-gradient(transparent 20%, #ffffffb3 40%, transparent 41%),
-      var(--window-background);
-    background-color: var(--window-background-color);
+    border-radius: var(--w7-w-bdr);
+    background: linear-gradient(transparent 20%, #ffffffb3 40%, transparent 41%), var(--w7-w-grad);
+    background-color: var(--w7-w-bg);
     box-shadow: inset 0 0 0 1px #fffd;
   }
 
   &-body {
-    margin: var(--window-spacing);
+    margin: var(--w7-w-space);
     margin-top: 0;
-    border: var(--window-border) var(--window-border-color);
-    background: var(--surface);
+    border: 1px solid var(--w7-w-bd);
+    background: var(--w7-surface);
     box-shadow: 0 0 0 1px #fff9;
 
     &.has-space {
-      padding: var(--window-spacing);
+      padding: var(--w7-w-space);
     }
 
     pre {
-      margin: calc(var(--window-spacing) * -1);
+      margin: calc(var(--w7-w-space) * -1);
     }
   }
 
   &-footer,
   footer {
-    margin: var(--window-spacing);
-    margin-top: calc(-1 * var(--window-spacing) - 1px);
-    background: var(--surface);
-    border: var(--window-border) var(--window-border-color);
+    margin: var(--w7-w-space);
+    margin-top: calc(-1 * var(--w7-w-space) - 1px);
+    background: var(--w7-surface);
+    border: 1px solid var(--w7-w-bd);
     border-top: 0;
     box-shadow: 0 0.5px 1px 0.5px #fff;
     position: relative;
@@ -183,8 +113,7 @@
     .window-footer,
     footer {
       background: #eee;
-      box-shadow: inset 0 1px 3px #ddd, 0 1px 0 #fff9, 1px 1px 0 #fff9,
-        -1px 1px 0 #fff9;
+      box-shadow: inset 0 1px 3px #ddd, 0 1px 0 #fff9, 1px 1px 0 #fff9, -1px 1px 0 #fff9;
 
       &::before {
         content: none;
@@ -206,13 +135,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: var(--window-border-radius);
+      border-radius: var(--w7-w-bdr);
       border: none;
       backdrop-filter: blur(4px);
     }
 
     > .title-bar {
-      background: var(--window-background-glass-stripes);
+      background: var(--w7-w-glass);
       background-attachment: fixed;
     }
   }
@@ -245,33 +174,32 @@
 }
 
 .title-bar {
-  font: var(--font);
+  font: var(--w7-font);
   box-shadow: inset 0 0 0 1px #fff9;
-  border: var(--window-border) var(--window-border-color);
-  border-radius: var(--window-border-radius) var(--window-border-radius) 0 0;
-  padding: var(--window-spacing);
+  border: 1px solid var(--w7-w-bd);
+  border-radius: var(--w7-w-bdr) var(--w7-w-bdr) 0 0;
+  padding: var(--w7-w-space);
   padding-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--window-background);
-  background-color: var(--window-background-color);
+  background: var(--w7-w-grad);
+  background-color: var(--w7-w-bg);
 
   &-text {
     color: #000;
     letter-spacing: 0;
     line-height: 15px;
-    padding-top: var(--window-spacing);
-    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff,
-      0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
+    padding-top: var(--w7-w-space);
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
   }
 
   &-controls {
     display: flex;
     background: #fff3;
-    border: var(--window-border) var(--control-border-color);
+    border: 1px solid var(--w7-wct-bd);
     border-top: 0;
-    border-radius: 0 0 var(--control-border-radius) var(--control-border-radius);
+    border-radius: 0 0 var(--w7-wct-bdr) var(--w7-wct-bdr);
     box-shadow: 0 1px 0 #fffa, 1px 0 0 #fffa, -1px 0 0 #fffa;
 
     button {
@@ -280,7 +208,7 @@
       min-height: 19px;
       padding: 0;
       border: 0;
-      border-right: var(--window-border) var(--control-border-color);
+      border-right: 1px solid var(--w7-wct-bd);
       border-radius: 0;
       box-shadow: none;
       box-sizing: border-box;
@@ -358,13 +286,13 @@
 
       &:first-child,
       &:first-child::before {
-        border-bottom-left-radius: var(--control-border-radius);
+        border-bottom-left-radius: var(--w7-wct-bdr);
       }
 
       &:last-child,
       &:last-child::before {
         border: 0;
-        border-bottom-right-radius: var(--control-border-radius);
+        border-bottom-right-radius: var(--w7-wct-bdr);
       }
 
       &:focus {
@@ -378,11 +306,11 @@
   .window.active &,
   &.active {
     .title-bar-controls {
-      border-color: var(--window-border-color);
+      border-color: var(--w7-w-bd);
 
       button {
-        border-color: var(--window-border-color);
-        box-shadow: var(--control-inset-shadow);
+        border-color: var(--w7-w-bd);
+        box-shadow: var(--w7-wct-sd);
 
         &::after {
           content: none;
@@ -390,14 +318,13 @@
 
         &[aria-label="Minimize"],
         &.is-minimize {
-          background: url("./icon/minimize.png") no-repeat center 10px,
-            var(--control-background);
+          background: url("./icon/minimize.png") no-repeat center 10px, var(--w7-wct-bg);
+
           &::before {
             content: "";
-            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
-            background: url("./icon/minimize.png") no-repeat center 10px,
-              var(--control-background-hovered);
-            border-bottom-left-radius: var(--control-border-radius);
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--w7-wct-sd);
+            background: url("./icon/minimize.png") no-repeat center 10px, var(--w7-wct-bg-h);
+            border-bottom-left-radius: var(--w7-wct-bdr);
             opacity: 0;
             transition: opacity 0.3s linear;
           }
@@ -409,20 +336,18 @@
           }
 
           &:active::before {
-            background: url("./icon/minimize.png") no-repeat center 10px,
-              var(--control-background-active);
+            background: url("./icon/minimize.png") no-repeat center 10px, var(--w7-wct-bg-a);
           }
         }
 
         &[aria-label="Maximize"],
         &.is-maximize {
-          background: url("./icon/maximize.png") no-repeat center,
-            var(--control-background);
+          background: url("./icon/maximize.png") no-repeat center, var(--w7-wct-bg);
+
           &::before {
             content: "";
-            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
-            background: url("./icon/maximize.png") no-repeat center,
-              var(--control-background-hovered);
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--w7-wct-sd);
+            background: url("./icon/maximize.png") no-repeat center, var(--w7-wct-bg-h);
             opacity: 0;
             transition: opacity 0.3s linear;
           }
@@ -434,20 +359,18 @@
           }
 
           &:active::before {
-            background: url("./icon/maximize.png") no-repeat center,
-              var(--control-background-active);
+            background: url("./icon/maximize.png") no-repeat center, var(--w7-wct-bg-a);
           }
         }
 
         &[aria-label="Help"],
         &.is-help {
-          background: url("./icon/help.png") no-repeat center,
-            var(--control-background);
+          background: url("./icon/help.png") no-repeat center, var(--w7-wct-bg);
+
           &::before {
             content: "";
-            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
-            background: url("./icon/help.png") no-repeat center,
-              var(--control-background-hovered);
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--w7-wct-sd);
+            background: url("./icon/help.png") no-repeat center, var(--w7-wct-bg-h);
             opacity: 0;
             transition: opacity 0.3s linear;
           }
@@ -459,20 +382,18 @@
           }
 
           &:active::before {
-            background: url("./icon/help.png") no-repeat center,
-              var(--control-background-active);
+            background: url("./icon/help.png") no-repeat center, var(--w7-wct-bg-a);
           }
         }
 
         &[aria-label="Restore"],
         &.is-restore {
-          background: url("./icon/restore.png") no-repeat center,
-            var(--control-background);
+          background: url("./icon/restore.png") no-repeat center, var(--w7-wct-bg);
+
           &::before {
             content: "";
-            box-shadow: 0 0 7px 3px #5dc4f0, var(--control-inset-shadow);
-            background: url("./icon/restore.png") no-repeat center,
-              var(--control-background-hovered);
+            box-shadow: 0 0 7px 3px #5dc4f0, var(--w7-wct-sd);
+            background: url("./icon/restore.png") no-repeat center, var(--w7-wct-bg-h);
             opacity: 0;
             transition: opacity 0.3s linear;
           }
@@ -484,23 +405,21 @@
           }
 
           &:active::before {
-            background: url("./icon/restore.png") no-repeat center,
-              var(--control-background-active);
+            background: url("./icon/restore.png") no-repeat center, var(--w7-wct-bg-a);
           }
         }
 
         &[aria-label="Close"],
         &.is-close {
-          background: url("./icon/close.png") no-repeat center,
-            var(--control-background), var(--control-background-close);
-          box-shadow: var(--control-inset-shadow);
+          background: url("./icon/close.png") no-repeat center, var(--w7-wct-bg), var(--w7-wct_close-bg);
+          box-shadow: var(--w7-wct-sd);
 
           &::before {
             content: "";
-            background: url("./icon/close.png") no-repeat center,
-              var(--control-background), var(--control-background-close-hovered);
-            box-shadow: 0 0 7px 3px #e68e75, var(--control-inset-shadow);
-            border-bottom-right-radius: var(--control-border-radius);
+            background: url("./icon/close.png") no-repeat center, var(--w7-wct-bg), radial-gradient(circle at 50% 170%, #f4e676 10% 20%, #0000 60%),
+              radial-gradient(circle at -60% 50%, #000a 5% 10%, #0000 50%), radial-gradient(circle at 160% 50%, #000a 5% 10%, #0000 50%), linear-gradient(#fb9d8b, #ee6d56 25% 50%, #d42809 50%);
+            box-shadow: 0 0 7px 3px #e68e75, var(--w7-wct-sd);
+            border-bottom-right-radius: var(--w7-wct-bdr);
             opacity: 0;
             transition: opacity 0.3s linear;
           }
@@ -512,15 +431,15 @@
           }
 
           &:active::before {
-            background: url("./icon/close.png") no-repeat center,
-              var(--control-background), var(--control-background-close-active);
+            background: url("./icon/close.png") no-repeat center, var(--w7-wct-bg), radial-gradient(circle at 50% 170%, #dcc03f 10% 20%, #0000 60%),
+              radial-gradient(circle at -60% 50%, #000 5% 10%, #0000 50%), radial-gradient(circle at 160% 50%, #000 5% 10%, #0000 50%), linear-gradient(#d1a894, #b67562 25% 50%, #7d0d01 50%);
           }
         }
 
         &:disabled {
           &[aria-label="Minimize"],
           &.is-minimize {
-            background: var(--control-background);
+            background: var(--w7-wct-bg);
 
             &::before {
               content: "";
@@ -532,7 +451,7 @@
 
           &[aria-label="Maximize"],
           &.is-maximize {
-            background: var(--control-background);
+            background: var(--w7-wct-bg);
 
             &::before {
               content: "";
@@ -544,7 +463,7 @@
 
           &[aria-label="Close"],
           &.is-close {
-            background: var(--control-background), var(--control-background-close);
+            background: var(--w7-wct-bg), var(--w7-wct_close-bg);
             filter: contrast(0.7) brightness(1.1);
 
             &::before {
@@ -561,16 +480,16 @@
 }
 
 .status-bar {
-  margin: var(--window-spacing);
-  margin-top: calc(var(--window-spacing) * -1);
-  background: var(--surface);
-  border: var(--window-border) var(--window-border-color);
+  margin: var(--w7-w-space);
+  margin-top: calc(var(--w7-w-space) * -1);
+  background: var(--w7-surface);
+  border: 1px solid var(--w7-w-bd);
   border-top: 0;
   box-shadow: 0 1px 0 #fff9, 1px 0 0 #fff9, -1px 0 0 #fff9;
   display: flex;
 
   &-field {
-    border-right: var(--window-border) #cfcfcf;
+    border-right: 1px solid #cfcfcf;
     padding: 2px 3px;
     margin: 0;
     flex-grow: 1;

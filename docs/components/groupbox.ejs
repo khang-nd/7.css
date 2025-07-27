@@ -17,16 +17,16 @@
 
     <%- example(`
       <fieldset>
-        <div class="field-row">Select one:</div>
-        <div class="field-row">
+        <div>Select one:</div>
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example">
           <label for="radio${getCurrentId()}">Diners</label>
         </div>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example">
           <label for="radio${getCurrentId()}">Drive-Ins</label>
         </div>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example">
           <label for="radio${getCurrentId()}">Dives</label>
         </div>
@@ -41,23 +41,46 @@
     <%- example(`
       <fieldset>
         <legend>Today's mood</legend>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
           <label for="radio${getCurrentId()}">Claire Saffitz</label>
         </div>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
           <label for="radio${getCurrentId()}">Brad Leone</label>
         </div>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
           <label for="radio${getCurrentId()}">Chris Morocco</label>
         </div>
-        <div class="field-row">
+        <div>
           <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
           <label for="radio${getCurrentId()}">Carla Lalli Music</label>
         </div>
       </fieldset>
+    `) %>
+
+    <p>
+      There is a handy <code>group</code> utility class provided out of the box which can be used
+      to group elements without the need for a <code>fieldset</code>, and ensure a consistent
+      spacing between them.
+    </p>
+
+    <%- example(`
+      <div class="group">
+        <div>
+          <input checked type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am checked</label>
+        </div>
+        <div>
+          <input disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive</label>
+        </div>
+        <div>
+          <input checked disabled type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">I am inactive but still checked</label>
+        </div>
+      </div>
     `) %>
   </div>
 </section>

@@ -1,27 +1,26 @@
 :root {
-  --balloon-border-color: #0006;
-  --balloon-tail-top: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.5V19.5H18.5L0.5 1.5Z' fill='%23fff' stroke='%23fff'/%3E%3Cpath d='M1 19.5H0.5V1.5L18.5 19.5H18' stroke='%23939393'/%3E%3C/svg%3E");
-  --balloon-tail-bottom: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.5V19.5H18.5L0.5 1.5Z' fill='%23ddd' stroke='%23ddd'/%3E%3Cpath d='M1 19.5H0.5V1.5L18.5 19.5H18' stroke='%23939393'/%3E%3C/svg%3E");
-  --balloon-tail-size: 18px;
-  --balloon-tail-offset: 1em;
+  /* blt = balloon tail */
+  --w7-bl-bd: #0006;
+  --w7-blt-size: 18px;
+  --w7-blt-offset: 1em;
 }
 
 [role="tooltip"] {
   position: relative;
   padding: 1em 1em 1em 2.5em;
-  border: 1px solid var(--balloon-border-color);
-  border-radius: var(--border-radius);
-  box-shadow: 5px 5px 3px -3px var(--balloon-border-color);
-  background: linear-gradient(to bottom, #fff, var(--button-shade-light));
+  border: 1px solid var(--w7-bl-bd);
+  border-radius: var(--w7-el-bdr);
+  box-shadow: 5px 5px 3px -3px var(--w7-bl-bd);
+  background: linear-gradient(to bottom, #fff, var(--w7-el-bg-s-1));
 
   &::before {
     content: "";
     position: absolute;
-    background: var(--balloon-tail-top);
-    width: var(--balloon-tail-size);
-    height: var(--balloon-tail-size);
-    top: calc(var(--balloon-tail-size) * -1);
-    left: var(--balloon-tail-offset);
+    background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.5V19.5H18.5L0.5 1.5Z' fill='%23fff' stroke='%23fff'/%3E%3Cpath d='M1 19.5H0.5V1.5L18.5 19.5H18' stroke='%23939393'/%3E%3C/svg%3E");
+    width: var(--w7-blt-size);
+    height: var(--w7-blt-size);
+    top: calc(var(--w7-blt-size) * -1);
+    left: var(--w7-blt-offset);
   }
 
   &[id] {
@@ -30,8 +29,8 @@
 
   &.is-top {
     &::before {
-      background: var(--balloon-tail-bottom);
-      bottom: calc(var(--balloon-tail-size) * -1);
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 1.5V19.5H18.5L0.5 1.5Z' fill='%23ebebeb' stroke='%23ddd'/%3E%3Cpath d='M1 19.5H0.5V1.5L18.5 19.5H18' stroke='%23939393'/%3E%3C/svg%3E");
+      bottom: calc(var(--w7-blt-size) * -1);
       top: unset;
       transform: scale(-1);
     }
@@ -46,7 +45,7 @@
   &.is-left {
     &::before {
       left: unset;
-      right: var(--balloon-tail-offset);
+      right: var(--w7-blt-offset);
     }
 
     &.is-bottom {

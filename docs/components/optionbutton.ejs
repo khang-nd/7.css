@@ -15,18 +15,19 @@
 
     <p>
       Option buttons can be grouped by specifying a shared <code>name</code> attribute on each
-      input. Just as before: when grouping inputs, wrap each input in a container with the
-      <code>field-row</code> class to ensure a consistent spacing between inputs.
+      input.
     </p>
 
     <%- example(`
-      <div class="field-row">
-        <input id="radio${getNewId()}" type="radio" name="first-example">
-        <label for="radio${getCurrentId()}">Yes</label>
-      </div>
-      <div class="field-row">
-        <input id="radio${getNewId()}" type="radio" name="first-example">
-        <label for="radio${getCurrentId()}">No</label>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div>
+          <input id="radio${getNewId()}" type="radio" name="first-example">
+          <label for="radio${getCurrentId()}">Yes</label>
+        </div>
+        <div>
+          <input id="radio${getNewId()}" type="radio" name="first-example">
+          <label for="radio${getCurrentId()}">No</label>
+        </div>
       </div>
     `) %>
 
@@ -36,17 +37,19 @@
     </p>
 
     <%- example(`
-      <div class="field-row">
-        <input id="radio${getNewId()}" type="radio" name="second-example">
-        <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
-      </div>
-      <div class="field-row">
-        <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
-        <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
-      </div>
-      <div class="field-row">
-        <input disabled id="radio${getNewId()}" type="radio" name="second-example">
-        <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div>
+          <input id="radio${getNewId()}" type="radio" name="second-example">
+          <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+        </div>
+        <div>
+          <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
+          <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
+        </div>
+        <div>
+          <input disabled id="radio${getNewId()}" type="radio" name="second-example">
+          <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
+        </div>
       </div>
     `) %>
   </div>

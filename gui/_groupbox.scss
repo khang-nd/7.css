@@ -1,40 +1,22 @@
 fieldset {
   border: 1px solid #cdd7db;
-  border-radius: var(--border-radius);
+  border-radius: var(--w7-el-bdr);
   box-shadow: inset 0 0 0 1px #fff;
-  padding: calc(2 * var(--border-width) + var(--element-spacing));
-  padding-block-start: var(--element-spacing);
   margin: 0;
+  padding: 8px 10px 10px;
 
   legend {
-    font: var(--font);
+    font: var(--w7-font);
   }
 }
 
-.field-row {
+fieldset,
+.group {
   display: flex;
-  align-items: center;
-
-  > * {
-    + * {
-      margin-left: var(--grouped-element-spacing);
-    }
-  }
-
-  &-stacked {
-    display: flex;
-    flex-direction: column;
-
-    * {
-      + * {
-        margin-top: var(--grouped-element-spacing);
-      }
-    }
-  }
+  flex-direction: column;
+  gap: 6px;
 }
 
-[class^="field-row"] {
-  + [class^="field-row"] {
-    margin-top: var(--grouped-element-spacing);
-  }
+.group + .group {
+  margin-top: 6px;
 }

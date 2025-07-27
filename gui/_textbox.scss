@@ -14,12 +14,12 @@ input[type="email"],
 input[type="number"],
 input[type="password"],
 textarea {
-  font: var(--font);
+  font: var(--w7-font);
   padding: 3px 4px 5px;
   border: 1px solid;
   border-color: #abadb3 #dbdfe6 #e3e9ef #e2e3ea;
   border-radius: 2px;
-  background-color: var(--button-highlight);
+  background-color: #fff;
   box-sizing: border-box;
   transition: border-color 0.5s;
 
@@ -36,6 +36,6 @@ textarea {
   &:disabled {
     border-color: #afafaf;
     box-shadow: inset 0 0 0 1px #ffff;
-    background: var(--surface);
+    background: var(--w7-surface);
   }
 }
