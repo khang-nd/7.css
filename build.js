@@ -21,8 +21,6 @@ const plugins = [
 
 const { homepage, version } = require("./package.json");
 
-let parser = postcss(plugins);
-
 /**
  *
  * @param {Object} options
@@ -33,6 +31,8 @@ async function buildCSS({ usePrefix, useInlineVars } = {}) {
   const input = `/*! 7.css v${version} - ${homepage} */\n` + fs.readFileSync("gui/index.scss");
 
   let targetFile = "dist/7.css";
+  let parser = postcss(plugins);
+
   if (usePrefix) {
     targetFile = "dist/7.scoped.css";
     parser = postcss([
@@ -77,6 +77,7 @@ function buildComponents() {
 
     const parsedResults = fileResults.map(async (file) => {
       const target = targetFolder + "/" + file.name.replace("scss", "css");
+      const parser = postcss([...plugins, require("postcss-css-variables")]);
       return {
         target,
         parsed: await parser.process(file.content, {
