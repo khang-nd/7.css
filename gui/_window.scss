@@ -162,14 +162,14 @@
         opacity: 0;
       }
       100% {
-        transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) scale(1);
+        transform: translate(-50%, -50%);
         opacity: 1;
       }
     }
     
     @keyframes dialog-close {
       0% {
-        transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) scale(1);
+        transform: translate(-50%, -50%);
         opacity: 1;
       }
       100% {
@@ -183,6 +183,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
     visibility: hidden;
     opacity: 0;
     
@@ -192,7 +195,7 @@
     &:target {
       visibility: visible;
       opacity: 1;
-      animation: dialog-open 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation: dialog-open 0.5s backwards;
       transition: none;
     }
   }
