@@ -213,6 +213,7 @@
       box-shadow: none;
       box-sizing: border-box;
       background: none;
+      image-rendering: pixelated;
 
       &::after {
         content: none;
