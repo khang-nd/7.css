@@ -156,19 +156,47 @@
   }
 
   &[role="dialog"] {
+    @keyframes dialog-open {
+      0% {
+        transform: translate(-50%, -50%) perspective(1000px) rotateX(-15deg) scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes dialog-close {
+      0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) perspective(1000px) rotateX(15deg) scale(0.9);
+        opacity: 0;
+      }
+    }
+
     position: fixed;
     z-index: 999;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
     visibility: hidden;
     opacity: 0;
-    transition-duration: 0.2s;
-    transition-property: visibility, opacity;
+    
+    animation: dialog-close 0.25s ease-in forwards;
+    transition: visibility 0s linear 0.25s;
 
     &:target {
       visibility: visible;
       opacity: 1;
+      animation: dialog-open 0.5s backwards;
+      transition: none;
     }
   }
 }
